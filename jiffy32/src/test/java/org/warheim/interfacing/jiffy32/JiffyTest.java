@@ -77,6 +77,8 @@ public class JiffyTest {
     @org.junit.Test
     public void testSetDigital() throws Exception {
         jiffy.setDigitalOutput((byte)('A'), (byte)5, (byte)1);
+        Thread.sleep(1000);
+        jiffy.setDigitalOutput((byte)('A'), (byte)5, (byte)0);
 //        for (byte x=1;x<253;++x) {
 //            System.out.println(x);
 //            jiffy.setPWMOutput((byte)('A'), (byte)5, x);
