@@ -316,15 +316,14 @@ public class FF32cImpl implements FF32c {
         byte[] buffer = new byte[commands.length + 1 + value.length()];
         buffer[0] = Constants.PRIMER;
         System.arraycopy(commands, 0, buffer, 1, commands.length);
-        byte[] str = value.getBytes(Charset.forName("UTF-8"));
+        byte[] str = value.getBytes();//Charset.forName("UTF-8"));
         int len = value.length();
 
         if (len > 32)
             len = 32;
         int startIndex = 1+commands.length;
-        int endIndex = startIndex + len;
-        System.arraycopy(str, 0, buffer, startIndex, endIndex);
-        Arrays.fill(buffer, len, 34, Constants.PRIMER);
+        System.arraycopy(str, 0, buffer, startIndex, len);
+        Arrays.fill(buffer, startIndex + len, buffer.length, Constants.PRIMER);
         return sendRaw(buffer);
 
     }
