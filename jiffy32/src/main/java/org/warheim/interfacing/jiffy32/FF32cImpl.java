@@ -28,6 +28,8 @@ import org.warheim.interfacing.jiffy32.model.ChipInformation;
  */
 public class FF32cImpl implements FF32c {
     HIDDevice dev;
+    private static final byte BTRUE = 0x01;
+    private static final byte BFALSE = 0x00;
 
     public FF32cImpl(HIDDevice dev) {
         this.dev = dev;
@@ -146,94 +148,6 @@ public class FF32cImpl implements FF32c {
     }
 
     @Override
-    public void setDigitalOutput(byte pinBlock, byte pinNumber, byte state) throws IOException, JiffyException {
-        byte[] commands = new byte[4];
-        commands[0] = Constants.CMD_SET_DIGITAL_OUTPUT;
-        commands[1] = pinBlock;
-        commands[2] = pinNumber;
-        commands[3] = state;
-        byte[] result = sendData(commands);
-        if (result!=null) {
-            if (result.length>0&&result[0]==Constants.RESULT_OK) {
-
-            } else {
-                JiffyException je = decodeException(result);
-                throw je;
-            }
-        } else {
-            throw new GeneralFF32Error();
-        }
-    }
-
-    @Override
-    public void setBlockDigitalOutputs(byte PinsBlock, String PinsMask, String States) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public byte readDigitalInput(byte pinBlock, byte pinNumber) throws IOException, JiffyException {
-        byte[] commands = new byte[3];
-        commands[0] = Constants.CMD_READ_DIGITAL_INPUT;
-        commands[1] = pinBlock;
-        commands[2] = pinNumber;
-        byte[] result = sendData(commands);
-        if (result!=null) {
-            if (result.length>1&&result[0]==Constants.CMD_READ_DIGITAL_INPUT) {
-                return result[1];
-            } else {
-                JiffyException je = decodeException(result);
-                throw je;
-            }
-        } else {
-            throw new GeneralFF32Error();
-        }
-    }
-
-    @Override
-    public boolean readBlockDigitalInputs(byte PinsBlock, String PinsMask) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void setPWMOutput(byte pinBlock, byte pinNumber, byte ratio) throws IOException, JiffyException {
-        byte[] commands = new byte[4];
-        commands[0] = Constants.CMD_SET_PWM_OUTPUT;
-        commands[1] = pinBlock;
-        commands[2] = pinNumber;
-        commands[3] = ratio;
-        byte[] result = sendData(commands);
-        if (result!=null) {
-            if (result.length>0&&result[0]==Constants.RESULT_OK) {
-
-            } else {
-                JiffyException je = decodeException(result);
-                throw je;
-            }
-        } else {
-            throw new GeneralFF32Error();
-        }
-    }
-
-    @Override
-    public byte readAnalogInput(byte pinBlock, byte pinNumber) throws IOException, JiffyException {
-        byte[] commands = new byte[3];
-        commands[0] = Constants.CMD_READ_ANALOG_INPUT;
-        commands[1] = pinBlock;
-        commands[2] = pinNumber;
-        byte[] result = sendData(commands);
-        if (result!=null) {
-            if (result.length>1&&result[0]==Constants.CMD_READ_ANALOG_INPUT) {
-                return result[1];
-            } else {
-                JiffyException je = decodeException(result);
-                throw je;
-            }
-        } else {
-            throw new GeneralFF32Error();
-        }
-    }
-
-    @Override
     public void setSPIPins(byte CSPinBlock, byte CSPinNumber, byte SCKPinBlock, byte SCKPinNumber, byte MOSIPinBlock, byte MOSIPinNumber, byte MISOPinBlock, byte MISOPinNumber) throws IOException {
         byte[] commands = new byte[10];
         commands[0] = Constants.CMD_CONFIG_SPI_BUS;
@@ -249,47 +163,11 @@ public class FF32cImpl implements FF32c {
         sendData(commands);
     }
 
-    @Override
-    public boolean writeSPIBus(int DataLen, String Data) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean readSPIBus(int WRDataLen, int RDDataLen, String WRData) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean setI2CPins(byte SCLPinBlock, byte SCLPinNumber, byte SDAPinBlock, byte SDAPinNumber) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean writeI2CBus(int DataLen, String Data) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean readI2CBus(int WRDataLen, int RDDataLen, String WRData) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean set1WirePin(byte DQPinBlock, byte DQPinNumber) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean write1WireBus(int DataLen, String Data) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean read1WireBus(int WRDataLen, int RDDataLen, String WRData) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     private byte[] sendRaw(byte... commands) throws IOException {
+        for (byte b: commands) {
+            System.out.print(String.format("%02X ", b));
+        }
+        System.out.println();
         byte[] buffer = new byte[64];
         int n;
         n = dev.write(commands);
@@ -340,6 +218,201 @@ public class FF32cImpl implements FF32c {
 
     @Override
     public boolean getPath(int pCount) throws IOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setDigitalOutput(byte pinBlock, byte pinNumber, boolean state) throws IOException, JiffyException {
+        byte[] commands = new byte[4];
+        commands[0] = Constants.CMD_SET_DIGITAL_OUTPUT;
+        commands[1] = pinBlock;
+        commands[2] = pinNumber;
+        commands[3] = (state?BTRUE:BFALSE);
+        byte[] result = sendData(commands);
+        if (result!=null) {
+            if (result.length>0&&result[0]==Constants.RESULT_OK) {
+
+            } else {
+                JiffyException je = decodeException(result);
+                throw je;
+            }
+        } else {
+            throw new GeneralFF32Error();
+        }
+    }
+
+    @Override
+    public void setDigitalOutput(Pin pin, boolean state) throws IOException, JiffyException {
+        setDigitalOutput(pin.getBlock(), pin.getNumber(), state);
+    }
+
+    @Override
+    public void setBlockDigitalOutputs(byte pinsBlock, int pinsMask, int states) throws IOException, JiffyException {
+        byte[] commands = new byte[6];
+        commands[0] = Constants.CMD_SET_BLOCK_DIGITAL_OUTPUTS;
+        commands[1] = pinsBlock;
+        byte maskLSB = (byte)(pinsMask & 0xFF);
+        byte maskMSB = (byte)((pinsMask >> 8)& 0xFF);
+        commands[2] = maskMSB;
+        commands[3] = maskLSB;
+        byte stateLSB = (byte)(states & 0xFF);
+        byte stateMSB = (byte)((states >> 8)& 0xFF);
+        
+        commands[4] = stateMSB;
+        commands[5] = stateLSB;
+        byte[] result = sendData(commands);
+        if (result!=null) {
+            if (result.length>0&&result[0]==Constants.RESULT_OK) {
+
+            } else {
+                JiffyException je = decodeException(result);
+                throw je;
+            }
+        } else {
+            throw new GeneralFF32Error();
+        }
+    }
+
+    @Override
+    public byte readDigitalInput(byte pinBlock, byte pinNumber) throws IOException, JiffyException {
+        byte[] commands = new byte[3];
+        commands[0] = Constants.CMD_READ_DIGITAL_INPUT;
+        commands[1] = pinBlock;
+        commands[2] = pinNumber;
+        byte[] result = sendData(commands);
+        if (result!=null) {
+            if (result.length>1&&result[0]==Constants.CMD_READ_DIGITAL_INPUT) {
+                return result[1];
+            } else {
+                JiffyException je = decodeException(result);
+                throw je;
+            }
+        } else {
+            throw new GeneralFF32Error();
+        }
+    }
+
+    @Override
+    public byte readDigitalInput(Pin pin) throws IOException, JiffyException {
+        return readDigitalInput(pin.getBlock(), pin.getNumber());
+    }
+
+    @Override
+    public int readBlockDigitalInputsAsInt(byte pinsBlock, String pinsMask) throws IOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String readBlockDigitalInputsAsString(byte pinsBlock, String pinsMask) throws IOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Boolean[] readBlockDigitalInputsAsBooleans(byte pinsBlock, String pinsMask) throws IOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int readBlockDigitalInputsAsInt(byte pinsBlock, int pinsMask) throws IOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String readBlockDigitalInputsAsString(byte pinsBlock, int pinsMask) throws IOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Boolean[] readBlockDigitalInputsAsBooleans(byte pinsBlock, int pinsMask) throws IOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setPWMOutput(byte pinBlock, byte pinNumber, byte ratio) throws IOException, JiffyException {
+        byte[] commands = new byte[4];
+        commands[0] = Constants.CMD_SET_PWM_OUTPUT;
+        commands[1] = (byte)pinBlock;
+        commands[2] = pinNumber;
+        commands[3] = ratio;
+        byte[] result = sendData(commands);
+        if (result!=null) {
+            if (result.length>0&&result[0]==Constants.RESULT_OK) {
+
+            } else {
+                JiffyException je = decodeException(result);
+                throw je;
+            }
+        } else {
+            throw new GeneralFF32Error();
+        }
+    }
+
+    @Override
+    public void setPWMOutput(Pin pin, byte ratio) throws IOException, JiffyException {
+        setPWMOutput(pin.getBlock(), pin.getNumber(), ratio);
+    }
+
+    @Override
+    public byte readAnalogInput(byte pinBlock, byte pinNumber) throws IOException, JiffyException {
+        byte[] commands = new byte[3];
+        commands[0] = Constants.CMD_READ_ANALOG_INPUT;
+        commands[1] = (byte)pinBlock;
+        commands[2] = pinNumber;
+        byte[] result = sendData(commands);
+        if (result!=null) {
+            if (result.length>1&&result[0]==Constants.CMD_READ_ANALOG_INPUT) {
+                return result[1];
+            } else {
+                JiffyException je = decodeException(result);
+                throw je;
+            }
+        } else {
+            throw new GeneralFF32Error();
+        }
+    }
+
+    @Override
+    public byte readAnalogInput(Pin pin) throws IOException, JiffyException {
+        return readAnalogInput(pin.getBlock(), pin.getNumber());
+    }
+
+    @Override
+    public boolean writeSPIBus(int dataLen, String data) throws IOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean readSPIBus(int WRDataLen, int RDDataLen, String WRData) throws IOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean setI2CPins(byte SCLPinBlock, byte SCLPinNumber, byte SDAPinBlock, byte SDAPinNumber) throws IOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean writeI2CBus(int dataLen, String data) throws IOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean readI2CBus(int WRDataLen, int RDDataLen, String WRData) throws IOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean set1WirePin(byte DQPinBlock, byte DQPinNumber) throws IOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean write1WireBus(int dataLen, String data) throws IOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean read1WireBus(int WRDataLen, int RDDataLen, String WRData) throws IOException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

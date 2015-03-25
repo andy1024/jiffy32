@@ -13,6 +13,8 @@ import org.warheim.interfacing.jiffy32.model.ChipInformation;
 
 /**
  *
+ * FF32 interface
+ * for details please consult http://www.flyfish-tech.com/FF32/FF32_datasheet.pdf
  * @author amaslowski
  */
 public interface FF32c {
@@ -25,15 +27,24 @@ public interface FF32c {
     String getProduct() throws IOException;
     String getSerialNumber() throws IOException;
     void setSerialNumber(String serial) throws IOException;
-    void setDigitalOutput(byte pinBlock, byte PinNumber,
-                              byte state) throws IOException, JiffyException;
-    void setBlockDigitalOutputs(byte pinsBlock, String pinsMask,
-                                    String states) throws IOException;
+    void setDigitalOutput(byte pinBlock, byte pinNumber,
+                              boolean state) throws IOException, JiffyException;
+    void setDigitalOutput(Pin pin, boolean state) throws IOException, JiffyException;
+    void setBlockDigitalOutputs(byte pinsBlock, int pinsMask,
+                                    int states) throws IOException, JiffyException;
     byte readDigitalInput(byte pinBlock, byte pinNumber) throws IOException, JiffyException;
-    boolean readBlockDigitalInputs(byte pinsBlock, String pinsMask) throws IOException;
+    byte readDigitalInput(Pin pin) throws IOException, JiffyException;
+    int readBlockDigitalInputsAsInt(byte pinsBlock, String pinsMask) throws IOException;
+    String readBlockDigitalInputsAsString(byte pinsBlock, String pinsMask) throws IOException;
+    Boolean[] readBlockDigitalInputsAsBooleans(byte pinsBlock, String pinsMask) throws IOException;
+    int readBlockDigitalInputsAsInt(byte pinsBlock, int pinsMask) throws IOException;
+    String readBlockDigitalInputsAsString(byte pinsBlock, int pinsMask) throws IOException;
+    Boolean[] readBlockDigitalInputsAsBooleans(byte pinsBlock, int pinsMask) throws IOException;
     void setPWMOutput(byte pinBlock, byte pinNumber,
                           byte ratio) throws IOException, JiffyException;
+    void setPWMOutput(Pin pin, byte ratio) throws IOException, JiffyException;
     byte readAnalogInput(byte pinBlock, byte pinNumber) throws IOException, JiffyException;
+    byte readAnalogInput(Pin pin) throws IOException, JiffyException;
     void setSPIPins(byte CSPinBlock, byte CSPinNumber,
                         byte SCKPinBlock, byte SCKPinNumber,
                         byte MOSIPinBlock, byte MOSIPinNumber,

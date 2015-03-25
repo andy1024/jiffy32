@@ -48,4 +48,8 @@ public class Constants {
     public static final byte RESULT_UNKNOWN_COMMAND       =       0x0F;
     public static final byte RESULT_IMPROPER_DATA_LEN     =       0x02;
     public static final byte RESULT_ACK_ABSENT            =       0x04;
+    
+    public static final byte A = 0x0A;
+    public static final byte B = 0x0B;
+
 }
