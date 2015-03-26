@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.warheim.interfacing.jiffy32;
 
 import com.codeminders.hidapi.ClassPathLibraryLoader;
@@ -125,9 +120,13 @@ public class JiffyTest {
         //light A6
         jiffy.setBlockDigitalOutputs(Constants.A, 0x003F, 0x0040);
         Thread.sleep(1000);
-        //dim all in A block
+        //light all in B block
+        jiffy.setBlockDigitalOutputs(Constants.B, 0x0FFF, 0x0FFF);
+        Thread.sleep(1000);
+        //dim all in both blocks
         Thread.sleep(1000);
         jiffy.setBlockDigitalOutputs(Constants.A, 0x003F, 0x0000);
+        jiffy.setBlockDigitalOutputs(Constants.B, 0x0FFF, 0x0000);
     }
     
 }

@@ -1,12 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.warheim.interfacing.jiffy32.exceptions;
 
 /**
- *
+ * General type of exception thrown from any hardware interfacing functions
+ * when unexpected situation arises (uncovered by specification)
+ * 
  * @author amaslowski
  */
 public class GeneralFF32Error extends RuntimeException {

@@ -1,12 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.warheim.interfacing.jiffy32.exceptions;
 
 /**
- *
+ * Thrown from these functions:
+ * Set block digital outputs (0x30)
+ * Read block digital inputs (0x31)
+ * (applicable to silicon versions older than 0.3)
+ * 
  * @author amaslowski
  */
 public class UnknownCommand extends JiffyException {
