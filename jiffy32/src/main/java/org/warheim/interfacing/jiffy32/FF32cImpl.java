@@ -293,40 +293,33 @@ public class FF32cImpl implements FF32c {
     }
 
     @Override
-    public int readBlockDigitalInputsAsInt(byte pinsBlock, String pinsMask) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public String readBlockDigitalInputsAsString(byte pinsBlock, String pinsMask) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Boolean[] readBlockDigitalInputsAsBooleans(byte pinsBlock, String pinsMask) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public int readBlockDigitalInputsAsInt(byte pinsBlock, int pinsMask) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public String readBlockDigitalInputsAsString(byte pinsBlock, int pinsMask) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Boolean[] readBlockDigitalInputsAsBooleans(byte pinsBlock, int pinsMask) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int readBlockDigitalInputs(byte pinsBlock, int pinsMask) throws IOException, JiffyException {
+        byte[] commands = new byte[4];
+        commands[0] = Constants.CMD_READ_BLOCK_DIGITAL_INPUTS;
+        commands[1] = pinsBlock;
+        byte maskLSB = (byte)(pinsMask & 0xFF);
+        byte maskMSB = (byte)((pinsMask >> 8)& 0xFF);
+        commands[2] = maskMSB;
+        commands[3] = maskLSB;
+        byte[] result = sendData(commands);
+        if (result!=null) {
+            if (result.length>2&&result[0]==Constants.CMD_READ_BLOCK_DIGITAL_INPUTS) {
+                int retval = (result[1] << 8) & result[2];
+                return retval;
+            } else {
+                JiffyException je = decodeException(result);
+                throw je;
+            }
+        } else {
+            throw new GeneralFF32Error();
+        }
     }
 
     @Override
     public void setPWMOutput(byte pinBlock, byte pinNumber, byte ratio) throws IOException, JiffyException {
         byte[] commands = new byte[4];
         commands[0] = Constants.CMD_SET_PWM_OUTPUT;
-        commands[1] = (byte)pinBlock;
+        commands[1] = pinBlock;
         commands[2] = pinNumber;
         commands[3] = ratio;
         byte[] result = sendData(commands);
@@ -351,7 +344,7 @@ public class FF32cImpl implements FF32c {
     public byte readAnalogInput(byte pinBlock, byte pinNumber) throws IOException, JiffyException {
         byte[] commands = new byte[3];
         commands[0] = Constants.CMD_READ_ANALOG_INPUT;
-        commands[1] = (byte)pinBlock;
+        commands[1] = pinBlock;
         commands[2] = pinNumber;
         byte[] result = sendData(commands);
         if (result!=null) {
@@ -381,33 +374,91 @@ public class FF32cImpl implements FF32c {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    //WARNING: not tested yet
     @Override
-    public boolean setI2CPins(byte SCLPinBlock, byte SCLPinNumber, byte SDAPinBlock, byte SDAPinNumber) throws IOException {
+    public void setI2CPins(byte SCLPinBlock, byte SCLPinNumber, byte SDAPinBlock, byte SDAPinNumber) 
+            throws IOException, JiffyException {
+        byte[] commands = new byte[5];
+        commands[0] = Constants.CMD_CONFIG_I2C_BUS;
+        commands[1] = SCLPinBlock;
+        commands[2] = SCLPinNumber;
+        commands[3] = SDAPinBlock;
+        commands[4] = SDAPinNumber;
+        byte[] result = sendData(commands);
+        if (result!=null) {
+            if (result.length>0&&result[0]==Constants.RESULT_OK) {
+
+            } else {
+                JiffyException je = decodeException(result);
+                throw je;
+            }
+        } else {
+            throw new GeneralFF32Error();
+        }
+    }
+
+    //WARNING: not tested yet
+    @Override
+    public void writeI2CBus(byte[] data) throws IOException, JiffyException {
+        if (data.length>60) {
+            throw new ImproperDataLengthParameterValue();
+        }
+        byte[] commands = new byte[2+data.length];
+        commands[0] = Constants.CMD_WRITE_I2C_BUS;
+        commands[1] = (byte)data.length;
+        System.arraycopy(data, 0, commands, 2, data.length);
+        byte[] result = sendData(commands);
+        if (result!=null) {
+            if (result.length>0&&result[0]==Constants.RESULT_OK) {
+
+            } else {
+                JiffyException je = decodeException(result);
+                throw je;
+            }
+        } else {
+            throw new GeneralFF32Error();
+        }
+    }
+
+    //WARNING: not tested yet
+    @Override
+    public byte[] readI2CBus(byte RDDataLen, byte[] WRData) throws IOException, JiffyException {
+        if (WRData.length>60||RDDataLen>60) {
+            throw new ImproperDataLengthParameterValue();
+        }
+        byte[] commands = new byte[3+WRData.length];
+        commands[0] = Constants.CMD_READ_I2C_BUS;
+        commands[1] = (byte)WRData.length;
+        commands[2] = RDDataLen;
+        System.arraycopy(WRData, 0, commands, 3, WRData.length);
+        byte[] result = sendData(commands);
+        if (result!=null) {
+            if (result.length>1&&result[0]==Constants.CMD_READ_I2C_BUS) {
+                byte readBytesArrayLength = result[1];
+                byte[] retval = new byte[readBytesArrayLength];
+                System.arraycopy(result, 2, retval, 0, readBytesArrayLength);
+                return retval;
+            } else {
+                JiffyException je = decodeException(result);
+                throw je;
+            }
+        } else {
+            throw new GeneralFF32Error();
+        }
+    }
+
+    @Override
+    public boolean set1WirePin(byte DQPinBlock, byte DQPinNumber) throws IOException, JiffyException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean writeI2CBus(int dataLen, String data) throws IOException {
+    public boolean write1WireBus(int dataLen, String data) throws IOException, JiffyException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean readI2CBus(int WRDataLen, int RDDataLen, String WRData) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean set1WirePin(byte DQPinBlock, byte DQPinNumber) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean write1WireBus(int dataLen, String data) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean read1WireBus(int WRDataLen, int RDDataLen, String WRData) throws IOException {
+    public boolean read1WireBus(int WRDataLen, int RDDataLen, String WRData) throws IOException, JiffyException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

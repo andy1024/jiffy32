@@ -29,12 +29,7 @@ public interface FF32c {
                                     int states) throws IOException, JiffyException;
     byte readDigitalInput(byte pinBlock, byte pinNumber) throws IOException, JiffyException;
     byte readDigitalInput(Pin pin) throws IOException, JiffyException;
-    int readBlockDigitalInputsAsInt(byte pinsBlock, String pinsMask) throws IOException;
-    String readBlockDigitalInputsAsString(byte pinsBlock, String pinsMask) throws IOException;
-    Boolean[] readBlockDigitalInputsAsBooleans(byte pinsBlock, String pinsMask) throws IOException;
-    int readBlockDigitalInputsAsInt(byte pinsBlock, int pinsMask) throws IOException;
-    String readBlockDigitalInputsAsString(byte pinsBlock, int pinsMask) throws IOException;
-    Boolean[] readBlockDigitalInputsAsBooleans(byte pinsBlock, int pinsMask) throws IOException;
+    int readBlockDigitalInputs(byte pinsBlock, int pinsMask) throws IOException, JiffyException;
     void setPWMOutput(byte pinBlock, byte pinNumber,
                           byte ratio) throws IOException, JiffyException;
     void setPWMOutput(Pin pin, byte ratio) throws IOException, JiffyException;
@@ -43,16 +38,16 @@ public interface FF32c {
     void setSPIPins(byte CSPinBlock, byte CSPinNumber,
                         byte SCKPinBlock, byte SCKPinNumber,
                         byte MOSIPinBlock, byte MOSIPinNumber,
-                        byte MISOPinBlock, byte MISOPinNumber) throws IOException;
-    boolean writeSPIBus(int dataLen, String data) throws IOException;
+                        byte MISOPinBlock, byte MISOPinNumber) throws IOException, JiffyException;
+    boolean writeSPIBus(int dataLen, String data) throws IOException, JiffyException;
     boolean readSPIBus(int WRDataLen, int RDDataLen, String WRData) throws IOException;
-    boolean setI2CPins(byte SCLPinBlock, byte SCLPinNumber,
-                        byte SDAPinBlock, byte SDAPinNumber) throws IOException;
-    boolean writeI2CBus(int dataLen, String data) throws IOException;
-    boolean readI2CBus(int WRDataLen, int RDDataLen, String WRData) throws IOException;
-    boolean set1WirePin(byte DQPinBlock, byte DQPinNumber) throws IOException;
-    boolean write1WireBus(int dataLen, String data) throws IOException;
-    boolean read1WireBus(int WRDataLen, int RDDataLen, String WRData) throws IOException;
+    void setI2CPins(byte SCLPinBlock, byte SCLPinNumber,
+                        byte SDAPinBlock, byte SDAPinNumber) throws IOException, JiffyException;
+    void writeI2CBus(byte[] data) throws IOException, JiffyException;
+    byte[] readI2CBus(byte RDDataLen, byte[] WRData) throws IOException, JiffyException;
+    boolean set1WirePin(byte DQPinBlock, byte DQPinNumber) throws IOException, JiffyException;
+    boolean write1WireBus(int dataLen, String data) throws IOException, JiffyException;
+    boolean read1WireBus(int WRDataLen, int RDDataLen, String WRData) throws IOException, JiffyException;
     byte[] sendData(byte... commands) throws IOException;
     byte[] sendDataString(String value, byte... commands) throws IOException;
     boolean openComm() throws IOException;
