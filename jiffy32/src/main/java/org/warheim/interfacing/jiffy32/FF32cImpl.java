@@ -142,22 +142,6 @@ public class FF32cImpl implements FF32c {
         return null;
     }
 
-    @Override
-    public void setSPIPins(byte CSPinBlock, byte CSPinNumber, byte SCKPinBlock, byte SCKPinNumber, byte MOSIPinBlock, byte MOSIPinNumber, byte MISOPinBlock, byte MISOPinNumber) throws IOException {
-        byte[] commands = new byte[10];
-        commands[0] = Constants.CMD_CONFIG_SPI_BUS;
-        commands[1] = CSPinBlock;
-        commands[2] = CSPinNumber;
-        commands[3] = SCKPinBlock;
-        commands[4] = SCKPinNumber;
-        commands[5] = MOSIPinBlock;
-        commands[6] = MOSIPinNumber;
-        commands[7] = MISOPinBlock;
-        commands[8] = MISOPinNumber;
-        commands[9] = 0;
-        sendData(commands);
-    }
-
     private byte[] sendRaw(byte... commands) throws IOException {
         for (byte b: commands) {
             System.out.print(String.format("%02X ", b));
@@ -364,14 +348,83 @@ public class FF32cImpl implements FF32c {
         return readAnalogInput(pin.getBlock(), pin.getNumber());
     }
 
+    //WARNING: not tested yet
     @Override
-    public boolean writeSPIBus(int dataLen, String data) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void writeSPIBus(byte[] data) throws IOException, JiffyException {
+        if (data.length>60) {
+            throw new ImproperDataLengthParameterValue();
+        }
+        byte[] commands = new byte[2+data.length];
+        commands[0] = Constants.CMD_WRITE_SPI_BUS;
+        commands[1] = (byte)data.length;
+        System.arraycopy(data, 0, commands, 2, data.length);
+        byte[] result = sendData(commands);
+        if (result!=null) {
+            if (result.length>0&&result[0]==Constants.RESULT_OK) {
+
+            } else {
+                JiffyException je = decodeException(result);
+                throw je;
+            }
+        } else {
+            throw new GeneralFF32Error();
+        }
     }
 
+    //WARNING: not tested yet
+    //This method is called "Configure SPI bus (0x24)" in docs
     @Override
-    public boolean readSPIBus(int WRDataLen, int RDDataLen, String WRData) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setSPIPins(byte CSPinBlock, byte CSPinNumber, byte SCKPinBlock, byte SCKPinNumber, byte MOSIPinBlock, byte MOSIPinNumber, byte MISOPinBlock, byte MISOPinNumber) 
+            throws IOException, JiffyException {
+        byte[] commands = new byte[10];
+        commands[0] = Constants.CMD_CONFIG_SPI_BUS;
+        commands[1] = CSPinBlock;
+        commands[2] = CSPinNumber;
+        commands[3] = SCKPinBlock;
+        commands[4] = SCKPinNumber;
+        commands[5] = MOSIPinBlock;
+        commands[6] = MOSIPinNumber;
+        commands[7] = MISOPinBlock;
+        commands[8] = MISOPinNumber;
+        commands[9] = 0;
+        byte[] result = sendData(commands);
+        if (result!=null) {
+            if (result.length>0&&result[0]==Constants.RESULT_OK) {
+
+            } else {
+                JiffyException je = decodeException(result);
+                throw je;
+            }
+        } else {
+            throw new GeneralFF32Error();
+        }    
+    }
+
+    //WARNING: not tested yet
+    @Override
+    public byte[] readSPIBus(byte RDDataLen, byte[] WRData) throws IOException, JiffyException {
+        if (WRData.length>60||RDDataLen>60) {
+            throw new ImproperDataLengthParameterValue();
+        }
+        byte[] commands = new byte[3+WRData.length];
+        commands[0] = Constants.CMD_READ_SPI_BUS;
+        commands[1] = (byte)WRData.length;
+        commands[2] = RDDataLen;
+        System.arraycopy(WRData, 0, commands, 3, WRData.length);
+        byte[] result = sendData(commands);
+        if (result!=null) {
+            if (result.length>1&&result[0]==Constants.CMD_READ_SPI_BUS) {
+                byte readBytesArrayLength = result[1];
+                byte[] retval = new byte[readBytesArrayLength];
+                System.arraycopy(result, 2, retval, 0, readBytesArrayLength);
+                return retval;
+            } else {
+                JiffyException je = decodeException(result);
+                throw je;
+            }
+        } else {
+            throw new GeneralFF32Error();
+        }
     }
 
     //WARNING: not tested yet

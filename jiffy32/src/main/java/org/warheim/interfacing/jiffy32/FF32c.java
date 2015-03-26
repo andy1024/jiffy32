@@ -40,12 +40,13 @@ public interface FF32c {
     byte readAnalogInput(Pin pin) throws IOException, JiffyException;
     
     /* SPI bus */
+    //This method is called "Configure SPI bus (0x24)" in docs
     void setSPIPins(byte CSPinBlock, byte CSPinNumber,
                         byte SCKPinBlock, byte SCKPinNumber,
                         byte MOSIPinBlock, byte MOSIPinNumber,
                         byte MISOPinBlock, byte MISOPinNumber) throws IOException, JiffyException;
-    boolean writeSPIBus(int dataLen, String data) throws IOException, JiffyException;
-    boolean readSPIBus(int WRDataLen, int RDDataLen, String WRData) throws IOException;
+    void writeSPIBus(byte[] data) throws IOException, JiffyException;
+    byte[] readSPIBus(byte RDDataLen, byte[] WRData) throws IOException, JiffyException;
     
     /* i2c bus */
     void setI2CPins(byte SCLPinBlock, byte SCLPinNumber,
