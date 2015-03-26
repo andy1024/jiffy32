@@ -1,0 +1,11 @@
+There a total of three models in FFxx group:
+FF31 14 pins, 8 outputs
+FF32 28 pins, 18 outputs
+FF34 40 pins, 29 outputs
+
+FF31 is completely unknown, possibly it doesn't exist at all.
+FF32 is the most popular one, it has 6 pins in block 'A', and 8 ones in block 'B'
+FF34 is the known only through its specs and @keptenkurk description on his blog.
+It has 8 pins in 'A', 16 pins in 'B' and 5 pins in 'C'.
+
+Consider using this data to build something more generic.
