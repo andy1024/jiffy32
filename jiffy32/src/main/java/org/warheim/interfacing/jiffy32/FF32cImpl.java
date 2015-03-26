@@ -447,19 +447,130 @@ public class FF32cImpl implements FF32c {
         }
     }
 
+    //WARNING: not tested yet
+    //This function is called "Configure 1-Wire/MicroLAN bus (0x2A)" in docs
     @Override
-    public boolean set1WirePin(byte DQPinBlock, byte DQPinNumber) throws IOException, JiffyException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void set1WirePin(byte DQPinBlock, byte DQPinNumber) throws IOException, JiffyException {
+        byte[] commands = new byte[3];
+        commands[0] = Constants.CMD_CONFIG_1WIRE_BUS;
+        commands[1] = DQPinBlock;
+        commands[2] = DQPinNumber;
+        byte[] result = sendData(commands);
+        if (result!=null) {
+            if (result.length>0&&result[0]==Constants.RESULT_OK) {
+
+            } else {
+                JiffyException je = decodeException(result);
+                throw je;
+            }
+        } else {
+            throw new GeneralFF32Error();
+        }
     }
 
+    //WARNING: not tested yet
     @Override
-    public boolean write1WireBus(int dataLen, String data) throws IOException, JiffyException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean reset1WireBus() throws IOException, JiffyException {
+        byte[] commands = new byte[1];
+        commands[0] = Constants.CMD_RESET_1WIRE_BUS;
+        byte[] result = sendData(commands);
+        if (result!=null) {
+            if (result.length>1&&result[0]==Constants.CMD_RESET_1WIRE_BUS) {
+                return (result[1]!=0x00);
+            } else {
+                JiffyException je = decodeException(result);
+                throw je;
+            }
+        } else {
+            throw new GeneralFF32Error();
+        }
     }
 
+    //WARNING: not tested yet
     @Override
-    public boolean read1WireBus(int WRDataLen, int RDDataLen, String WRData) throws IOException, JiffyException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void write1WireBus(byte[] data) throws IOException, JiffyException {
+        if (data.length>60) {
+            throw new ImproperDataLengthParameterValue();
+        }
+        byte[] commands = new byte[2+data.length];
+        commands[0] = Constants.CMD_WRITE_1WIRE_BUS;
+        commands[1] = (byte)data.length;
+        System.arraycopy(data, 0, commands, 2, data.length);
+        byte[] result = sendData(commands);
+        if (result!=null) {
+            if (result.length>0&&result[0]==Constants.RESULT_OK) {
+
+            } else {
+                JiffyException je = decodeException(result);
+                throw je;
+            }
+        } else {
+            throw new GeneralFF32Error();
+        }
     }
-    
+
+    //WARNING: not tested yet
+    @Override
+    public void writeBit1WireBus(boolean dataBit) throws IOException, JiffyException {
+        byte[] commands = new byte[2];
+        commands[0] = Constants.CMD_WRITE_BIT_1WIRE_BUS;
+        commands[1] = (byte)(dataBit?0x01:0x00);
+        byte[] result = sendData(commands);
+        if (result!=null) {
+            if (result.length>0&&result[0]==Constants.RESULT_OK) {
+
+            } else {
+                JiffyException je = decodeException(result);
+                throw je;
+            }
+        } else {
+            throw new GeneralFF32Error();
+        }
+    }
+
+    //WARNING: not tested yet
+    @Override
+    public byte[] read1WireBus(byte RDDataLen, byte[] WRData) throws IOException, JiffyException {
+        if (WRData.length>60||RDDataLen>60) {
+            throw new ImproperDataLengthParameterValue();
+        }
+        byte[] commands = new byte[3+WRData.length];
+        commands[0] = Constants.CMD_READ_1WIRE_BUS;
+        commands[1] = (byte)WRData.length;
+        commands[2] = RDDataLen;
+        System.arraycopy(WRData, 0, commands, 3, WRData.length);
+        byte[] result = sendData(commands);
+        if (result!=null) {
+            if (result.length>1&&result[0]==Constants.CMD_READ_1WIRE_BUS) {
+                byte readBytesArrayLength = result[1];
+                byte[] retval = new byte[readBytesArrayLength];
+                System.arraycopy(result, 2, retval, 0, readBytesArrayLength);
+                return retval;
+            } else {
+                JiffyException je = decodeException(result);
+                throw je;
+            }
+        } else {
+            throw new GeneralFF32Error();
+        }
+    }
+
+    //WARNING: not tested yet
+    @Override
+    public boolean readBit1WireBus() throws IOException, JiffyException {
+        byte[] commands = new byte[1];
+        commands[0] = Constants.CMD_READ_BIT_1WIRE_BUS;
+        byte[] result = sendData(commands);
+        if (result!=null) {
+            if (result.length>1&&result[0]==Constants.CMD_READ_BIT_1WIRE_BUS) {
+                return (result[1]!=0x00);
+            } else {
+                JiffyException je = decodeException(result);
+                throw je;
+            }
+        } else {
+            throw new GeneralFF32Error();
+        }
+    }
+  
 }

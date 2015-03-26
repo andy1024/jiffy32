@@ -33,7 +33,9 @@ public class Constants {
     public static final byte CMD_CONFIG_1WIRE_BUS = 	0x2A;
     public static final byte CMD_WRITE_1WIRE_BUS = 	0x2B;
     public static final byte CMD_READ_1WIRE_BUS = 	0x2C;
-
+    public static final byte CMD_RESET_1WIRE_BUS =      0x2D;
+    public static final byte CMD_WRITE_BIT_1WIRE_BUS =  0x2E;
+    public static final byte CMD_READ_BIT_1WIRE_BUS =   0x2F;
     public static final byte CMD_GET_CHIP_INFO = 	0x71;
     
     public static final byte RESULT_OK                    =       0x0E;
