@@ -2,18 +2,12 @@ package org.warheim.interfacing.jiffy32;
 
 import com.codeminders.hidapi.HIDDevice;
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.util.Arrays;
 import org.warheim.interfacing.jiffy32.util.Utils;
 import org.warheim.interfacing.jiffy32.exceptions.AddressOutOfRange;
-import org.warheim.interfacing.jiffy32.exceptions.DeviceAcknowlegdementAbsent;
 import org.warheim.interfacing.jiffy32.exceptions.GeneralFF32Error;
 import org.warheim.interfacing.jiffy32.exceptions.ImproperDataLengthParameterValue;
-import org.warheim.interfacing.jiffy32.exceptions.ImproperPinName;
-import org.warheim.interfacing.jiffy32.exceptions.ImproperPinsBlockIdentifier;
 import org.warheim.interfacing.jiffy32.exceptions.JiffyException;
-import org.warheim.interfacing.jiffy32.exceptions.UndefinedException;
-import org.warheim.interfacing.jiffy32.exceptions.UnknownCommand;
 import org.warheim.interfacing.jiffy32.model.Address;
 import org.warheim.interfacing.jiffy32.model.ChipInformation;
 
@@ -25,6 +19,8 @@ public class FF32cImpl implements FF32c {
     HIDDevice dev;
     private static final byte BTRUE = 0x01;
     private static final byte BFALSE = 0x00;
+    private static final int MAX_METADATA_BUFFER_LENGTH = 32;
+    private static final int MAX_BUS_DATA_BUFFER_LENGTH = 60;
 
     public FF32cImpl(HIDDevice dev) {
         this.dev = dev;
@@ -120,27 +116,6 @@ public class FF32cImpl implements FF32c {
         }
     }
     
-    private JiffyException decodeException(byte[] buffer) {
-        if (buffer!=null&&buffer.length>0) {
-            switch (buffer[0]) {
-                case Constants.RESULT_ACK_ABSENT:
-                    return new DeviceAcknowlegdementAbsent();
-                case Constants.RESULT_ADDRESS_OUT_OF_RANGE:
-                    return new AddressOutOfRange();
-                case Constants.RESULT_IMPROPER_DATA_LEN:
-                    return new ImproperDataLengthParameterValue();
-                case Constants.RESULT_IMPROPER_PINS_BLOCK_ID:
-                    return new ImproperPinsBlockIdentifier();
-                case Constants.RESULT_IMPROPER_PIN_NAME:
-                    return new ImproperPinName();
-                case Constants.RESULT_UNKNOWN_COMMAND:
-                    return new UnknownCommand();
-                default:
-                    return new UndefinedException();
-            }
-        }
-        return null;
-    }
 
     private byte[] sendRaw(byte... commands) throws IOException {
         for (byte b: commands) {
@@ -176,8 +151,8 @@ public class FF32cImpl implements FF32c {
         byte[] str = value.getBytes();//Charset.forName("UTF-8"));
         int len = value.length();
 
-        if (len > 32)
-            len = 32;
+        if (len > MAX_METADATA_BUFFER_LENGTH)
+            len = MAX_METADATA_BUFFER_LENGTH;
         int startIndex = 1+commands.length;
         System.arraycopy(str, 0, buffer, startIndex, len);
         Arrays.fill(buffer, startIndex + len, buffer.length, Constants.PRIMER);
@@ -212,7 +187,7 @@ public class FF32cImpl implements FF32c {
             if (result.length>0&&result[0]==Constants.RESULT_OK) {
 
             } else {
-                JiffyException je = decodeException(result);
+                JiffyException je = JiffyException.decodeException(result);
                 throw je;
             }
         } else {
@@ -244,7 +219,7 @@ public class FF32cImpl implements FF32c {
             if (result.length>0&&result[0]==Constants.RESULT_OK) {
 
             } else {
-                JiffyException je = decodeException(result);
+                JiffyException je = JiffyException.decodeException(result);
                 throw je;
             }
         } else {
@@ -263,7 +238,7 @@ public class FF32cImpl implements FF32c {
             if (result.length>1&&result[0]==Constants.CMD_READ_DIGITAL_INPUT) {
                 return result[1];
             } else {
-                JiffyException je = decodeException(result);
+                JiffyException je = JiffyException.decodeException(result);
                 throw je;
             }
         } else {
@@ -291,7 +266,7 @@ public class FF32cImpl implements FF32c {
                 int retval = (result[1] << 8) & result[2];
                 return retval;
             } else {
-                JiffyException je = decodeException(result);
+                JiffyException je = JiffyException.decodeException(result);
                 throw je;
             }
         } else {
@@ -311,7 +286,7 @@ public class FF32cImpl implements FF32c {
             if (result.length>0&&result[0]==Constants.RESULT_OK) {
 
             } else {
-                JiffyException je = decodeException(result);
+                JiffyException je = JiffyException.decodeException(result);
                 throw je;
             }
         } else {
@@ -335,7 +310,7 @@ public class FF32cImpl implements FF32c {
             if (result.length>1&&result[0]==Constants.CMD_READ_ANALOG_INPUT) {
                 return result[1];
             } else {
-                JiffyException je = decodeException(result);
+                JiffyException je = JiffyException.decodeException(result);
                 throw je;
             }
         } else {
@@ -351,7 +326,7 @@ public class FF32cImpl implements FF32c {
     //WARNING: not tested yet
     @Override
     public void writeSPIBus(byte[] data) throws IOException, JiffyException {
-        if (data.length>60) {
+        if (data.length>MAX_BUS_DATA_BUFFER_LENGTH) {
             throw new ImproperDataLengthParameterValue();
         }
         byte[] commands = new byte[2+data.length];
@@ -363,7 +338,7 @@ public class FF32cImpl implements FF32c {
             if (result.length>0&&result[0]==Constants.RESULT_OK) {
 
             } else {
-                JiffyException je = decodeException(result);
+                JiffyException je = JiffyException.decodeException(result);
                 throw je;
             }
         } else {
@@ -386,13 +361,13 @@ public class FF32cImpl implements FF32c {
         commands[6] = MOSIPinNumber;
         commands[7] = MISOPinBlock;
         commands[8] = MISOPinNumber;
-        commands[9] = 0;
+        commands[9] = 0x00;
         byte[] result = sendData(commands);
         if (result!=null) {
             if (result.length>0&&result[0]==Constants.RESULT_OK) {
 
             } else {
-                JiffyException je = decodeException(result);
+                JiffyException je = JiffyException.decodeException(result);
                 throw je;
             }
         } else {
@@ -403,7 +378,7 @@ public class FF32cImpl implements FF32c {
     //WARNING: not tested yet
     @Override
     public byte[] readSPIBus(byte RDDataLen, byte[] WRData) throws IOException, JiffyException {
-        if (WRData.length>60||RDDataLen>60) {
+        if (WRData.length>MAX_BUS_DATA_BUFFER_LENGTH||RDDataLen>MAX_BUS_DATA_BUFFER_LENGTH) {
             throw new ImproperDataLengthParameterValue();
         }
         byte[] commands = new byte[3+WRData.length];
@@ -419,7 +394,7 @@ public class FF32cImpl implements FF32c {
                 System.arraycopy(result, 2, retval, 0, readBytesArrayLength);
                 return retval;
             } else {
-                JiffyException je = decodeException(result);
+                JiffyException je = JiffyException.decodeException(result);
                 throw je;
             }
         } else {
@@ -442,7 +417,7 @@ public class FF32cImpl implements FF32c {
             if (result.length>0&&result[0]==Constants.RESULT_OK) {
 
             } else {
-                JiffyException je = decodeException(result);
+                JiffyException je = JiffyException.decodeException(result);
                 throw je;
             }
         } else {
@@ -453,7 +428,7 @@ public class FF32cImpl implements FF32c {
     //WARNING: not tested yet
     @Override
     public void writeI2CBus(byte[] data) throws IOException, JiffyException {
-        if (data.length>60) {
+        if (data.length>MAX_BUS_DATA_BUFFER_LENGTH) {
             throw new ImproperDataLengthParameterValue();
         }
         byte[] commands = new byte[2+data.length];
@@ -465,7 +440,7 @@ public class FF32cImpl implements FF32c {
             if (result.length>0&&result[0]==Constants.RESULT_OK) {
 
             } else {
-                JiffyException je = decodeException(result);
+                JiffyException je = JiffyException.decodeException(result);
                 throw je;
             }
         } else {
@@ -476,7 +451,7 @@ public class FF32cImpl implements FF32c {
     //WARNING: not tested yet
     @Override
     public byte[] readI2CBus(byte RDDataLen, byte[] WRData) throws IOException, JiffyException {
-        if (WRData.length>60||RDDataLen>60) {
+        if (WRData.length>MAX_BUS_DATA_BUFFER_LENGTH||RDDataLen>MAX_BUS_DATA_BUFFER_LENGTH) {
             throw new ImproperDataLengthParameterValue();
         }
         byte[] commands = new byte[3+WRData.length];
@@ -492,7 +467,7 @@ public class FF32cImpl implements FF32c {
                 System.arraycopy(result, 2, retval, 0, readBytesArrayLength);
                 return retval;
             } else {
-                JiffyException je = decodeException(result);
+                JiffyException je = JiffyException.decodeException(result);
                 throw je;
             }
         } else {
@@ -513,7 +488,7 @@ public class FF32cImpl implements FF32c {
             if (result.length>0&&result[0]==Constants.RESULT_OK) {
 
             } else {
-                JiffyException je = decodeException(result);
+                JiffyException je = JiffyException.decodeException(result);
                 throw je;
             }
         } else {
@@ -529,9 +504,9 @@ public class FF32cImpl implements FF32c {
         byte[] result = sendData(commands);
         if (result!=null) {
             if (result.length>1&&result[0]==Constants.CMD_RESET_1WIRE_BUS) {
-                return (result[1]!=0x00);
+                return (result[1]!=BFALSE);
             } else {
-                JiffyException je = decodeException(result);
+                JiffyException je = JiffyException.decodeException(result);
                 throw je;
             }
         } else {
@@ -542,7 +517,7 @@ public class FF32cImpl implements FF32c {
     //WARNING: not tested yet
     @Override
     public void write1WireBus(byte[] data) throws IOException, JiffyException {
-        if (data.length>60) {
+        if (data.length>MAX_BUS_DATA_BUFFER_LENGTH) {
             throw new ImproperDataLengthParameterValue();
         }
         byte[] commands = new byte[2+data.length];
@@ -554,7 +529,7 @@ public class FF32cImpl implements FF32c {
             if (result.length>0&&result[0]==Constants.RESULT_OK) {
 
             } else {
-                JiffyException je = decodeException(result);
+                JiffyException je = JiffyException.decodeException(result);
                 throw je;
             }
         } else {
@@ -567,13 +542,13 @@ public class FF32cImpl implements FF32c {
     public void writeBit1WireBus(boolean dataBit) throws IOException, JiffyException {
         byte[] commands = new byte[2];
         commands[0] = Constants.CMD_WRITE_BIT_1WIRE_BUS;
-        commands[1] = (byte)(dataBit?0x01:0x00);
+        commands[1] = (byte)(dataBit?BTRUE:BFALSE);
         byte[] result = sendData(commands);
         if (result!=null) {
             if (result.length>0&&result[0]==Constants.RESULT_OK) {
 
             } else {
-                JiffyException je = decodeException(result);
+                JiffyException je = JiffyException.decodeException(result);
                 throw je;
             }
         } else {
@@ -584,7 +559,7 @@ public class FF32cImpl implements FF32c {
     //WARNING: not tested yet
     @Override
     public byte[] read1WireBus(byte RDDataLen, byte[] WRData) throws IOException, JiffyException {
-        if (WRData.length>60||RDDataLen>60) {
+        if (WRData.length>MAX_BUS_DATA_BUFFER_LENGTH||RDDataLen>MAX_BUS_DATA_BUFFER_LENGTH) {
             throw new ImproperDataLengthParameterValue();
         }
         byte[] commands = new byte[3+WRData.length];
@@ -600,7 +575,7 @@ public class FF32cImpl implements FF32c {
                 System.arraycopy(result, 2, retval, 0, readBytesArrayLength);
                 return retval;
             } else {
-                JiffyException je = decodeException(result);
+                JiffyException je = JiffyException.decodeException(result);
                 throw je;
             }
         } else {
@@ -616,9 +591,9 @@ public class FF32cImpl implements FF32c {
         byte[] result = sendData(commands);
         if (result!=null) {
             if (result.length>1&&result[0]==Constants.CMD_READ_BIT_1WIRE_BUS) {
-                return (result[1]!=0x00);
+                return (result[1]!=BFALSE);
             } else {
-                JiffyException je = decodeException(result);
+                JiffyException je = JiffyException.decodeException(result);
                 throw je;
             }
         } else {
