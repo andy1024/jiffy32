@@ -45,18 +45,21 @@ public interface FF32c {
                         byte SCKPinBlock, byte SCKPinNumber,
                         byte MOSIPinBlock, byte MOSIPinNumber,
                         byte MISOPinBlock, byte MISOPinNumber) throws IOException, JiffyException;
+    void setSPIPins(Pin CS, Pin SCK, Pin MOSI, Pin MISO) throws IOException, JiffyException;
     void writeSPIBus(byte[] data) throws IOException, JiffyException;
     byte[] readSPIBus(byte RDDataLen, byte[] WRData) throws IOException, JiffyException;
     
     /* i2c bus */
     void setI2CPins(byte SCLPinBlock, byte SCLPinNumber,
                         byte SDAPinBlock, byte SDAPinNumber) throws IOException, JiffyException;
+    void setI2CPins(Pin SCL, Pin SDA) throws IOException, JiffyException;
     void writeI2CBus(byte[] data) throws IOException, JiffyException;
     byte[] readI2CBus(byte RDDataLen, byte[] WRData) throws IOException, JiffyException;
     
     /* 1-Wire bus */
     //This function is called "Configure 1-Wire/MicroLAN bus (0x2A)" in docs
     void set1WirePin(byte DQPinBlock, byte DQPinNumber) throws IOException, JiffyException;
+    void set1WirePin(Pin DQ) throws IOException, JiffyException;
     boolean reset1WireBus() throws IOException, JiffyException;
     void write1WireBus(byte[] data) throws IOException, JiffyException;
     void writeBit1WireBus(boolean dataBit) throws IOException, JiffyException;

@@ -374,6 +374,12 @@ public class FF32cImpl implements FF32c {
             throw new GeneralFF32Error();
         }    
     }
+    
+    @Override
+    public void setSPIPins(Pin CS, Pin SCK, Pin MOSI, Pin MISO) throws IOException, JiffyException {
+        setSPIPins(CS.getBlock(), CS.getNumber(), SCK.getBlock(), SCK.getNumber(), 
+                MOSI.getBlock(), MOSI.getNumber(), MISO.getBlock(), MISO.getNumber());
+    }
 
     //WARNING: not tested yet
     @Override
@@ -423,6 +429,11 @@ public class FF32cImpl implements FF32c {
         } else {
             throw new GeneralFF32Error();
         }
+    }
+    
+    @Override
+    public void setI2CPins(Pin SCL, Pin SDA) throws IOException, JiffyException {
+        setI2CPins(SCL.getBlock(), SCL.getNumber(), SDA.getBlock(), SDA.getNumber());
     }
 
     //WARNING: not tested yet
@@ -494,6 +505,11 @@ public class FF32cImpl implements FF32c {
         } else {
             throw new GeneralFF32Error();
         }
+    }
+    
+    @Override
+    public void set1WirePin(Pin DQ) throws IOException, JiffyException {
+        set1WirePin(DQ.getBlock(), DQ.getNumber());
     }
 
     //WARNING: not tested yet
