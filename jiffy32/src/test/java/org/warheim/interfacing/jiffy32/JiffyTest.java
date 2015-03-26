@@ -36,7 +36,7 @@ public class JiffyTest {
     public void setUp() {
         try {
             hidMgr = HIDManager.getInstance();
-            dev = hidMgr.openById(1240, 63673, null);
+            dev = hidMgr.openById(Constants.USB_FF32_VENDOR_NUMBER, Constants.USB_FF32_PRODUCT_ID_NUMBER, null);
             jiffy = new FF32cImpl(dev);
         } catch (IOException e) {
             throw new RuntimeException(e);

@@ -49,4 +49,6 @@ public class Constants {
     public static final byte A = 0x0A;
     public static final byte B = 0x0B;
 
+    public static final int USB_FF32_VENDOR_NUMBER = 1240;
+    public static final int USB_FF32_PRODUCT_ID_NUMBER = 63673;
 }
