@@ -55,6 +55,14 @@ public interface FF32c {
     void setI2CPins(Pin SCL, Pin SDA) throws IOException, JiffyException;
     void writeI2CBus(byte[] data) throws IOException, JiffyException;
     byte[] readI2CBus(byte RDDataLen, byte[] WRData) throws IOException, JiffyException;
+
+    void writeByteI2C(byte addr, byte value) throws IOException, JiffyException;
+    void writeBlockI2C(byte addr, byte[] values) throws IOException, JiffyException;
+    byte readByteI2C(byte addr) throws IOException, JiffyException;
+    byte[] readBlockI2C(byte addr, byte readLength) throws IOException, JiffyException;
+
+    //Read a (two byte) word from a slave address (little-endian) (based on D. Otwell's code)
+    short readWordI2C(byte addr) throws IOException, JiffyException;
     
     /* 1-Wire bus */
     //This function is called "Configure 1-Wire/MicroLAN bus (0x2A)" in docs

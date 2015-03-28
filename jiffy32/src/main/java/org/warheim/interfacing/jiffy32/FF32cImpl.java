@@ -3,6 +3,8 @@ package org.warheim.interfacing.jiffy32;
 import com.codeminders.hidapi.HIDDevice;
 import java.io.IOException;
 import java.util.Arrays;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.warheim.interfacing.jiffy32.util.Utils;
 import org.warheim.interfacing.jiffy32.exceptions.AddressOutOfRange;
 import org.warheim.interfacing.jiffy32.exceptions.GeneralFF32Error;
@@ -21,6 +23,8 @@ public class FF32cImpl implements FF32c {
     private static final byte BFALSE = 0x00;
     private static final int MAX_METADATA_BUFFER_LENGTH = 32;
     private static final int MAX_BUS_DATA_BUFFER_LENGTH = 60;
+    
+    Logger logger = LoggerFactory.getLogger(FF32cImpl.class);
 
     public FF32cImpl(HIDDevice dev) {
         this.dev = dev;
@@ -116,12 +120,18 @@ public class FF32cImpl implements FF32c {
         }
     }
     
+    private void logBytes(String msg, byte[] buffer) {
+        logger.debug(msg);
+        StringBuilder s = new StringBuilder();
+        for (byte b: buffer) {
+            s.append(String.format("%02X ", b));
+        }
+        logger.debug(s.toString());
+    }
 
     private byte[] sendRaw(byte... commands) throws IOException {
-        for (byte b: commands) {
-            System.out.print(String.format("%02X ", b));
-        }
-        System.out.println();
+        logBytes("SEND:", commands);
+
         byte[] buffer = new byte[64];
         int n;
         n = dev.write(commands);
@@ -132,6 +142,7 @@ public class FF32cImpl implements FF32c {
         if (n<0) {
             return null;
         }
+        logBytes("RCVD["+n+"]", commands);
         return buffer;
     }
     
@@ -408,7 +419,6 @@ public class FF32cImpl implements FF32c {
         }
     }
 
-    //WARNING: not tested yet
     @Override
     public void setI2CPins(byte SCLPinBlock, byte SCLPinNumber, byte SDAPinBlock, byte SDAPinNumber) 
             throws IOException, JiffyException {
@@ -436,7 +446,6 @@ public class FF32cImpl implements FF32c {
         setI2CPins(SCL.getBlock(), SCL.getNumber(), SDA.getBlock(), SDA.getNumber());
     }
 
-    //WARNING: not tested yet
     @Override
     public void writeI2CBus(byte[] data) throws IOException, JiffyException {
         if (data.length>MAX_BUS_DATA_BUFFER_LENGTH) {
@@ -449,7 +458,7 @@ public class FF32cImpl implements FF32c {
         byte[] result = sendData(commands);
         if (result!=null) {
             if (result.length>0&&result[0]==Constants.RESULT_OK) {
-
+                
             } else {
                 JiffyException je = JiffyException.decodeException(result);
                 throw je;
@@ -459,7 +468,6 @@ public class FF32cImpl implements FF32c {
         }
     }
 
-    //WARNING: not tested yet
     @Override
     public byte[] readI2CBus(byte RDDataLen, byte[] WRData) throws IOException, JiffyException {
         if (WRData.length>MAX_BUS_DATA_BUFFER_LENGTH||RDDataLen>MAX_BUS_DATA_BUFFER_LENGTH) {
@@ -484,6 +492,55 @@ public class FF32cImpl implements FF32c {
         } else {
             throw new GeneralFF32Error();
         }
+    }
+    
+    @Override
+    public void writeByteI2C(byte addr, byte value) throws IOException, JiffyException {
+        addr = (byte)(addr * 2);
+        byte[] data =  {addr, value};
+        //byte[] result = 
+        writeI2CBus(data);
+    }
+
+    @Override
+    public void writeBlockI2C(byte addr, byte[] values) throws IOException, JiffyException {
+        addr = (byte)(addr * 2);
+        byte[] data =  new byte[1+values.length];
+        data[0] = addr;
+        System.arraycopy(values, 0, data, 1, values.length);
+        writeI2CBus(data);
+    }
+
+    @Override
+    public byte readByteI2C(byte addr) throws IOException, JiffyException {
+        addr = (byte)(addr * 2 + 1);
+        byte[] data =  {addr};
+        byte[] result = readI2CBus((byte)1, data);
+        return result[0];
+    }
+
+    @Override
+    public byte[] readBlockI2C(byte addr, byte readLength) throws IOException, JiffyException {
+        addr = (byte)(addr * 2 + 1);
+        byte[] data =  {addr};
+        byte[] result = readI2CBus(readLength, data);
+        return result;
+    }
+    
+
+    /**
+     *  Read a (two byte) word from a slave address (little-endian) (based on D. Otwell's code)
+     * @param addr
+     * @return
+     * @throws IOException
+     * @throws JiffyException 
+     */
+    @Override
+    public short readWordI2C(byte addr) throws IOException, JiffyException {
+        addr = (byte)(addr * 2 + 1);
+        byte[] data =  {addr};
+        byte[] result = readI2CBus((byte)2, data);
+        return (short)((result[1] << 8) + result[0]);
     }
 
     //WARNING: not tested yet

@@ -4,18 +4,23 @@ import com.codeminders.hidapi.ClassPathLibraryLoader;
 import com.codeminders.hidapi.HIDDevice;
 import com.codeminders.hidapi.HIDManager;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
  * @author amaslowski
  */
 public class JiffyTest {
-    
+    Logger logger = LoggerFactory.getLogger(JiffyTest.class);
+
     private HIDManager hidMgr;
     private HIDDevice dev;
     private FF32c jiffy;
@@ -55,21 +60,21 @@ public class JiffyTest {
     @Ignore
     @org.junit.Test
     public void testGeneralUSBInfo() throws Exception {
-        System.err.print("Manufacturer: " + dev.getManufacturerString() + "\n");
-        System.err.print("Product: " + dev.getProductString() + "\n");
-        System.err.print("Serial Number: " + dev.getSerialNumberString() + "\n"); 
+        logger.info("Manufacturer: " + dev.getManufacturerString());
+        logger.info("Product: " + dev.getProductString());
+        logger.info("Serial Number: " + dev.getSerialNumberString()); 
     }
 
     @Ignore
     @org.junit.Test
     public void testMetadata() throws Exception {
-        System.err.println(jiffy.getChipInfo().toString());
-        System.err.println(jiffy.getAddress().toString());
-        System.err.println(jiffy.getProduct());
-        System.err.println(jiffy.getSerialNumber());
+        logger.info(jiffy.getChipInfo().toString());
+        logger.info(jiffy.getAddress().toString());
+        logger.info(jiffy.getProduct());
+        logger.info(jiffy.getSerialNumber());
         //jiffy.setSerialNumber("serial12345");
         //System.err.println(jiffy.getSerialNumber());
-        System.err.println(jiffy.getVendor());
+        logger.info(jiffy.getVendor());
     }
     
     @Ignore
@@ -98,15 +103,16 @@ public class JiffyTest {
     @org.junit.Test
     public void testPWMOutput() throws Exception {
         for (int x=1;x<253;++x) {
-            System.out.println(x);
+            logger.info("setting pwm to " + x);
             jiffy.setPWMOutput(Pin.A5, (byte)x);
         }
         for (int x=254;x>2;--x) {
-            System.out.println(x);
+            logger.info("setting pwm to " + x);
             jiffy.setPWMOutput(Pin.A5, (byte)x);
         }
     }
     
+    @Ignore
     @org.junit.Test
     public void testMultipleDigitalOut() throws Exception {
         //light all in A block
@@ -127,6 +133,28 @@ public class JiffyTest {
         Thread.sleep(1000);
         jiffy.setBlockDigitalOutputs(Constants.A, 0x003F, 0x0000);
         jiffy.setBlockDigitalOutputs(Constants.B, 0x0FFF, 0x0000);
+    }
+    
+//    @Ignore
+    @org.junit.Test
+    public void testI2C_PCF8591chip() throws Exception {
+        logger.info("testI2C_PCF8591chip");
+        jiffy.setI2CPins(Pin.B9, Pin.B10);
+        byte slaveAddress = (byte)0x48;
+        Map<Byte, String> ports = new HashMap<>();
+        ports.put((byte)0x00, "empty");
+        ports.put((byte)0x01, "pot");
+        ports.put((byte)0x02, "photoresistor");
+        ports.put((byte)0x03, "thermistor");
+        for (int i=0;i<15;++i) {
+            for (byte x: ports.keySet()) {
+                jiffy.writeByteI2C(slaveAddress, x); 
+                int retval = jiffy.readByteI2C(slaveAddress);
+                logger.info("Port: " + x + " " + ports.get(x) + " " + retval);
+            }
+            Thread.sleep(200);
+        }
+        logger.info("~testI2C_PCF8591chip");
     }
     
 }
