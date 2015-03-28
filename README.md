@@ -26,6 +26,9 @@ Example usage can be found in org.warheim.interfacing.jiffy32.JiffyTest class. P
 ## Current project status
 Work in progress
 
-Basic calls are working (dongle metadata, digital, analog and pwm single pin i/o requests)
+Basic calls are working (dongle metadata, digital, analog and pwm single and mutliple pin i/o requests)
+
+Bus calls (i2c, SPI, 1-Wire) are implemented, but not tested yet
+
 
 No optimization has been done yet 
