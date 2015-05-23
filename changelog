@@ -1,0 +1,29 @@
+## 2015-05-23
+* changed arguments from byte to int because of bytes being signed in java
+
+## 2015-03-28
+* i2c functionality with tests
+* Update README.md
+
+## 2015-03-27
+* some convenience methods added
+* notes on various FF models
+* Update README.md
+
+## 2015-03-26
+* comments
+* Minor refactorization
+* SPI functions, not tested
+* 1-wire functions, not tested
+* i2c functions, not tested
+* VENDOR/PRODUCT_ID promoted to constants
+
+## 2015-03-25
+* added Pin abstraction, fixed multiple digital pins handling error
+
+## 2015-03-24
+* Initial commit
+* Create README.md
+* Update .gitignore
+* string handling fix
+* minor change in tests
