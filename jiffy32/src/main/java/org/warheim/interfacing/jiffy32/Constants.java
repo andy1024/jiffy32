@@ -51,4 +51,6 @@ public class Constants {
 
     public static final int USB_FF32_VENDOR_NUMBER = 1240;
     public static final int USB_FF32_PRODUCT_ID_NUMBER = 63673;
+    
+    public static final String ARGUMENT_EXC_MESSAGE_BYTE = "Value supplied is not a byte %d";
 }

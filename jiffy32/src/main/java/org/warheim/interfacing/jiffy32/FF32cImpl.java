@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.warheim.interfacing.jiffy32.util.Utils;
 import org.warheim.interfacing.jiffy32.exceptions.AddressOutOfRange;
+import org.warheim.interfacing.jiffy32.exceptions.ArgumentException;
 import org.warheim.interfacing.jiffy32.exceptions.GeneralFF32Error;
 import org.warheim.interfacing.jiffy32.exceptions.ImproperDataLengthParameterValue;
 import org.warheim.interfacing.jiffy32.exceptions.JiffyException;
@@ -30,14 +31,30 @@ public class FF32cImpl implements FF32c {
         this.dev = dev;
     }
     
+    private int b2i(byte b) {
+        return (int)b & 0xFF;
+    }
+    
+    private void validateArguments(int... args) 
+            throws ArgumentException {
+        for (int x: args) {
+            if (x<0 || x>255) {
+                String msg = String.format(Constants.ARGUMENT_EXC_MESSAGE_BYTE, x);
+                throw new ArgumentException(msg);
+            }
+        }
+    }
+    
     @Override
-    public ChipInformation getChipInfo() throws IOException {
+    public ChipInformation getChipInfo() 
+            throws IOException {
         byte[] result = sendData(Constants.CMD_GET_CHIP_INFO);
         return new ChipInformation(result);
     }
 
     @Override
-    public void setAddress(Address address) throws IOException, AddressOutOfRange {
+    public void setAddress(Address address) 
+            throws IOException, AddressOutOfRange {
         byte[] commands = new byte[2];
         commands[0] = Constants.CMD_SET_ADDRESS;
         commands[1] = address.getValue();
@@ -51,7 +68,8 @@ public class FF32cImpl implements FF32c {
     }
 
     @Override
-    public Address getAddress() throws IOException {
+    public Address getAddress() 
+            throws IOException {
         byte[] result = sendData(Constants.CMD_GET_ADDRESS);
         if (result!=null&&result.length>1&&result[0]==Constants.CMD_GET_ADDRESS) {
             return new Address(result[1]);
@@ -61,7 +79,8 @@ public class FF32cImpl implements FF32c {
     }
 
     @Override
-    public void setVendor(String vendor) throws IOException {
+    public void setVendor(String vendor) 
+            throws IOException {
         byte[] result = sendDataString(vendor, Constants.CMD_SET_VENDOR);
         if (result!=null&&result.length>0&&result[0]==Constants.RESULT_OK) {
             
@@ -71,7 +90,8 @@ public class FF32cImpl implements FF32c {
     }
 
     @Override
-    public String getVendor() throws IOException {
+    public String getVendor() 
+            throws IOException {
         byte[] result = sendData(Constants.CMD_GET_VENDOR);
         if (result!=null&&result.length>1&&result[0]==Constants.CMD_GET_VENDOR) {
             return Utils.convertPrefixedByteArrayToString(result);
@@ -81,7 +101,8 @@ public class FF32cImpl implements FF32c {
     }
 
     @Override
-    public void setProduct(String product) throws IOException {
+    public void setProduct(String product) 
+            throws IOException {
         byte[] result = sendDataString(product, Constants.CMD_SET_PRODUCT);
         if (result!=null&&result.length>0&&result[0]==Constants.RESULT_OK) {
             
@@ -91,7 +112,8 @@ public class FF32cImpl implements FF32c {
     }
 
     @Override
-    public String getProduct() throws IOException {
+    public String getProduct() 
+            throws IOException {
         byte[] result = sendData(Constants.CMD_GET_PRODUCT);
         if (result!=null&&result.length>1&&result[0]==Constants.CMD_GET_PRODUCT) {
             return Utils.convertPrefixedByteArrayToString(result);
@@ -101,7 +123,8 @@ public class FF32cImpl implements FF32c {
     }
 
     @Override
-    public String getSerialNumber() throws IOException {
+    public String getSerialNumber() 
+            throws IOException {
         byte[] result = sendData(Constants.CMD_GET_SERIAL_NUMBER);
         if (result!=null&&result.length>1&&result[0]==Constants.CMD_GET_SERIAL_NUMBER) {
             return Utils.convertPrefixedByteArrayToString(result);
@@ -111,7 +134,8 @@ public class FF32cImpl implements FF32c {
     }
 
     @Override
-    public void setSerialNumber(String serial) throws IOException {
+    public void setSerialNumber(String serial) 
+            throws IOException {
         byte[] result = sendDataString(serial, Constants.CMD_SET_SERIAL_NUMBER);
         if (result!=null&&result.length>0&&result[0]==Constants.RESULT_OK) {
             
@@ -129,7 +153,8 @@ public class FF32cImpl implements FF32c {
         logger.debug(s.toString());
     }
 
-    private byte[] sendRaw(byte... commands) throws IOException {
+    private byte[] sendRaw(byte... commands) 
+            throws IOException {
         logBytes("SEND:", commands);
 
         byte[] buffer = new byte[64];
@@ -147,7 +172,8 @@ public class FF32cImpl implements FF32c {
     }
     
     @Override
-    public byte[] sendData(byte... commands) throws IOException {
+    public byte[] sendData(byte... commands) 
+            throws IOException {
         byte[] buffer = new byte[commands.length + 1];
         buffer[0] = Constants.PRIMER;
         System.arraycopy(commands, 0, buffer, 1, commands.length);
@@ -155,7 +181,8 @@ public class FF32cImpl implements FF32c {
     }
 
     @Override
-    public byte[] sendDataString(String value, byte... commands) throws IOException {
+    public byte[] sendDataString(String value, byte... commands) 
+            throws IOException {
         byte[] buffer = new byte[commands.length + 1 + value.length()];
         buffer[0] = Constants.PRIMER;
         System.arraycopy(commands, 0, buffer, 1, commands.length);
@@ -172,26 +199,31 @@ public class FF32cImpl implements FF32c {
     }
 
     @Override
-    public boolean openComm() throws IOException {
+    public boolean openComm() 
+            throws IOException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void closeComm() throws IOException {
+    public void closeComm() 
+            throws IOException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean getPath(int pCount) throws IOException {
+    public boolean getPath(int pCount) 
+            throws IOException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void setDigitalOutput(byte pinBlock, byte pinNumber, boolean state) throws IOException, JiffyException {
+    public void setDigitalOutput(int pinBlock, int pinNumber, boolean state) 
+            throws IOException, JiffyException, ArgumentException {
+        validateArguments(pinBlock, pinNumber);
         byte[] commands = new byte[4];
         commands[0] = Constants.CMD_SET_DIGITAL_OUTPUT;
-        commands[1] = pinBlock;
-        commands[2] = pinNumber;
+        commands[1] = (byte)pinBlock;
+        commands[2] = (byte)pinNumber;
         commands[3] = (state?BTRUE:BFALSE);
         byte[] result = sendData(commands);
         if (result!=null) {
@@ -207,15 +239,18 @@ public class FF32cImpl implements FF32c {
     }
 
     @Override
-    public void setDigitalOutput(Pin pin, boolean state) throws IOException, JiffyException {
+    public void setDigitalOutput(Pin pin, boolean state) 
+            throws IOException, JiffyException, ArgumentException {
         setDigitalOutput(pin.getBlock(), pin.getNumber(), state);
     }
 
     @Override
-    public void setBlockDigitalOutputs(byte pinsBlock, int pinsMask, int states) throws IOException, JiffyException {
+    public void setBlockDigitalOutputs(int pinsBlock, int pinsMask, int states) 
+            throws IOException, JiffyException, ArgumentException {
+        validateArguments(pinsBlock, pinsMask);
         byte[] commands = new byte[6];
         commands[0] = Constants.CMD_SET_BLOCK_DIGITAL_OUTPUTS;
-        commands[1] = pinsBlock;
+        commands[1] = (byte)pinsBlock;
         byte maskLSB = (byte)(pinsMask & 0xFF);
         byte maskMSB = (byte)((pinsMask >> 8)& 0xFF);
         commands[2] = maskMSB;
@@ -239,11 +274,13 @@ public class FF32cImpl implements FF32c {
     }
 
     @Override
-    public byte readDigitalInput(byte pinBlock, byte pinNumber) throws IOException, JiffyException {
+    public int readDigitalInput(int pinBlock, int pinNumber) 
+            throws IOException, JiffyException, ArgumentException {
+        validateArguments(pinBlock, pinNumber);
         byte[] commands = new byte[3];
         commands[0] = Constants.CMD_READ_DIGITAL_INPUT;
-        commands[1] = pinBlock;
-        commands[2] = pinNumber;
+        commands[1] = (byte)pinBlock;
+        commands[2] = (byte)pinNumber;
         byte[] result = sendData(commands);
         if (result!=null) {
             if (result.length>1&&result[0]==Constants.CMD_READ_DIGITAL_INPUT) {
@@ -258,15 +295,18 @@ public class FF32cImpl implements FF32c {
     }
 
     @Override
-    public byte readDigitalInput(Pin pin) throws IOException, JiffyException {
+    public int readDigitalInput(Pin pin) 
+            throws IOException, JiffyException, ArgumentException {
         return readDigitalInput(pin.getBlock(), pin.getNumber());
     }
 
     @Override
-    public int readBlockDigitalInputs(byte pinsBlock, int pinsMask) throws IOException, JiffyException {
+    public int readBlockDigitalInputs(int pinsBlock, int pinsMask) 
+            throws IOException, JiffyException, ArgumentException {
+        validateArguments(pinsMask);
         byte[] commands = new byte[4];
         commands[0] = Constants.CMD_READ_BLOCK_DIGITAL_INPUTS;
-        commands[1] = pinsBlock;
+        commands[1] = (byte)pinsBlock;
         byte maskLSB = (byte)(pinsMask & 0xFF);
         byte maskMSB = (byte)((pinsMask >> 8)& 0xFF);
         commands[2] = maskMSB;
@@ -286,12 +326,14 @@ public class FF32cImpl implements FF32c {
     }
 
     @Override
-    public void setPWMOutput(byte pinBlock, byte pinNumber, byte ratio) throws IOException, JiffyException {
+    public void setPWMOutput(int pinBlock, int pinNumber, int ratio) 
+            throws IOException, JiffyException, ArgumentException {
+        validateArguments(pinBlock, pinNumber, ratio);
         byte[] commands = new byte[4];
         commands[0] = Constants.CMD_SET_PWM_OUTPUT;
-        commands[1] = pinBlock;
-        commands[2] = pinNumber;
-        commands[3] = ratio;
+        commands[1] = (byte)pinBlock;
+        commands[2] = (byte)pinNumber;
+        commands[3] = (byte)ratio;
         byte[] result = sendData(commands);
         if (result!=null) {
             if (result.length>0&&result[0]==Constants.RESULT_OK) {
@@ -306,16 +348,20 @@ public class FF32cImpl implements FF32c {
     }
 
     @Override
-    public void setPWMOutput(Pin pin, byte ratio) throws IOException, JiffyException {
+    public void setPWMOutput(Pin pin, int ratio) 
+            throws IOException, JiffyException, ArgumentException {
+        validateArguments(ratio);
         setPWMOutput(pin.getBlock(), pin.getNumber(), ratio);
     }
 
     @Override
-    public byte readAnalogInput(byte pinBlock, byte pinNumber) throws IOException, JiffyException {
+    public int readAnalogInput(int pinBlock, int pinNumber) 
+            throws IOException, JiffyException, ArgumentException {
+        validateArguments(pinBlock, pinNumber);
         byte[] commands = new byte[3];
         commands[0] = Constants.CMD_READ_ANALOG_INPUT;
-        commands[1] = pinBlock;
-        commands[2] = pinNumber;
+        commands[1] = (byte)pinBlock;
+        commands[2] = (byte)pinNumber;
         byte[] result = sendData(commands);
         if (result!=null) {
             if (result.length>1&&result[0]==Constants.CMD_READ_ANALOG_INPUT) {
@@ -330,13 +376,15 @@ public class FF32cImpl implements FF32c {
     }
 
     @Override
-    public byte readAnalogInput(Pin pin) throws IOException, JiffyException {
+    public int readAnalogInput(Pin pin) 
+            throws IOException, JiffyException, ArgumentException {
         return readAnalogInput(pin.getBlock(), pin.getNumber());
     }
 
     //WARNING: not tested yet
     @Override
-    public void writeSPIBus(byte[] data) throws IOException, JiffyException {
+    public void writeSPIBus(byte[] data) 
+            throws IOException, JiffyException {
         if (data.length>MAX_BUS_DATA_BUFFER_LENGTH) {
             throw new ImproperDataLengthParameterValue();
         }
@@ -360,18 +408,22 @@ public class FF32cImpl implements FF32c {
     //WARNING: not tested yet
     //This method is called "Configure SPI bus (0x24)" in docs
     @Override
-    public void setSPIPins(byte CSPinBlock, byte CSPinNumber, byte SCKPinBlock, byte SCKPinNumber, byte MOSIPinBlock, byte MOSIPinNumber, byte MISOPinBlock, byte MISOPinNumber) 
-            throws IOException, JiffyException {
+    public void setSPIPins(int CSPinBlock, int CSPinNumber, int SCKPinBlock, int SCKPinNumber, 
+            int MOSIPinBlock, int MOSIPinNumber, int MISOPinBlock, int MISOPinNumber) 
+            throws IOException, JiffyException, ArgumentException {
+        validateArguments(CSPinBlock, CSPinNumber, SCKPinBlock, SCKPinNumber, 
+                MOSIPinBlock, MOSIPinNumber, MISOPinBlock, MISOPinNumber);
+        
         byte[] commands = new byte[10];
         commands[0] = Constants.CMD_CONFIG_SPI_BUS;
-        commands[1] = CSPinBlock;
-        commands[2] = CSPinNumber;
-        commands[3] = SCKPinBlock;
-        commands[4] = SCKPinNumber;
-        commands[5] = MOSIPinBlock;
-        commands[6] = MOSIPinNumber;
-        commands[7] = MISOPinBlock;
-        commands[8] = MISOPinNumber;
+        commands[1] = (byte)CSPinBlock;
+        commands[2] = (byte)CSPinNumber;
+        commands[3] = (byte)SCKPinBlock;
+        commands[4] = (byte)SCKPinNumber;
+        commands[5] = (byte)MOSIPinBlock;
+        commands[6] = (byte)MOSIPinNumber;
+        commands[7] = (byte)MISOPinBlock;
+        commands[8] = (byte)MISOPinNumber;
         commands[9] = 0x00;
         byte[] result = sendData(commands);
         if (result!=null) {
@@ -387,21 +439,24 @@ public class FF32cImpl implements FF32c {
     }
     
     @Override
-    public void setSPIPins(Pin CS, Pin SCK, Pin MOSI, Pin MISO) throws IOException, JiffyException {
+    public void setSPIPins(Pin CS, Pin SCK, Pin MOSI, Pin MISO) 
+            throws IOException, JiffyException, ArgumentException {
         setSPIPins(CS.getBlock(), CS.getNumber(), SCK.getBlock(), SCK.getNumber(), 
                 MOSI.getBlock(), MOSI.getNumber(), MISO.getBlock(), MISO.getNumber());
     }
 
     //WARNING: not tested yet
     @Override
-    public byte[] readSPIBus(byte RDDataLen, byte[] WRData) throws IOException, JiffyException {
+    public byte[] readSPIBus(int RDDataLen, byte[] WRData) 
+            throws IOException, JiffyException, ArgumentException {
+        validateArguments(RDDataLen);
         if (WRData.length>MAX_BUS_DATA_BUFFER_LENGTH||RDDataLen>MAX_BUS_DATA_BUFFER_LENGTH) {
             throw new ImproperDataLengthParameterValue();
         }
         byte[] commands = new byte[3+WRData.length];
         commands[0] = Constants.CMD_READ_SPI_BUS;
         commands[1] = (byte)WRData.length;
-        commands[2] = RDDataLen;
+        commands[2] = (byte)RDDataLen;
         System.arraycopy(WRData, 0, commands, 3, WRData.length);
         byte[] result = sendData(commands);
         if (result!=null) {
@@ -420,14 +475,15 @@ public class FF32cImpl implements FF32c {
     }
 
     @Override
-    public void setI2CPins(byte SCLPinBlock, byte SCLPinNumber, byte SDAPinBlock, byte SDAPinNumber) 
-            throws IOException, JiffyException {
+    public void setI2CPins(int SCLPinBlock, int SCLPinNumber, int SDAPinBlock, int SDAPinNumber) 
+            throws IOException, JiffyException, ArgumentException {
+        validateArguments(SCLPinBlock, SCLPinNumber, SDAPinBlock, SDAPinNumber);
         byte[] commands = new byte[5];
         commands[0] = Constants.CMD_CONFIG_I2C_BUS;
-        commands[1] = SCLPinBlock;
-        commands[2] = SCLPinNumber;
-        commands[3] = SDAPinBlock;
-        commands[4] = SDAPinNumber;
+        commands[1] = (byte)SCLPinBlock;
+        commands[2] = (byte)SCLPinNumber;
+        commands[3] = (byte)SDAPinBlock;
+        commands[4] = (byte)SDAPinNumber;
         byte[] result = sendData(commands);
         if (result!=null) {
             if (result.length>0&&result[0]==Constants.RESULT_OK) {
@@ -442,12 +498,14 @@ public class FF32cImpl implements FF32c {
     }
     
     @Override
-    public void setI2CPins(Pin SCL, Pin SDA) throws IOException, JiffyException {
+    public void setI2CPins(Pin SCL, Pin SDA) 
+            throws IOException, JiffyException, ArgumentException {
         setI2CPins(SCL.getBlock(), SCL.getNumber(), SDA.getBlock(), SDA.getNumber());
     }
 
     @Override
-    public void writeI2CBus(byte[] data) throws IOException, JiffyException {
+    public void writeI2CBus(byte[] data) 
+            throws IOException, JiffyException {
         if (data.length>MAX_BUS_DATA_BUFFER_LENGTH) {
             throw new ImproperDataLengthParameterValue();
         }
@@ -469,14 +527,16 @@ public class FF32cImpl implements FF32c {
     }
 
     @Override
-    public byte[] readI2CBus(byte RDDataLen, byte[] WRData) throws IOException, JiffyException {
+    public byte[] readI2CBus(int RDDataLen, byte[] WRData) 
+            throws IOException, JiffyException, ArgumentException {
+        validateArguments(RDDataLen);
         if (WRData.length>MAX_BUS_DATA_BUFFER_LENGTH||RDDataLen>MAX_BUS_DATA_BUFFER_LENGTH) {
             throw new ImproperDataLengthParameterValue();
         }
         byte[] commands = new byte[3+WRData.length];
         commands[0] = Constants.CMD_READ_I2C_BUS;
         commands[1] = (byte)WRData.length;
-        commands[2] = RDDataLen;
+        commands[2] = (byte)RDDataLen;
         System.arraycopy(WRData, 0, commands, 3, WRData.length);
         byte[] result = sendData(commands);
         if (result!=null) {
@@ -495,34 +555,42 @@ public class FF32cImpl implements FF32c {
     }
     
     @Override
-    public void writeByteI2C(byte addr, byte value) throws IOException, JiffyException {
+    public void writeByteI2C(int addr, int value) 
+            throws IOException, JiffyException, ArgumentException {
+        validateArguments(addr, value);
         addr = (byte)(addr * 2);
-        byte[] data =  {addr, value};
+        byte[] data =  {(byte)addr, (byte)value};
         //byte[] result = 
         writeI2CBus(data);
     }
 
     @Override
-    public void writeBlockI2C(byte addr, byte[] values) throws IOException, JiffyException {
+    public void writeBlockI2C(int addr, byte[] values) 
+            throws IOException, JiffyException, ArgumentException {
+        validateArguments(addr);
         addr = (byte)(addr * 2);
         byte[] data =  new byte[1+values.length];
-        data[0] = addr;
+        data[0] = (byte)addr;
         System.arraycopy(values, 0, data, 1, values.length);
         writeI2CBus(data);
     }
 
     @Override
-    public byte readByteI2C(byte addr) throws IOException, JiffyException {
+    public int readByteI2C(int addr) 
+            throws IOException, JiffyException, ArgumentException {
+        validateArguments(addr);
         addr = (byte)(addr * 2 + 1);
-        byte[] data =  {addr};
+        byte[] data =  {(byte)addr};
         byte[] result = readI2CBus((byte)1, data);
-        return result[0];
+        return b2i(result[0]);
     }
 
     @Override
-    public byte[] readBlockI2C(byte addr, byte readLength) throws IOException, JiffyException {
+    public byte[] readBlockI2C(int addr, int readLength) 
+            throws IOException, JiffyException, ArgumentException {
+        validateArguments(addr, readLength);
         addr = (byte)(addr * 2 + 1);
-        byte[] data =  {addr};
+        byte[] data =  {(byte)addr};
         byte[] result = readI2CBus(readLength, data);
         return result;
     }
@@ -536,9 +604,11 @@ public class FF32cImpl implements FF32c {
      * @throws JiffyException 
      */
     @Override
-    public short readWordI2C(byte addr) throws IOException, JiffyException {
+    public short readWordI2C(int addr) 
+            throws IOException, JiffyException, ArgumentException {
+        validateArguments(addr);
         addr = (byte)(addr * 2 + 1);
-        byte[] data =  {addr};
+        byte[] data =  {(byte)addr};
         byte[] result = readI2CBus((byte)2, data);
         return (short)((result[1] << 8) + result[0]);
     }
@@ -546,11 +616,13 @@ public class FF32cImpl implements FF32c {
     //WARNING: not tested yet
     //This function is called "Configure 1-Wire/MicroLAN bus (0x2A)" in docs
     @Override
-    public void set1WirePin(byte DQPinBlock, byte DQPinNumber) throws IOException, JiffyException {
+    public void set1WirePin(int DQPinBlock, int DQPinNumber) 
+            throws IOException, JiffyException, ArgumentException {
+        validateArguments(DQPinBlock, DQPinNumber);
         byte[] commands = new byte[3];
         commands[0] = Constants.CMD_CONFIG_1WIRE_BUS;
-        commands[1] = DQPinBlock;
-        commands[2] = DQPinNumber;
+        commands[1] = (byte)DQPinBlock;
+        commands[2] = (byte)DQPinNumber;
         byte[] result = sendData(commands);
         if (result!=null) {
             if (result.length>0&&result[0]==Constants.RESULT_OK) {
@@ -565,13 +637,15 @@ public class FF32cImpl implements FF32c {
     }
     
     @Override
-    public void set1WirePin(Pin DQ) throws IOException, JiffyException {
+    public void set1WirePin(Pin DQ) 
+            throws IOException, JiffyException, ArgumentException {
         set1WirePin(DQ.getBlock(), DQ.getNumber());
     }
 
     //WARNING: not tested yet
     @Override
-    public boolean reset1WireBus() throws IOException, JiffyException {
+    public boolean reset1WireBus() 
+            throws IOException, JiffyException {
         byte[] commands = new byte[1];
         commands[0] = Constants.CMD_RESET_1WIRE_BUS;
         byte[] result = sendData(commands);
@@ -589,7 +663,8 @@ public class FF32cImpl implements FF32c {
 
     //WARNING: not tested yet
     @Override
-    public void write1WireBus(byte[] data) throws IOException, JiffyException {
+    public void write1WireBus(byte[] data) 
+            throws IOException, JiffyException {
         if (data.length>MAX_BUS_DATA_BUFFER_LENGTH) {
             throw new ImproperDataLengthParameterValue();
         }
@@ -612,7 +687,8 @@ public class FF32cImpl implements FF32c {
 
     //WARNING: not tested yet
     @Override
-    public void writeBit1WireBus(boolean dataBit) throws IOException, JiffyException {
+    public void writeBit1WireBus(boolean dataBit) 
+            throws IOException, JiffyException {
         byte[] commands = new byte[2];
         commands[0] = Constants.CMD_WRITE_BIT_1WIRE_BUS;
         commands[1] = (byte)(dataBit?BTRUE:BFALSE);
@@ -631,14 +707,16 @@ public class FF32cImpl implements FF32c {
 
     //WARNING: not tested yet
     @Override
-    public byte[] read1WireBus(byte RDDataLen, byte[] WRData) throws IOException, JiffyException {
+    public byte[] read1WireBus(int RDDataLen, byte[] WRData) 
+            throws IOException, JiffyException, ArgumentException {
+        validateArguments(RDDataLen);
         if (WRData.length>MAX_BUS_DATA_BUFFER_LENGTH||RDDataLen>MAX_BUS_DATA_BUFFER_LENGTH) {
             throw new ImproperDataLengthParameterValue();
         }
         byte[] commands = new byte[3+WRData.length];
         commands[0] = Constants.CMD_READ_1WIRE_BUS;
         commands[1] = (byte)WRData.length;
-        commands[2] = RDDataLen;
+        commands[2] = (byte)RDDataLen;
         System.arraycopy(WRData, 0, commands, 3, WRData.length);
         byte[] result = sendData(commands);
         if (result!=null) {
@@ -658,7 +736,8 @@ public class FF32cImpl implements FF32c {
 
     //WARNING: not tested yet
     @Override
-    public boolean readBit1WireBus() throws IOException, JiffyException {
+    public boolean readBit1WireBus() 
+            throws IOException, JiffyException {
         byte[] commands = new byte[1];
         commands[0] = Constants.CMD_READ_BIT_1WIRE_BUS;
         byte[] result = sendData(commands);
