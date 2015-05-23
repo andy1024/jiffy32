@@ -1,3 +1,8 @@
+## 2015-05-24
+* refactored initialization procedure to a factory
+* added test class for accessing multiple dongles at the same time
+* split test class into several classes each of its own responsibility
+
 ## 2015-05-23
 * changed arguments from byte to int because of bytes being signed in java
 
