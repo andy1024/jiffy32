@@ -247,7 +247,7 @@ public class FF32cImpl implements FF32c {
     @Override
     public void setBlockDigitalOutputs(int pinsBlock, int pinsMask, int states) 
             throws IOException, JiffyException, ArgumentException {
-        validateArguments(pinsBlock, pinsMask);
+        validateArguments(pinsBlock);
         byte[] commands = new byte[6];
         commands[0] = Constants.CMD_SET_BLOCK_DIGITAL_OUTPUTS;
         commands[1] = (byte)pinsBlock;
@@ -303,7 +303,7 @@ public class FF32cImpl implements FF32c {
     @Override
     public int readBlockDigitalInputs(int pinsBlock, int pinsMask) 
             throws IOException, JiffyException, ArgumentException {
-        validateArguments(pinsMask);
+        validateArguments(pinsBlock);
         byte[] commands = new byte[4];
         commands[0] = Constants.CMD_READ_BLOCK_DIGITAL_INPUTS;
         commands[1] = (byte)pinsBlock;
@@ -752,5 +752,30 @@ public class FF32cImpl implements FF32c {
             throw new GeneralFF32Error();
         }
     }
-  
+
+    @Override
+    public String getManufacturerString() throws IOException {
+        return dev.getManufacturerString();
+    }
+
+    @Override
+    public String getProductString() throws IOException {
+        return dev.getProductString();
+    }
+
+    @Override
+    public String getSerialNumberString() throws IOException {
+        return dev.getSerialNumberString();
+    }
+
+    @Override
+    public void close() throws IOException {
+        dev.close();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+    
 }

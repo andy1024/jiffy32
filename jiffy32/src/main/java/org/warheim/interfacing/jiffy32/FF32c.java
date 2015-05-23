@@ -14,6 +14,12 @@ import org.warheim.interfacing.jiffy32.model.ChipInformation;
  * @author amaslowski
  */
 public interface FF32c {
+    /* usb functions */
+    public String getManufacturerString() throws IOException;
+    public String getProductString() throws IOException;
+    public String getSerialNumberString() throws IOException;
+    public void close() throws IOException;
+        
     /* device metadata functions */
     ChipInformation getChipInfo() throws IOException;
     void setAddress(Address address) throws IOException, AddressOutOfRange;
@@ -109,4 +115,5 @@ public interface FF32c {
     boolean openComm() throws IOException;
     void closeComm() throws IOException;
     boolean getPath(int pCount) throws IOException; 
+    public String toString();
 }
