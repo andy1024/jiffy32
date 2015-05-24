@@ -27,9 +27,7 @@ Example usage can be found in org.warheim.interfacing.jiffy32.JiffyTest class. P
 
 <figure>
    <img src="images/pfcjif-screenshot.png">
-<figcaption>
-    Screenshot from demo written in Processing
-</figcaption>
+<figcaption><p>Screenshot from PCF8591 demo written in Processing</p></figcaption>
 </figure>
 
 ## Current project status
