@@ -32,5 +32,6 @@ i2c calls are working (tested with PCF8591 chip)
 
 SPI and 1-Wire calls are implemented, but not tested yet
 
+Library supports multiple dongles attached simultaneously
 
 No optimization has been done yet 
