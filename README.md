@@ -1,6 +1,6 @@
 # jiffy32
 ##Description
-![alt tag](images/ff32chip-on-homebrew-board.jpg)
+![Alt text](images/ff32chip-on-homebrew-board.jpg?raw=true "Self-made board with FF32 chip connected to PCF8591")
 
 A java library intended for interfacing with FlyFish Technologies FF32 General Purpose Input Output USB dongle
 
@@ -24,6 +24,8 @@ Building process is handled by maven tool, which takes care of dependencies need
 
 ## Usage
 Example usage can be found in org.warheim.interfacing.jiffy32.JiffyTest class. Protoboard wiring example will follow shortly.
+
+![Alt text](images/pfcjif-screenshot.png?raw=true "Screnshot from demo written in Processing")
 
 ## Current project status
 Work in progress
