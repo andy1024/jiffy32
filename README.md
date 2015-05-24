@@ -25,7 +25,12 @@ Building process is handled by maven tool, which takes care of dependencies need
 ## Usage
 Example usage can be found in org.warheim.interfacing.jiffy32.JiffyTest class. Protoboard wiring example will follow shortly.
 
-![Alt text](images/pfcjif-screenshot.png?raw=true "Screnshot from demo written in Processing")
+<figure>
+   <img src="images/pfcjif-screenshot.png">
+<figcaption>
+    "Screenshot from demo written in Processing
+</figcaption>
+</figure>
 
 ## Current project status
 Work in progress
