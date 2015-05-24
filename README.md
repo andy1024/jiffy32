@@ -1,6 +1,6 @@
 # jiffy32
 ##Description
-![alt tag](images.ff32chip-on-homebrew-board.jpg)
+![alt tag](images/ff32chip-on-homebrew-board.jpg)
 
 A java library intended for interfacing with FlyFish Technologies FF32 General Purpose Input Output USB dongle
 
