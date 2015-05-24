@@ -28,7 +28,7 @@ Work in progress
 
 Basic calls are working (dongle metadata, digital, analog and pwm single and mutliple pin i/o requests)
 
-i2c calls are working (tested with PCF8519 chip)
+i2c calls are working (tested with PCF8591 chip)
 
 SPI and 1-Wire calls are implemented, but not tested yet
 
