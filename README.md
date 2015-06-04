@@ -1,6 +1,6 @@
 # jiffy32
 ##Description
-![Alt text](images/ff32chip-on-homebrew-board.jpg?raw=true "Self-made board with FF32 chip connected to PCF8591")
+![Alt text](https://raw.githubusercontent.com/andy1024/jiffy32/master/images/ff32chip-on-homebrew-board.jpg "Self-made board with FF32 chip connected to PCF8591")
 ######Self-made board with FF32 chip connected to PCF8591
 A java library intended for interfacing with FlyFish Technologies FF32 General Purpose Input Output USB dongle
 
