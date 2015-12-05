@@ -25,7 +25,7 @@ Building process is handled by maven tool, which takes care of dependencies need
 ## Usage
 Example usage can be found in org.warheim.interfacing.jiffy32.JiffyTest class. Protoboard wiring example will follow shortly.
 
-![Alt text](images/pfcjif-screenshot.png?raw=true "Self-made board with FF32 chip connected to PCF8591")
+![Alt text](https://raw.githubusercontent.com/andy1024/jiffy32/master/images/pfcjif-screenshot.png?raw=true "Self-made board with FF32 chip connected to PCF8591")
 ######Screenshot from jiffy32 demo using PCF8591 breakout board. Written in Processing
 
 
