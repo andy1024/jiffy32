@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Jiffy32 by andy1024</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Jiffy32</h1>
+        <h2>A java library intended for interfacing with FlyFish Technologies FF32 General Purpose Input Output USB dongle</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/andy1024/jiffy32/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/andy1024/jiffy32/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/andy1024/jiffy32" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="jiffy32" class="anchor" href="#jiffy32" aria-hidden="true"><span class="octicon octicon-link"></span></a>jiffy32</h1>
+
+<h2>
+<a id="description" class="anchor" href="#description" aria-hidden="true"><span class="octicon octicon-link"></span></a>Description</h2>
+
+<p><img src="https://raw.githubusercontent.com/andy1024/jiffy32/master/images/ff32chip-on-homebrew-board.jpg" alt="Alt text" title="Self-made board with FF32 chip connected to PCF8591"></p>
+
+<h6>
+<a id="self-made-board-with-ff32-chip-connected-to-pcf8591" class="anchor" href="#self-made-board-with-ff32-chip-connected-to-pcf8591" aria-hidden="true"><span class="octicon octicon-link"></span></a>Self-made board with FF32 chip connected to PCF8591</h6>
+
+<p>A java library intended for interfacing with FlyFish Technologies FF32 General Purpose Input Output USB dongle</p>
+
+<p><a href="http://www.flyfish-tech.com/FF32/index.php">http://www.flyfish-tech.com/FF32/index.php</a></p>
+
+<p>This code is based on "FF32 demo" written in C and published to the Public Domain</p>
+
+<h2>
+<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Credits</h2>
+
+<p>Engineering team at FlyFish Technologies for FF32 chip</p>
+
+<p>Original author of FF32 C library for codebase</p>
+
+<p>Codeminders for their <a href="https://code.google.com/p/javahidapi/">javahidapi</a></p>
+
+<h2>
+<a id="build" class="anchor" href="#build" aria-hidden="true"><span class="octicon octicon-link"></span></a>Build</h2>
+
+<p>Building process is handled by maven tool, which takes care of dependencies needed by this project</p>
+
+<div class="highlight highlight-source-shell"><pre>    mvn clean
+    mvn compile</pre></div>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Example usage can be found in org.warheim.interfacing.jiffy32.JiffyTest class. Protoboard wiring example will follow shortly.</p>
+
+<p><img src="https://raw.githubusercontent.com/andy1024/jiffy32/master/images/pfcjif-screenshot.png?raw=true" alt="Alt text" title="Self-made board with FF32 chip connected to PCF8591"></p>
+
+<h6>
+<a id="screenshot-from-jiffy32-demo-using-pcf8591-breakout-board-written-in-processing" class="anchor" href="#screenshot-from-jiffy32-demo-using-pcf8591-breakout-board-written-in-processing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Screenshot from jiffy32 demo using PCF8591 breakout board. Written in Processing</h6>
+
+<h2>
+<a id="current-project-status" class="anchor" href="#current-project-status" aria-hidden="true"><span class="octicon octicon-link"></span></a>Current project status</h2>
+
+<p>Work in progress</p>
+
+<p>Basic calls are working (dongle metadata, digital, analog and pwm single and mutliple pin i/o requests)</p>
+
+<p>i2c calls are working (tested with PCF8591 chip)</p>
+
+<p>SPI and 1-Wire calls are implemented, but not tested yet</p>
+
+<p>Library supports multiple dongles attached simultaneously</p>
+
+<p>No optimization has been done yet </p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
