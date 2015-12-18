@@ -20,7 +20,7 @@ import org.warheim.interfacing.jiffy32.exceptions.InitalizationException;
  * @author amaslowski
  */
 public class FF32Factory {
-    private static Logger logger = LoggerFactory.getLogger(FF32Factory.class);
+    private static final Logger logger = LoggerFactory.getLogger(FF32Factory.class);
     
     public static void showAllDevices() throws IOException {
         HIDDeviceInfo[] devices = HIDManager.getInstance().listDevices();

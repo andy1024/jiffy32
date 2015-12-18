@@ -602,6 +602,7 @@ public class FF32cImpl implements FF32c {
      * @return
      * @throws IOException
      * @throws JiffyException 
+     * @throws org.warheim.interfacing.jiffy32.exceptions.ArgumentException 
      */
     @Override
     public short readWordI2C(int addr) 

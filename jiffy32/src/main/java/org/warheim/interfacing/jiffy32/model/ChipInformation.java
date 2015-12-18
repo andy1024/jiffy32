@@ -37,9 +37,9 @@ public class ChipInformation {
 
     public ChipInformation(byte[] input) {
         if (input!=null&&input.length>=5&&input[0]==Constants.CMD_GET_CHIP_INFO) {
-            setIdentifier((short)(input[1] & input[2]<<8));
-            setVersionHigh(input[3]);
-            setVersionLow(input[4]);
+            identifier = (short)(input[1] & input[2]<<8);
+            versionHigh = input[3];
+            versionLow = input[4];
         }
     }
 

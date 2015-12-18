@@ -115,5 +115,4 @@ public interface FF32c {
     boolean openComm() throws IOException;
     void closeComm() throws IOException;
     boolean getPath(int pCount) throws IOException; 
-    public String toString();
 }
