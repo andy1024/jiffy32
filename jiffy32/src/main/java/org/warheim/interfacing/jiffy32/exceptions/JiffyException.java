@@ -3,7 +3,7 @@ package org.warheim.interfacing.jiffy32.exceptions;
 import org.warheim.interfacing.jiffy32.Constants;
 
 /**
- * Baseclass for all the Jiffy exceptions
+ * Base class for all the Jiffy exceptions
  * 
  * @author amaslowski
  */
