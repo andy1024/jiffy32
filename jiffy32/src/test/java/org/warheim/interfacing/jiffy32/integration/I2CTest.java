@@ -1,4 +1,4 @@
-package org.warheim.interfacing.jiffy32;
+package org.warheim.interfacing.jiffy32.integration;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
