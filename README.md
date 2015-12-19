@@ -23,6 +23,15 @@ Building process is handled by maven tool, which takes care of dependencies need
 ```
 
 ## Usage
+In order to run this package you need to FF32 from FlyFish Technologies and proper privileges to run the code.
+You can achieve it by running it as root (bad practice) or add a udev rule like this:
+```
+sudo echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="04d8", ATTRS{idProduct}=="f8b9", MODE:="0666"
+KERNEL=="hiddev*", ATTRS{idVendor}=="04d8", ATTRS{idProduct}=="f8b9", MODE:="0666"' >/etc/udev/rules.d/50-hid.rules
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+```
+This should be done only once.
 Example usage can be found in org.warheim.interfacing.jiffy32.JiffyTest class. Protoboard wiring example will follow shortly.
 
 ![Alt text](https://raw.githubusercontent.com/andy1024/jiffy32/master/images/pfcjif-screenshot.png?raw=true "Self-made board with FF32 chip connected to PCF8591")
