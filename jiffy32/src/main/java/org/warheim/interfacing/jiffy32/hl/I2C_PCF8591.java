@@ -2,7 +2,6 @@ package org.warheim.interfacing.jiffy32.hl;
 
 import com.codeminders.hidapi.ClassPathLibraryLoader;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +12,8 @@ import org.warheim.interfacing.jiffy32.exceptions.ArgumentException;
 import org.warheim.interfacing.jiffy32.exceptions.JiffyException;
 
 /**
+ * 8-bit A/D & D/A converter
+ * http://botland.com.pl/rozszerzenia-gpio-nakladki-hat-do-raspberry-pi-2/2632-pcf8591-przetwornik-ac-i-ca-8-bitowy-i2c.html
  *
  * @author andy
  */
@@ -49,5 +50,10 @@ public class I2C_PCF8591 {
         jiffy.writeByteI2C(SLAVE_ADDRESS, portNumber);
         int retval = jiffy.readByteI2C(SLAVE_ADDRESS);
         return retval;
+    }
+    
+    public static void main(String... args) throws Exception {
+        I2C_PCF8591 chip = new I2C_PCF8591(Pin.B9, Pin.B10);
+        System.out.println(chip.readPort(0x03));
     }
 }
