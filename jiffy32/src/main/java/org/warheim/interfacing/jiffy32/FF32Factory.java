@@ -41,6 +41,9 @@ public class FF32Factory {
         FF32c jiffy=null;
         try {
             HIDDevice dev = HIDManager.getInstance().openById(vendorId, productId, serialNumber);
+            if (dev==null) {
+                throw new InitalizationException();
+            }
             jiffy = new FF32cImpl(dev);
         } catch (IOException e) {
             throw new RuntimeException(e);

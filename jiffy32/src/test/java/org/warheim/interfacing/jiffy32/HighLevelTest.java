@@ -48,7 +48,7 @@ public class HighLevelTest {
         }
     }
     
-    @Ignore
+    //@Ignore
     @org.junit.Test
     public void testI2C_PCF8591chip() throws Exception {
         logger.info("testI2C_PCF8591chip");
