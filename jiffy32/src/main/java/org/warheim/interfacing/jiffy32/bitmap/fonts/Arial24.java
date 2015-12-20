@@ -1,20 +1,15 @@
 package org.warheim.interfacing.jiffy32.bitmap.fonts;
-
-/**
- *
- */
-public class Arial24 extends Font {
-
-    public Arial24() {
-      super("Arial 24", '!', (char)127, 24, 12, 3);
-    }
-
 // coding=utf-8
 // Module arial_24
 // generated from Arial 18.75pt
 
-    private static final byte[] bitmaps = {
+public class Arial24 extends Font {
+	public Arial24() {
+		super("Arial 24", '!', (char)127, 24, 12, 3);
+	}
 
+
+	private static final byte[] bitmaps = {
     // @0 '!' (2 pixels wide)
     (byte)0x00, //   
     (byte)0xC0, // OO
@@ -40,7 +35,6 @@ public class Arial24 extends Font {
     (byte)0x00, //   
     (byte)0x00, //   
     (byte)0x00, //   
-
     // @24 '"' (7 pixels wide)
     (byte)0x00, //        
     (byte)0xC6, // OO   OO
@@ -66,7 +60,6 @@ public class Arial24 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @48 '#' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0x06, (byte)0x18, //      OO    OO 
@@ -92,7 +85,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @96 '$' (11 pixels wide)
     (byte)0x04, (byte)0x00, //      O     
     (byte)0x1F, (byte)0x00, //    OOOOO   
@@ -118,7 +110,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @144 '%' (19 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
     (byte)0x3C, (byte)0x06, (byte)0x00, //   OOOO       OO    
@@ -144,7 +135,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
-
     // @216 '&' (15 pixels wide)
     (byte)0x00, (byte)0x00, //                
     (byte)0x0F, (byte)0x80, //     OOOOO      
@@ -170,7 +160,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
-
     // @264 ''' (2 pixels wide)
     (byte)0x00, //   
     (byte)0xC0, // OO
@@ -196,7 +185,6 @@ public class Arial24 extends Font {
     (byte)0x00, //   
     (byte)0x00, //   
     (byte)0x00, //   
-
     // @288 '(' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x0C, //     OO
@@ -222,7 +210,6 @@ public class Arial24 extends Font {
     (byte)0x30, //   OO  
     (byte)0x18, //    OO 
     (byte)0x0C, //     OO
-
     // @312 ')' (6 pixels wide)
     (byte)0x00, //       
     (byte)0xC0, // OO    
@@ -248,7 +235,6 @@ public class Arial24 extends Font {
     (byte)0x30, //   OO  
     (byte)0x60, //  OO   
     (byte)0xC0, // OO    
-
     // @336 '*' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x18, //    OO   
@@ -274,7 +260,6 @@ public class Arial24 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @360 '+' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
@@ -300,7 +285,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @408 ',' (2 pixels wide)
     (byte)0x00, //   
     (byte)0x00, //   
@@ -326,7 +310,6 @@ public class Arial24 extends Font {
     (byte)0xC0, // OO
     (byte)0x80, // O 
     (byte)0x00, //   
-
     // @432 '-' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x00, //       
@@ -352,7 +335,6 @@ public class Arial24 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @456 '.' (2 pixels wide)
     (byte)0x00, //   
     (byte)0x00, //   
@@ -378,7 +360,6 @@ public class Arial24 extends Font {
     (byte)0x00, //   
     (byte)0x00, //   
     (byte)0x00, //   
-
     // @480 '/' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x06, //      OO
@@ -404,7 +385,6 @@ public class Arial24 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @504 '0' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x1F, (byte)0x80, //    OOOOOO   
@@ -430,7 +410,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @552 '1' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x06, //      OO
@@ -456,7 +435,6 @@ public class Arial24 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @576 '2' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x1F, (byte)0x80, //    OOOOOO   
@@ -482,7 +460,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @624 '3' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x1F, (byte)0x00, //    OOOOO    
@@ -508,7 +485,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @672 '4' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0xC0, //         OO  
@@ -534,7 +510,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @720 '5' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x3F, (byte)0xE0, //   OOOOOOOOO 
@@ -560,7 +535,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @768 '6' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x0F, (byte)0x80, //     OOOOO   
@@ -586,7 +560,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @816 '7' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0xFF, (byte)0xF0, // OOOOOOOOOOOO
@@ -612,7 +585,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @864 '8' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x0F, (byte)0x00, //     OOOO    
@@ -638,7 +610,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @912 '9' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x1F, (byte)0x00, //    OOOOO    
@@ -664,7 +635,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @960 ':' (2 pixels wide)
     (byte)0x00, //   
     (byte)0x00, //   
@@ -690,7 +660,6 @@ public class Arial24 extends Font {
     (byte)0x00, //   
     (byte)0x00, //   
     (byte)0x00, //   
-
     // @984 ';' (2 pixels wide)
     (byte)0x00, //   
     (byte)0x00, //   
@@ -716,7 +685,6 @@ public class Arial24 extends Font {
     (byte)0xC0, // OO
     (byte)0x80, // O 
     (byte)0x00, //   
-
     // @1008 '<' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
@@ -742,7 +710,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @1056 '=' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
@@ -768,7 +735,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @1104 '>' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
@@ -794,7 +760,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @1152 '?' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x1F, (byte)0x80, //    OOOOOO   
@@ -820,7 +785,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @1200 '@' (23 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                        
     (byte)0x00, (byte)0xFE, (byte)0x00, //         OOOOOOO        
@@ -846,7 +810,6 @@ public class Arial24 extends Font {
     (byte)0x0F, (byte)0x00, (byte)0xF0, //     OOOO        OOOO   
     (byte)0x07, (byte)0xFF, (byte)0xE0, //      OOOOOOOOOOOOOO    
     (byte)0x00, (byte)0xFF, (byte)0x00, //         OOOOOOOO       
-
     // @1272 'A' (15 pixels wide)
     (byte)0x00, (byte)0x00, //                
     (byte)0x03, (byte)0x80, //       OOO      
@@ -872,7 +835,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
-
     // @1320 'B' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0xFF, (byte)0xC0, // OOOOOOOOOO    
@@ -898,7 +860,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @1368 'C' (16 pixels wide)
     (byte)0x00, (byte)0x00, //                 
     (byte)0x03, (byte)0xF0, //       OOOOOO    
@@ -924,7 +885,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
-
     // @1416 'D' (15 pixels wide)
     (byte)0x00, (byte)0x00, //                
     (byte)0xFF, (byte)0xC0, // OOOOOOOOOO     
@@ -950,7 +910,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
-
     // @1464 'E' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0xFF, (byte)0xFC, // OOOOOOOOOOOOOO
@@ -976,7 +935,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @1512 'F' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0xFF, (byte)0xF0, // OOOOOOOOOOOO
@@ -1002,7 +960,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @1560 'G' (16 pixels wide)
     (byte)0x00, (byte)0x00, //                 
     (byte)0x07, (byte)0xF0, //      OOOOOOO    
@@ -1028,7 +985,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
-
     // @1608 'H' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0xC0, (byte)0x0C, // OO          OO
@@ -1054,7 +1010,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @1656 'I' (2 pixels wide)
     (byte)0x00, //   
     (byte)0xC0, // OO
@@ -1080,7 +1035,6 @@ public class Arial24 extends Font {
     (byte)0x00, //   
     (byte)0x00, //   
     (byte)0x00, //   
-
     // @1680 'J' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0xC0, //         OO
@@ -1106,7 +1060,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @1728 'K' (15 pixels wide)
     (byte)0x00, (byte)0x00, //                
     (byte)0xC0, (byte)0x1C, // OO         OOO 
@@ -1132,7 +1085,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
-
     // @1776 'L' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0xC0, (byte)0x00, // OO         
@@ -1158,7 +1110,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @1824 'M' (17 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
     (byte)0xE0, (byte)0x03, (byte)0x80, // OOO           OOO
@@ -1184,7 +1135,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
-
     // @1896 'N' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0xC0, (byte)0x0C, // OO          OO
@@ -1210,7 +1160,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @1944 'O' (17 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
     (byte)0x07, (byte)0xF0, (byte)0x00, //      OOOOOOO     
@@ -1236,7 +1185,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
-
     // @2016 'P' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0xFF, (byte)0xE0, // OOOOOOOOOOO   
@@ -1262,7 +1210,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @2064 'Q' (17 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
     (byte)0x07, (byte)0xF0, (byte)0x00, //      OOOOOOO     
@@ -1288,7 +1235,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
-
     // @2136 'R' (15 pixels wide)
     (byte)0x00, (byte)0x00, //                
     (byte)0xFF, (byte)0xE0, // OOOOOOOOOOO    
@@ -1314,7 +1260,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
-
     // @2184 'S' (15 pixels wide)
     (byte)0x00, (byte)0x00, //                
     (byte)0x07, (byte)0xE0, //      OOOOOO    
@@ -1340,7 +1285,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
-
     // @2232 'T' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0xFF, (byte)0xFC, // OOOOOOOOOOOOOO
@@ -1366,7 +1310,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @2280 'U' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0xC0, (byte)0x0C, // OO          OO
@@ -1392,7 +1335,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @2328 'V' (15 pixels wide)
     (byte)0x00, (byte)0x00, //                
     (byte)0xC0, (byte)0x06, // OO           OO
@@ -1418,7 +1360,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
-
     // @2376 'W' (25 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, //                          
     (byte)0xC0, (byte)0x1C, (byte)0x01, (byte)0x80, // OO         OOO         OO
@@ -1444,7 +1385,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, //                          
     (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, //                          
     (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, //                          
-
     // @2472 'X' (17 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
     (byte)0x70, (byte)0x07, (byte)0x00, //  OOO         OOO 
@@ -1470,7 +1410,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
-
     // @2544 'Y' (16 pixels wide)
     (byte)0x00, (byte)0x00, //                 
     (byte)0xC0, (byte)0x07, // OO           OOO
@@ -1496,7 +1435,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
-
     // @2592 'Z' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0x7F, (byte)0xFC, //  OOOOOOOOOOOOO
@@ -1522,7 +1460,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @2640 '[' (5 pixels wide)
     (byte)0x00, //      
     (byte)0xF8, // OOOOO
@@ -1548,7 +1485,6 @@ public class Arial24 extends Font {
     (byte)0xC0, // OO   
     (byte)0xF8, // OOOOO
     (byte)0xF8, // OOOOO
-
     // @2664 '\' (7 pixels wide)
     (byte)0x00, //        
     (byte)0xC0, // OO     
@@ -1574,7 +1510,6 @@ public class Arial24 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @2688 ']' (5 pixels wide)
     (byte)0x00, //      
     (byte)0xF8, // OOOOO
@@ -1600,7 +1535,6 @@ public class Arial24 extends Font {
     (byte)0x18, //    OO
     (byte)0xF8, // OOOOO
     (byte)0xF8, // OOOOO
-
     // @2712 '^' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x0C, (byte)0x00, //     OO    
@@ -1626,7 +1560,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @2760 '_' (15 pixels wide)
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
@@ -1652,7 +1585,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //                
     (byte)0xFF, (byte)0xFE, // OOOOOOOOOOOOOOO
     (byte)0xFF, (byte)0xFE, // OOOOOOOOOOOOOOO
-
     // @2808 '`' (4 pixels wide)
     (byte)0x00, //     
     (byte)0xE0, // OOO 
@@ -1678,7 +1610,6 @@ public class Arial24 extends Font {
     (byte)0x00, //     
     (byte)0x00, //     
     (byte)0x00, //     
-
     // @2832 'a' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
@@ -1704,7 +1635,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @2880 'b' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0xC0, (byte)0x00, // OO         
@@ -1730,7 +1660,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @2928 'c' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
@@ -1756,7 +1685,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @2976 'd' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x60, //          OO
@@ -1782,7 +1710,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @3024 'e' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
@@ -1808,7 +1735,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @3072 'f' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x1E, //    OOOO
@@ -1834,7 +1760,6 @@ public class Arial24 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @3096 'g' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
@@ -1860,7 +1785,6 @@ public class Arial24 extends Font {
     (byte)0xE1, (byte)0xC0, // OOO    OOO 
     (byte)0x7F, (byte)0xC0, //  OOOOOOOOO 
     (byte)0x3F, (byte)0x00, //   OOOOOO   
-
     // @3144 'h' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0xC0, (byte)0x00, // OO        
@@ -1886,7 +1810,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @3192 'i' (2 pixels wide)
     (byte)0x00, //   
     (byte)0xC0, // OO
@@ -1912,7 +1835,6 @@ public class Arial24 extends Font {
     (byte)0x00, //   
     (byte)0x00, //   
     (byte)0x00, //   
-
     // @3216 'j' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x18, //    OO
@@ -1938,7 +1860,6 @@ public class Arial24 extends Font {
     (byte)0x18, //    OO
     (byte)0xF8, // OOOOO
     (byte)0xF0, // OOOO 
-
     // @3240 'k' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0xC0, (byte)0x00, // OO         
@@ -1964,7 +1885,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @3288 'l' (2 pixels wide)
     (byte)0x00, //   
     (byte)0xC0, // OO
@@ -1990,7 +1910,6 @@ public class Arial24 extends Font {
     (byte)0x00, //   
     (byte)0x00, //   
     (byte)0x00, //   
-
     // @3312 'm' (18 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
@@ -2016,7 +1935,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
-
     // @3384 'n' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
@@ -2042,7 +1960,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @3432 'o' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
@@ -2068,7 +1985,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @3480 'p' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
@@ -2094,7 +2010,6 @@ public class Arial24 extends Font {
     (byte)0xC0, (byte)0x00, // OO         
     (byte)0xC0, (byte)0x00, // OO         
     (byte)0xC0, (byte)0x00, // OO         
-
     // @3528 'q' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
@@ -2120,7 +2035,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x60, //          OO
     (byte)0x00, (byte)0x60, //          OO
     (byte)0x00, (byte)0x60, //          OO
-
     // @3576 'r' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x00, //       
@@ -2146,7 +2060,6 @@ public class Arial24 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @3600 's' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
@@ -2172,7 +2085,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @3648 't' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x00, //        
@@ -2198,7 +2110,6 @@ public class Arial24 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @3672 'u' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
@@ -2224,7 +2135,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @3720 'v' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
@@ -2250,7 +2160,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @3768 'w' (19 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
@@ -2276,7 +2185,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
-
     // @3840 'x' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
@@ -2302,7 +2210,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @3888 'y' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
@@ -2328,7 +2235,6 @@ public class Arial24 extends Font {
     (byte)0x18, (byte)0x00, //    OO      
     (byte)0x78, (byte)0x00, //  OOOO      
     (byte)0x70, (byte)0x00, //  OOO       
-
     // @3936 'z' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
@@ -2354,7 +2260,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @3984 '{' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x07, //      OOO
@@ -2380,7 +2285,6 @@ public class Arial24 extends Font {
     (byte)0x18, //    OO   
     (byte)0x0F, //     OOOO
     (byte)0x07, //      OOO
-
     // @4008 '|' (2 pixels wide)
     (byte)0x00, //   
     (byte)0xC0, // OO
@@ -2406,7 +2310,6 @@ public class Arial24 extends Font {
     (byte)0xC0, // OO
     (byte)0xC0, // OO
     (byte)0xC0, // OO
-
     // @4032 '}' (8 pixels wide)
     (byte)0x00, //         
     (byte)0xE0, // OOO     
@@ -2432,7 +2335,6 @@ public class Arial24 extends Font {
     (byte)0x18, //    OO   
     (byte)0xF0, // OOOO    
     (byte)0xE0, // OOO     
-
     // @4056 '~' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
@@ -2458,7 +2360,6 @@ public class Arial24 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @4104 '°' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x38, //   OOO  
@@ -2483,10 +2384,10 @@ public class Arial24 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-    (byte)0x00 //        
+    (byte)0x00, //        
 };
 
-private static final int[][] descriptors = {
+	private static final int[][] descriptors = {
     {2,0},// !
     {7,24},// "
     {14,48},// #
@@ -2584,7 +2485,7 @@ private static final int[][] descriptors = {
     {7,4104},// °
 };
 
-private static final byte[][] kerning = {
+	private static final byte[][] kerning = {
     {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,2,2,2,2,2,2,2,2,2,2,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,},
     {7,7,7,7,7,5,7,6,7,7,2,5,1,5,4,7,7,7,7,3,6,7,7,6,7,7,7,0,7,7,7,5,3,7,6,7,7,7,6,7,7,0,7,7,7,7,6,7,6,7,6,7,7,7,7,6,7,6,7,7,7,5,0,7,4,7,4,4,4,7,4,7,7,4,7,7,7,7,4,7,4,7,5,7,7,7,7,7,7,6,4,7,7,0,7,},
     {14,14,14,14,14,14,14,14,13,13,11,12,14,12,12,14,14,12,12,14,13,14,13,14,14,14,14,11,14,14,12,14,12,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,13,14,13,13,12,13,12,14,13,13,13,0,13,13,14,14,14,14,14,14,14,14,11,14,14,14,14,14,14,14,14,13,14,14,14,14,14,14,13,14,14,13,11,13,},
@@ -2679,23 +2580,24 @@ private static final byte[][] kerning = {
     {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,},
     {8,5,8,5,5,8,6,8,4,5,6,6,8,6,6,8,5,5,5,8,5,8,4,8,6,6,6,7,8,5,5,8,6,8,8,8,8,8,8,8,8,6,8,8,8,8,8,8,8,8,6,4,8,4,5,5,3,5,8,5,5,6,4,4,6,8,8,8,8,6,8,8,8,5,8,8,8,8,8,8,8,8,7,6,8,6,6,5,6,5,8,8,4,6,5,},
     {13,6,10,11,12,11,11,13,9,5,13,11,7,11,11,13,8,5,9,11,13,13,8,12,13,11,11,13,1,6,7,13,10,13,13,13,13,13,13,13,13,5,13,13,13,13,13,13,13,13,10,7,13,10,11,7,7,8,13,11,10,13,0,9,13,13,13,13,13,11,13,13,13,10,13,13,13,13,13,13,13,13,13,11,13,12,12,11,12,7,11,13,10,13,6,},
-    {7,7,6,7,7,5,7,6,5,7,2,5,1,5,3,7,7,7,7,2,6,6,6,6,7,6,6,0,6,7,7,5,2,7,6,7,7,7,6,7,7,0,7,7,7,7,6,7,6,7,6,6,7,6,6,4,5,5,7,6,6,5,0,5,4,7,3,3,3,6,3,7,6,3,7,7,6,6,3,6,3,6,4,6,6,6,6,6,6,5,4,7,6,0,7,}
-};
-
-    @Override
-    public byte[] getBitmaps() {
-        return bitmaps;
-    }
-
-    @Override
-    public int[][] getDescriptors() {
-        return descriptors;
-    }
-
-    @Override
-    public byte[][] getKerning() {
-        return kerning;
-    }
+    {7,7,6,7,7,5,7,6,5,7,2,5,1,5,3,7,7,7,7,2,6,6,6,6,7,6,6,0,6,7,7,5,2,7,6,7,7,7,6,7,7,0,7,7,7,7,6,7,6,7,6,6,7,6,6,4,5,5,7,6,6,5,0,5,4,7,3,3,3,6,3,7,6,3,7,7,6,6,3,6,3,6,4,6,6,6,6,6,6,5,4,7,6,0,7,},
 }
-// End of font
+;
+
+	@Override
+	public byte[] getBitmaps() {
+		return bitmaps;
+	}
+
+	@Override
+	public int[][] getDescriptors() {
+		return descriptors;
+	}
+
+	@Override
+	public byte[][] getKerning() {
+		return kerning;
+	}
+
+}
 

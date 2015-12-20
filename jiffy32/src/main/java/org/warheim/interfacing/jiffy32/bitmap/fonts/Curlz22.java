@@ -1,20 +1,15 @@
 package org.warheim.interfacing.jiffy32.bitmap.fonts;
-
-/**
- *
- */
-public class Curlz22 extends Font {
-
-    public Curlz22() {
-      super("Curlz 22", '!', (char)127, 22, 11, 2);
-    }
-
 // coding=utf-8
 // Module curlz_mt_22
 // generated from Curlz MT 15.75pt
 
+public class Curlz22 extends Font {
+	public Curlz22() {
+		super("Curlz MT 22", '!', (char)127, 22, 11, 2);
+	}
 
-    private static final byte[] bitmaps = {
+
+	private static final byte[] bitmaps = {
     // @0 '!' (3 pixels wide)
     (byte)0x00, //    
     (byte)0x00, //    
@@ -38,7 +33,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //    
     (byte)0x00, //    
     (byte)0x00, //    
-
     // @22 '"' (3 pixels wide)
     (byte)0x00, //    
     (byte)0x00, //    
@@ -62,7 +56,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //    
     (byte)0x00, //    
     (byte)0x00, //    
-
     // @44 '#' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
@@ -86,7 +79,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @88 '$' (6 pixels wide)
     (byte)0x10, //    O  
     (byte)0x10, //    O  
@@ -110,7 +102,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @110 '%' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
@@ -134,7 +125,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @154 '&' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x1C, (byte)0x00, //    OOO       
@@ -158,7 +148,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @198 ''' (1 pixels wide)
     (byte)0x00, //  
     (byte)0x00, //  
@@ -182,7 +171,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //  
     (byte)0x00, //  
     (byte)0x00, //  
-
     // @220 '(' (4 pixels wide)
     (byte)0x00, //     
     (byte)0x10, //    O
@@ -206,7 +194,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //     
     (byte)0x00, //     
     (byte)0x00, //     
-
     // @242 ')' (4 pixels wide)
     (byte)0x00, //     
     (byte)0x80, // O   
@@ -230,7 +217,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //     
     (byte)0x00, //     
     (byte)0x00, //     
-
     // @264 '*' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x00, //        
@@ -254,7 +240,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @286 '+' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
@@ -278,7 +263,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @330 ',' (2 pixels wide)
     (byte)0x00, //   
     (byte)0x00, //   
@@ -302,7 +286,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //   
     (byte)0x00, //   
     (byte)0x00, //   
-
     // @352 '-' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x00, //      
@@ -326,7 +309,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @374 '.' (1 pixels wide)
     (byte)0x00, //  
     (byte)0x00, //  
@@ -350,7 +332,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //  
     (byte)0x00, //  
     (byte)0x00, //  
-
     // @396 '/' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
@@ -374,7 +355,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @440 '0' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
@@ -398,7 +378,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @484 '1' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x00, //         
@@ -422,7 +401,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @506 '2' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x00, //         
@@ -446,7 +424,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @528 '3' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x00, //        
@@ -470,7 +447,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @550 '4' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
@@ -494,7 +470,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @594 '5' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x07, (byte)0x00, //      OOO 
@@ -518,7 +493,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @638 '6' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
@@ -542,7 +516,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @682 '7' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x00, //        
@@ -566,7 +539,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @704 '8' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x00, //        
@@ -590,7 +562,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @726 '9' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x00, //         
@@ -614,7 +585,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @748 ':' (2 pixels wide)
     (byte)0x00, //   
     (byte)0x00, //   
@@ -638,7 +608,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //   
     (byte)0x00, //   
     (byte)0x00, //   
-
     // @770 ';' (2 pixels wide)
     (byte)0x00, //   
     (byte)0x00, //   
@@ -662,7 +631,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //   
     (byte)0x00, //   
     (byte)0x00, //   
-
     // @792 '<' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
@@ -686,7 +654,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @836 '=' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
@@ -710,7 +677,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @880 '>' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
@@ -734,7 +700,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @924 '?' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x00, //        
@@ -758,7 +723,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @946 '@' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
@@ -782,7 +746,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @990 'A' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
@@ -806,7 +769,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @1034 'B' (10 pixels wide)
     (byte)0x08, (byte)0x00, //     O     
     (byte)0x08, (byte)0x00, //     O     
@@ -830,7 +792,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @1078 'C' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
@@ -854,7 +815,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @1122 'D' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
@@ -878,7 +838,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @1166 'E' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
@@ -902,7 +861,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @1210 'F' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x00, //        
@@ -926,7 +884,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @1232 'G' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
@@ -950,7 +907,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0xC0, //         OO   
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @1276 'H' (14 pixels wide)
     (byte)0x00, (byte)0x38, //           OOO 
     (byte)0x00, (byte)0x74, //          OOO O
@@ -974,7 +930,6 @@ public class Curlz22 extends Font {
     (byte)0x60, (byte)0x00, //  OO           
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @1320 'I' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x00, //      
@@ -998,7 +953,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @1342 'J' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x00, //         
@@ -1022,7 +976,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @1364 'K' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
@@ -1046,7 +999,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @1408 'L' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
@@ -1070,7 +1022,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @1452 'M' (16 pixels wide)
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
@@ -1094,7 +1045,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
-
     // @1496 'N' (16 pixels wide)
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x0F, //             OOOO
@@ -1118,7 +1068,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
-
     // @1540 'O' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
@@ -1142,7 +1091,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @1584 'P' (12 pixels wide)
     (byte)0x08, (byte)0x00, //     O       
     (byte)0x08, (byte)0x00, //     O       
@@ -1166,7 +1114,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @1628 'Q' (15 pixels wide)
     (byte)0x00, (byte)0x00, //                
     (byte)0x04, (byte)0x00, //      O         
@@ -1190,7 +1137,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
-
     // @1672 'R' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
@@ -1214,7 +1160,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @1716 'S' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x00, //         
@@ -1238,7 +1183,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @1738 'T' (11 pixels wide)
     (byte)0x00, (byte)0xC0, //         OO 
     (byte)0x01, (byte)0xA0, //        OO O
@@ -1262,7 +1206,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @1782 'U' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
@@ -1286,7 +1229,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @1826 'V' (15 pixels wide)
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
@@ -1310,7 +1252,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
-
     // @1870 'W' (19 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
@@ -1334,7 +1275,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
-
     // @1936 'X' (13 pixels wide)
     (byte)0x00, (byte)0xC0, //         OO   
     (byte)0x7C, (byte)0x30, //  OOOOO    OO 
@@ -1358,7 +1298,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @1980 'Y' (15 pixels wide)
     (byte)0x00, (byte)0x00, //                
     (byte)0x70, (byte)0x00, //  OOO           
@@ -1382,7 +1321,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
-
     // @2024 'Z' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
@@ -1406,7 +1344,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @2068 '[' (3 pixels wide)
     (byte)0x00, //    
     (byte)0xE0, // OOO
@@ -1430,7 +1367,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //    
     (byte)0x00, //    
     (byte)0x00, //    
-
     // @2090 '\' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
@@ -1454,7 +1390,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @2134 ']' (3 pixels wide)
     (byte)0x00, //    
     (byte)0xE0, // OOO
@@ -1478,7 +1413,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //    
     (byte)0x00, //    
     (byte)0x00, //    
-
     // @2156 '^' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
@@ -1502,7 +1436,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @2200 '_' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
@@ -1526,7 +1459,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0xFF, (byte)0xE0, // OOOOOOOOOOO
-
     // @2244 '`' (4 pixels wide)
     (byte)0x00, //     
     (byte)0x00, //     
@@ -1550,7 +1482,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //     
     (byte)0x00, //     
     (byte)0x00, //     
-
     // @2266 'a' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x00, //       
@@ -1574,7 +1505,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @2288 'b' (9 pixels wide)
     (byte)0x10, (byte)0x00, //    O     
     (byte)0x60, (byte)0x00, //  OO      
@@ -1598,7 +1528,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @2332 'c' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x00, //        
@@ -1622,7 +1551,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @2354 'd' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x0E, //     OOO
@@ -1646,7 +1574,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @2376 'e' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x00, //        
@@ -1670,7 +1597,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @2398 'f' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x38, //   OOO 
@@ -1694,7 +1620,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @2420 'g' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x00, //         
@@ -1718,7 +1643,6 @@ public class Curlz22 extends Font {
     (byte)0x7C, //  OOOOO  
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @2442 'h' (9 pixels wide)
     (byte)0x20, (byte)0x00, //   O      
     (byte)0xC0, (byte)0x00, // OO       
@@ -1742,7 +1666,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @2486 'i' (4 pixels wide)
     (byte)0x00, //     
     (byte)0x00, //     
@@ -1766,7 +1689,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //     
     (byte)0x00, //     
     (byte)0x00, //     
-
     // @2508 'j' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x0C, //     OO
@@ -1790,7 +1712,6 @@ public class Curlz22 extends Font {
     (byte)0x70, //  OOO  
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @2530 'k' (10 pixels wide)
     (byte)0x70, (byte)0x00, //  OOO      
     (byte)0x20, (byte)0x00, //   O       
@@ -1814,7 +1735,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @2574 'l' (4 pixels wide)
     (byte)0x00, //     
     (byte)0xE0, // OOO 
@@ -1838,7 +1758,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //     
     (byte)0x00, //     
     (byte)0x00, //     
-
     // @2596 'm' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
@@ -1862,7 +1781,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @2640 'n' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
@@ -1886,7 +1804,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @2684 'o' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x00, //         
@@ -1910,7 +1827,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @2706 'p' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
@@ -1934,7 +1850,6 @@ public class Curlz22 extends Font {
     (byte)0xF0, (byte)0x00, // OOOO     
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @2750 'q' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
@@ -1958,7 +1873,6 @@ public class Curlz22 extends Font {
     (byte)0x07, (byte)0xC0, //      OOOOO
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @2794 'r' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
@@ -1982,7 +1896,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @2838 's' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x00, //      
@@ -2006,7 +1919,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @2860 't' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x00, //       
@@ -2030,7 +1942,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @2882 'u' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x00, //         
@@ -2054,7 +1965,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @2904 'v' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
@@ -2078,7 +1988,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @2948 'w' (15 pixels wide)
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
@@ -2102,7 +2011,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
-
     // @2992 'x' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
@@ -2126,7 +2034,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @3036 'y' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x00, //         
@@ -2150,7 +2057,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @3058 'z' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x00, //         
@@ -2174,7 +2080,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @3080 '{' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x00, //       
@@ -2198,7 +2103,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @3102 '|' (1 pixels wide)
     (byte)0x80, // O
     (byte)0x80, // O
@@ -2222,7 +2126,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //  
     (byte)0x00, //  
     (byte)0x00, //  
-
     // @3124 '}' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x00, //      
@@ -2246,7 +2149,6 @@ public class Curlz22 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @3146 '~' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
@@ -2270,7 +2172,6 @@ public class Curlz22 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @3190 '°' (4 pixels wide)
     (byte)0x00, //     
     (byte)0x00, //     
@@ -2296,7 +2197,7 @@ public class Curlz22 extends Font {
     (byte)0x00, //     
 };
 
-private static final int[][] descriptors = {
+	private static final int[][] descriptors = {
     {3,0},// !
     {3,22},// "
     {9,44},// #
@@ -2394,7 +2295,7 @@ private static final int[][] descriptors = {
     {4,3190},// °
 };
 
-private static final byte[][] kerning = {
+	private static final byte[][] kerning = {
     {3,3,3,3,3,3,3,3,2,2,2,3,2,3,2,2,3,3,3,3,3,2,3,3,3,3,3,2,2,3,3,2,3,3,2,3,3,3,2,1,3,3,3,3,3,3,2,3,2,3,3,3,2,3,3,3,3,3,3,3,1,1,0,3,3,3,2,2,3,3,2,2,3,0,3,3,3,3,2,1,2,1,2,2,3,2,2,3,2,3,2,3,3,2,3,},
     {2,3,3,3,3,2,3,2,2,2,0,1,0,2,0,2,3,2,3,3,3,1,3,3,3,1,1,0,0,3,3,1,0,3,2,3,3,3,2,1,3,0,3,3,3,1,2,3,2,3,3,3,2,3,3,0,3,2,3,3,1,0,0,3,0,1,0,0,0,3,0,2,3,0,1,2,0,2,0,0,0,0,0,1,0,0,0,0,0,2,2,3,3,0,3,},
     {8,9,9,9,9,8,9,8,7,7,6,7,6,8,3,8,6,8,8,9,9,8,9,9,9,7,7,7,8,7,9,8,5,8,8,9,8,8,8,6,7,5,7,7,8,4,8,9,8,7,9,9,8,6,6,5,8,8,9,7,7,6,0,6,8,7,7,7,7,9,8,8,7,5,7,8,7,8,7,6,7,7,8,7,8,6,8,6,6,8,8,9,6,5,8,},
@@ -2490,23 +2391,23 @@ private static final byte[][] kerning = {
     {4,4,4,4,4,4,4,5,3,3,3,4,3,4,2,5,4,4,4,4,4,5,4,4,4,4,4,5,3,4,4,5,4,4,5,4,4,4,5,2,3,4,4,3,4,4,5,4,5,4,4,4,5,4,4,4,4,4,5,3,3,3,0,3,5,4,5,5,4,4,5,3,4,2,3,4,4,4,5,3,5,3,5,3,4,3,3,4,3,3,5,5,4,3,4,},
     {10,8,10,9,8,10,10,11,8,4,11,9,11,10,7,11,6,8,10,11,9,11,9,9,10,9,9,11,9,3,8,11,8,7,11,7,10,10,11,8,9,10,9,9,7,8,11,7,11,9,10,6,11,6,6,9,4,7,11,7,9,10,0,7,11,10,11,11,11,11,11,9,10,8,9,10,10,10,11,9,11,9,11,9,10,9,8,8,9,6,11,11,9,10,7,},
     {3,4,3,4,3,3,4,3,3,3,0,2,0,3,0,2,4,3,4,4,4,2,4,4,3,2,2,0,0,4,4,1,0,4,2,3,4,4,2,1,3,0,4,3,4,1,2,4,3,4,4,3,3,4,4,1,4,2,4,3,2,0,0,3,0,2,0,0,0,4,0,3,4,1,2,3,0,2,0,0,0,0,0,2,0,0,0,0,0,2,3,4,4,0,4,},
-};
-
-    @Override
-    public byte[] getBitmaps() {
-        return bitmaps;
-    }
-
-    @Override
-    public int[][] getDescriptors() {
-        return descriptors;
-    }
-
-    @Override
-    public byte[][] getKerning() {
-        return kerning;
-    }
 }
+;
 
-// End of font
+	@Override
+	public byte[] getBitmaps() {
+		return bitmaps;
+	}
+
+	@Override
+	public int[][] getDescriptors() {
+		return descriptors;
+	}
+
+	@Override
+	public byte[][] getKerning() {
+		return kerning;
+	}
+
+}
 

@@ -1,20 +1,15 @@
 package org.warheim.interfacing.jiffy32.bitmap.fonts;
-
-/**
- *
- */
-public class ArialNarrow16 extends Font {
-
-    public ArialNarrow16() {
-      super("Arial narrow 16", '!', (char)127, 16, 8, 2);
-    }
-
 // coding=utf-8
 // Module arial_narrow_16
 // generated from Arial Narrow 12pt
 
-    private static final byte[] bitmaps = {
+public class ArialNarrow16 extends Font {
+	public ArialNarrow16() {
+		super("Arial Narrow 16", '!', (char)127, 16, 8, 2);
+	}
 
+
+	private static final byte[] bitmaps = {
     // @0 '!' (1 pixels wide)
     (byte)0x00, //  
     (byte)0x80, // O
@@ -32,7 +27,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //  
     (byte)0x00, //  
     (byte)0x00, //  
-
     // @16 '"' (3 pixels wide)
     (byte)0x00, //    
     (byte)0xA0, // O O
@@ -50,7 +44,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //    
     (byte)0x00, //    
     (byte)0x00, //    
-
     // @32 '#' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x12, //    O  O 
@@ -68,7 +61,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @48 '$' (6 pixels wide)
     (byte)0x10, //    O  
     (byte)0x78, //  OOOO 
@@ -86,7 +78,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @64 '%' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x61, (byte)0x00, //  OO    O  
@@ -104,7 +95,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @96 '&' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x30, //   OO    
@@ -122,7 +112,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @112 ''' (1 pixels wide)
     (byte)0x00, //  
     (byte)0x80, // O
@@ -140,7 +129,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //  
     (byte)0x00, //  
     (byte)0x00, //  
-
     // @128 '(' (3 pixels wide)
     (byte)0x00, //    
     (byte)0x20, //   O
@@ -158,7 +146,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x40, //  O 
     (byte)0x20, //   O
     (byte)0x00, //    
-
     // @144 ')' (3 pixels wide)
     (byte)0x00, //    
     (byte)0x80, // O  
@@ -176,7 +163,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x40, //  O 
     (byte)0x80, // O  
     (byte)0x00, //    
-
     // @160 '*' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x20, //   O  
@@ -194,7 +180,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @176 '+' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x00, //        
@@ -212,7 +197,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @192 ',' (2 pixels wide)
     (byte)0x00, //   
     (byte)0x00, //   
@@ -230,7 +214,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x80, // O 
     (byte)0x00, //   
     (byte)0x00, //   
-
     // @208 '-' (4 pixels wide)
     (byte)0x00, //     
     (byte)0x00, //     
@@ -248,7 +231,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //     
     (byte)0x00, //     
     (byte)0x00, //     
-
     // @224 '.' (1 pixels wide)
     (byte)0x00, //  
     (byte)0x00, //  
@@ -266,7 +248,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //  
     (byte)0x00, //  
     (byte)0x00, //  
-
     // @240 '/' (4 pixels wide)
     (byte)0x00, //     
     (byte)0x10, //    O
@@ -284,7 +265,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //     
     (byte)0x00, //     
     (byte)0x00, //     
-
     // @256 '0' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x30, //   OO  
@@ -302,7 +282,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @272 '1' (3 pixels wide)
     (byte)0x00, //    
     (byte)0x20, //   O
@@ -320,7 +299,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //    
     (byte)0x00, //    
     (byte)0x00, //    
-
     // @288 '2' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x70, //  OOO  
@@ -338,7 +316,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @304 '3' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x70, //  OOO  
@@ -356,7 +333,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @320 '4' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x08, //     O 
@@ -374,7 +350,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @336 '5' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x7C, //  OOOOO
@@ -392,7 +367,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @352 '6' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x38, //   OOO 
@@ -410,7 +384,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @368 '7' (6 pixels wide)
     (byte)0x00, //       
     (byte)0xFC, // OOOOOO
@@ -428,7 +401,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @384 '8' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x30, //   OO  
@@ -446,7 +418,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @400 '9' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x30, //   OO  
@@ -464,7 +435,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @416 ':' (1 pixels wide)
     (byte)0x00, //  
     (byte)0x00, //  
@@ -482,7 +452,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //  
     (byte)0x00, //  
     (byte)0x00, //  
-
     // @432 ';' (2 pixels wide)
     (byte)0x00, //   
     (byte)0x00, //   
@@ -500,7 +469,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x80, // O 
     (byte)0x00, //   
     (byte)0x00, //   
-
     // @448 '<' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x00, //       
@@ -518,7 +486,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @464 '=' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x00, //       
@@ -536,7 +503,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @480 '>' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x00, //       
@@ -554,7 +520,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @496 '?' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x78, //  OOOO 
@@ -572,7 +537,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @512 '@' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x0F, (byte)0x00, //     OOOO   
@@ -590,7 +554,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x10, (byte)0xC0, //    O    OO 
     (byte)0x0F, (byte)0x00, //     OOOO   
     (byte)0x00, (byte)0x00, //            
-
     // @544 'A' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x08, (byte)0x00, //     O    
@@ -608,7 +571,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @576 'B' (7 pixels wide)
     (byte)0x00, //        
     (byte)0xFC, // OOOOOO 
@@ -626,7 +588,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @592 'C' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x38, //   OOO  
@@ -644,7 +605,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @608 'D' (7 pixels wide)
     (byte)0x00, //        
     (byte)0xF8, // OOOOO  
@@ -662,7 +622,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @624 'E' (7 pixels wide)
     (byte)0x00, //        
     (byte)0xFE, // OOOOOOO
@@ -680,7 +639,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @640 'F' (6 pixels wide)
     (byte)0x00, //       
     (byte)0xFC, // OOOOOO
@@ -698,7 +656,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @656 'G' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x3C, //   OOOO  
@@ -716,7 +673,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @672 'H' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x82, // O     O
@@ -734,7 +690,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @688 'I' (1 pixels wide)
     (byte)0x00, //  
     (byte)0x80, // O
@@ -752,7 +707,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //  
     (byte)0x00, //  
     (byte)0x00, //  
-
     // @704 'J' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x08, //     O
@@ -770,7 +724,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @720 'K' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x82, // O     O
@@ -788,7 +741,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @736 'L' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x80, // O     
@@ -806,7 +758,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @752 'M' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0xC1, (byte)0x80, // OO     OO
@@ -824,7 +775,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @784 'N' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x82, // O     O
@@ -842,7 +792,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @800 'O' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x3C, //   OOOO  
@@ -860,7 +809,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @816 'P' (7 pixels wide)
     (byte)0x00, //        
     (byte)0xFC, // OOOOOO 
@@ -878,7 +826,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @832 'Q' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x3C, //   OOOO  
@@ -896,7 +843,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @848 'R' (8 pixels wide)
     (byte)0x00, //         
     (byte)0xFC, // OOOOOO  
@@ -914,7 +860,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @864 'S' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x38, //   OOO  
@@ -932,7 +877,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @880 'T' (7 pixels wide)
     (byte)0x00, //        
     (byte)0xFE, // OOOOOOO
@@ -950,7 +894,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @896 'U' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x82, // O     O
@@ -968,7 +911,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @912 'V' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x80, (byte)0x80, // O       O
@@ -986,7 +928,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @944 'W' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x84, (byte)0x20, // O    O    O
@@ -1004,7 +945,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @976 'X' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x81, // O      O
@@ -1022,7 +962,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @992 'Y' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x80, (byte)0x80, // O       O
@@ -1040,7 +979,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @1024 'Z' (7 pixels wide)
     (byte)0x00, //        
     (byte)0xFE, // OOOOOOO
@@ -1058,7 +996,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @1040 '[' (2 pixels wide)
     (byte)0x00, //   
     (byte)0xC0, // OO
@@ -1076,7 +1013,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x80, // O 
     (byte)0xC0, // OO
     (byte)0x00, //   
-
     // @1056 '\' (4 pixels wide)
     (byte)0x00, //     
     (byte)0x80, // O   
@@ -1094,7 +1030,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //     
     (byte)0x00, //     
     (byte)0x00, //     
-
     // @1072 ']' (2 pixels wide)
     (byte)0x00, //   
     (byte)0xC0, // OO
@@ -1112,7 +1047,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x40, //  O
     (byte)0xC0, // OO
     (byte)0x00, //   
-
     // @1088 '^' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x20, //   O  
@@ -1130,7 +1064,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @1104 '_' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x00, //        
@@ -1148,7 +1081,6 @@ public class ArialNarrow16 extends Font {
     (byte)0xFE, // OOOOOOO
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @1120 '`' (2 pixels wide)
     (byte)0x00, //   
     (byte)0x80, // O 
@@ -1166,7 +1098,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //   
     (byte)0x00, //   
     (byte)0x00, //   
-
     // @1136 'a' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x00, //      
@@ -1184,7 +1115,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @1152 'b' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x80, // O     
@@ -1202,7 +1132,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @1168 'c' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x00, //      
@@ -1220,7 +1149,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @1184 'd' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x04, //      O
@@ -1238,7 +1166,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @1200 'e' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x00, //       
@@ -1256,7 +1183,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @1216 'f' (3 pixels wide)
     (byte)0x00, //    
     (byte)0x60, //  OO
@@ -1274,7 +1200,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //    
     (byte)0x00, //    
     (byte)0x00, //    
-
     // @1232 'g' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x00, //       
@@ -1292,7 +1217,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x88, // O   O 
     (byte)0x70, //  OOO  
     (byte)0x00, //       
-
     // @1248 'h' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x80, // O    
@@ -1310,7 +1234,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @1264 'i' (1 pixels wide)
     (byte)0x00, //  
     (byte)0x80, // O
@@ -1328,7 +1251,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //  
     (byte)0x00, //  
     (byte)0x00, //  
-
     // @1280 'j' (2 pixels wide)
     (byte)0x00, //   
     (byte)0x40, //  O
@@ -1346,7 +1268,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x40, //  O
     (byte)0xC0, // OO
     (byte)0x00, //   
-
     // @1296 'k' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x80, // O    
@@ -1364,7 +1285,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @1312 'l' (1 pixels wide)
     (byte)0x00, //  
     (byte)0x80, // O
@@ -1382,7 +1302,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //  
     (byte)0x00, //  
     (byte)0x00, //  
-
     // @1328 'm' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
@@ -1400,7 +1319,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @1360 'n' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x00, //      
@@ -1418,7 +1336,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @1376 'o' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x00, //       
@@ -1436,7 +1353,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @1392 'p' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x00, //       
@@ -1454,7 +1370,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x80, // O     
     (byte)0x80, // O     
     (byte)0x00, //       
-
     // @1408 'q' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x00, //       
@@ -1472,7 +1387,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x04, //      O
     (byte)0x04, //      O
     (byte)0x00, //       
-
     // @1424 'r' (3 pixels wide)
     (byte)0x00, //    
     (byte)0x00, //    
@@ -1490,7 +1404,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //    
     (byte)0x00, //    
     (byte)0x00, //    
-
     // @1440 's' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x00, //      
@@ -1508,7 +1421,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @1456 't' (3 pixels wide)
     (byte)0x00, //    
     (byte)0x40, //  O 
@@ -1526,7 +1438,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //    
     (byte)0x00, //    
     (byte)0x00, //    
-
     // @1472 'u' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x00, //      
@@ -1544,7 +1455,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @1488 'v' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x00, //        
@@ -1562,7 +1472,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @1504 'w' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
@@ -1580,7 +1489,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @1536 'x' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x00, //      
@@ -1598,7 +1506,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @1552 'y' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x00, //        
@@ -1616,7 +1523,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x10, //    O   
     (byte)0x60, //  OO    
     (byte)0x00, //        
-
     // @1568 'z' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x00, //      
@@ -1634,7 +1540,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @1584 '{' (3 pixels wide)
     (byte)0x00, //    
     (byte)0x60, //  OO
@@ -1652,7 +1557,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x40, //  O 
     (byte)0x60, //  OO
     (byte)0x00, //    
-
     // @1600 '|' (1 pixels wide)
     (byte)0x00, //  
     (byte)0x80, // O
@@ -1670,7 +1574,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x80, // O
     (byte)0x80, // O
     (byte)0x80, // O
-
     // @1616 '}' (3 pixels wide)
     (byte)0x00, //    
     (byte)0xC0, // OO 
@@ -1688,7 +1591,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x40, //  O 
     (byte)0xC0, // OO 
     (byte)0x00, //    
-
     // @1632 '~' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x00, //        
@@ -1706,7 +1608,6 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @1648 '°' (4 pixels wide)
     (byte)0x00, //     
     (byte)0x60, //  OO 
@@ -1723,10 +1624,10 @@ public class ArialNarrow16 extends Font {
     (byte)0x00, //     
     (byte)0x00, //     
     (byte)0x00, //     
-    (byte)0x00 //     
+    (byte)0x00, //     
 };
 
-private static final int[][] descriptors = {
+	private static final int[][] descriptors = {
     {1,0},// !
     {3,16},// "
     {8,32},// #
@@ -1821,10 +1722,10 @@ private static final int[][] descriptors = {
     {1,1600},// |
     {3,1616},// }
     {7,1632},// ~
-    {4,1648}// °
+    {4,1648},// °
 };
 
-private static final byte[][] kerning = {
+	private static final byte[][] kerning = {
     {1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,},
     {3,3,3,3,3,2,3,3,3,3,0,1,0,2,1,3,3,3,3,1,3,3,3,3,3,3,2,0,0,3,3,2,0,3,3,3,3,3,3,3,3,0,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,0,3,2,3,1,1,1,3,1,3,3,2,3,3,3,3,1,3,1,3,2,3,3,3,3,3,3,3,2,3,3,0,3,},
     {8,8,8,8,8,8,8,8,7,7,6,6,8,7,7,8,8,7,7,8,8,8,7,8,8,8,7,6,8,7,7,8,7,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,7,8,7,8,7,7,7,8,7,7,7,1,7,7,8,8,8,8,8,8,8,8,7,8,8,8,8,8,8,8,8,7,8,8,8,8,8,8,8,8,8,7,6,7,},
@@ -1919,24 +1820,24 @@ private static final byte[][] kerning = {
     {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,},
     {3,2,3,2,2,3,2,3,2,2,2,2,3,2,2,3,2,2,2,3,2,3,2,3,2,2,2,2,3,2,2,3,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,3,2,2,2,2,2,3,2,2,2,2,2,2,3,3,3,3,2,3,3,3,2,3,3,3,3,3,3,3,3,2,2,3,2,2,2,2,2,3,3,2,2,2,},
     {7,4,5,6,7,6,6,7,5,6,7,5,3,6,5,7,5,3,5,6,7,7,5,6,7,6,5,7,7,4,3,7,5,7,7,7,7,7,7,7,7,3,7,7,7,7,7,7,7,7,6,4,7,5,6,4,4,4,7,6,6,7,0,5,7,7,7,7,7,6,7,7,7,6,7,7,7,7,7,7,7,7,7,6,7,6,7,6,6,4,6,7,6,7,3,},
-    {4,4,3,4,4,3,4,3,3,4,1,2,0,3,1,4,3,4,4,1,3,4,3,4,4,3,2,0,0,4,4,2,1,4,4,4,4,4,4,4,4,0,4,4,4,4,4,4,4,4,4,3,4,3,4,3,3,3,4,4,3,3,0,3,2,4,1,1,1,3,1,4,3,2,4,4,3,3,1,3,1,3,2,3,3,3,3,3,3,3,3,4,3,0,4,}
-};
+    {4,4,3,4,4,3,4,3,3,4,1,2,0,3,1,4,3,4,4,1,3,4,3,4,4,3,2,0,0,4,4,2,1,4,4,4,4,4,4,4,4,0,4,4,4,4,4,4,4,4,4,3,4,3,4,3,3,3,4,4,3,3,0,3,2,4,1,1,1,3,1,4,3,2,4,4,3,3,1,3,1,3,2,3,3,3,3,3,3,3,3,4,3,0,4,},
+}
+;
 
-    @Override
-    public byte[] getBitmaps() {
-        return bitmaps;
-    }
+	@Override
+	public byte[] getBitmaps() {
+		return bitmaps;
+	}
 
-    @Override
-    public int[][] getDescriptors() {
-        return descriptors;
-    }
+	@Override
+	public int[][] getDescriptors() {
+		return descriptors;
+	}
 
-    @Override
-    public byte[][] getKerning() {
-        return kerning;
-    }
+	@Override
+	public byte[][] getKerning() {
+		return kerning;
+	}
 
 }
-// End of font
 

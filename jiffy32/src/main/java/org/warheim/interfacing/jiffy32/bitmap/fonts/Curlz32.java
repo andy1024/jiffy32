@@ -1,21 +1,15 @@
 package org.warheim.interfacing.jiffy32.bitmap.fonts;
-
-/**
- *
- */
-public class Curlz32 extends Font {
-
-    public Curlz32() {
-      super("Curlz 32", '!', (char)127, 32, 16, 4);
-    }
-
 // coding=utf-8
 // Module curlz_mt_32
 // generated from Curlz MT 21.75pt
 
+public class Curlz32 extends Font {
+	public Curlz32() {
+		super("Curlz MT 32", '!', (char)127, 32, 16, 4);
+	}
 
-    private static final byte[] bitmaps = {
 
+	private static final byte[] bitmaps = {
     // @0 '!' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x00, //      
@@ -49,7 +43,6 @@ public class Curlz32 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @32 '"' (4 pixels wide)
     (byte)0x00, //     
     (byte)0x00, //     
@@ -83,7 +76,6 @@ public class Curlz32 extends Font {
     (byte)0x00, //     
     (byte)0x00, //     
     (byte)0x00, //     
-
     // @64 '#' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
@@ -117,7 +109,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @128 '$' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x0C, //     OO  
@@ -151,7 +142,6 @@ public class Curlz32 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @160 '%' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
@@ -185,7 +175,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @224 '&' (19 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
@@ -219,7 +208,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
-
     // @320 ''' (2 pixels wide)
     (byte)0x00, //   
     (byte)0x00, //   
@@ -253,7 +241,6 @@ public class Curlz32 extends Font {
     (byte)0x00, //   
     (byte)0x00, //   
     (byte)0x00, //   
-
     // @352 '(' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x00, //      
@@ -287,7 +274,6 @@ public class Curlz32 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @384 ')' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x00, //      
@@ -321,7 +307,6 @@ public class Curlz32 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @416 '*' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
@@ -355,7 +340,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @480 '+' (15 pixels wide)
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
@@ -389,7 +373,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
-
     // @544 ',' (3 pixels wide)
     (byte)0x00, //    
     (byte)0x00, //    
@@ -423,7 +406,6 @@ public class Curlz32 extends Font {
     (byte)0x00, //    
     (byte)0x00, //    
     (byte)0x00, //    
-
     // @576 '-' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x00, //         
@@ -457,7 +439,6 @@ public class Curlz32 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @608 '.' (2 pixels wide)
     (byte)0x00, //   
     (byte)0x00, //   
@@ -491,7 +472,6 @@ public class Curlz32 extends Font {
     (byte)0x00, //   
     (byte)0x00, //   
     (byte)0x00, //   
-
     // @640 '/' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
@@ -525,7 +505,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @704 '0' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
@@ -559,7 +538,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @768 '1' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
@@ -593,7 +571,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @832 '2' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
@@ -627,7 +604,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @896 '3' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
@@ -661,7 +637,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @960 '4' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
@@ -695,7 +670,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @1024 '5' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
@@ -729,7 +703,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @1088 '6' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
@@ -763,7 +736,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @1152 '7' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
@@ -797,7 +769,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @1216 '8' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
@@ -831,7 +802,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @1280 '9' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
@@ -865,7 +835,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @1344 ':' (2 pixels wide)
     (byte)0x00, //   
     (byte)0x00, //   
@@ -899,7 +868,6 @@ public class Curlz32 extends Font {
     (byte)0x00, //   
     (byte)0x00, //   
     (byte)0x00, //   
-
     // @1376 ';' (3 pixels wide)
     (byte)0x00, //    
     (byte)0x00, //    
@@ -933,7 +901,6 @@ public class Curlz32 extends Font {
     (byte)0x00, //    
     (byte)0x00, //    
     (byte)0x00, //    
-
     // @1408 '<' (16 pixels wide)
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
@@ -967,7 +934,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
-
     // @1472 '=' (15 pixels wide)
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
@@ -1001,7 +967,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
-
     // @1536 '>' (16 pixels wide)
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
@@ -1035,7 +1000,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
-
     // @1600 '?' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
@@ -1069,7 +1033,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @1664 '@' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
@@ -1103,7 +1066,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @1728 'A' (19 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
@@ -1137,7 +1099,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
-
     // @1824 'B' (16 pixels wide)
     (byte)0x00, (byte)0x00, //                 
     (byte)0x01, (byte)0x80, //        OO       
@@ -1171,7 +1132,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
-
     // @1888 'C' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
@@ -1205,7 +1165,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @1952 'D' (18 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
@@ -1239,7 +1198,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
-
     // @2048 'E' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
@@ -1273,7 +1231,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @2112 'F' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
@@ -1307,7 +1264,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @2176 'G' (18 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
@@ -1341,7 +1297,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
-
     // @2272 'H' (21 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                      
     (byte)0x00, (byte)0x00, (byte)0xF0, //                 OOOO 
@@ -1375,7 +1330,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                      
     (byte)0x00, (byte)0x00, (byte)0x00, //                      
     (byte)0x00, (byte)0x00, (byte)0x00, //                      
-
     // @2368 'I' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x00, //        
@@ -1409,7 +1363,6 @@ public class Curlz32 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @2400 'J' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
@@ -1443,7 +1396,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @2464 'K' (18 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
@@ -1477,7 +1429,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
-
     // @2560 'L' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
@@ -1511,7 +1462,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @2624 'M' (24 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                         
     (byte)0x00, (byte)0x00, (byte)0x00, //                         
@@ -1545,7 +1495,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                         
     (byte)0x00, (byte)0x00, (byte)0x00, //                         
     (byte)0x00, (byte)0x00, (byte)0x00, //                         
-
     // @2720 'N' (23 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                        
     (byte)0x00, (byte)0x00, (byte)0x00, //                        
@@ -1579,7 +1528,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                        
     (byte)0x00, (byte)0x00, (byte)0x00, //                        
     (byte)0x00, (byte)0x00, (byte)0x00, //                        
-
     // @2816 'O' (18 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
@@ -1613,7 +1561,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
-
     // @2912 'P' (16 pixels wide)
     (byte)0x03, (byte)0x80, //       OOO       
     (byte)0x03, (byte)0x00, //       OO        
@@ -1647,7 +1594,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
-
     // @2976 'Q' (21 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                      
     (byte)0x00, (byte)0x00, (byte)0x00, //                      
@@ -1681,7 +1627,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                      
     (byte)0x00, (byte)0x00, (byte)0x00, //                      
     (byte)0x00, (byte)0x00, (byte)0x00, //                      
-
     // @3072 'R' (17 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
@@ -1715,7 +1660,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
-
     // @3168 'S' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
@@ -1749,7 +1693,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @3232 'T' (16 pixels wide)
     (byte)0x00, (byte)0x3C, //           OOOO  
     (byte)0x00, (byte)0x5B, //          O OO OO
@@ -1783,7 +1726,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
-
     // @3296 'U' (15 pixels wide)
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
@@ -1817,7 +1759,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
-
     // @3360 'V' (20 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                     
     (byte)0x00, (byte)0x00, (byte)0x00, //                     
@@ -1851,7 +1792,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                     
     (byte)0x00, (byte)0x00, (byte)0x00, //                     
     (byte)0x00, (byte)0x00, (byte)0x00, //                     
-
     // @3456 'W' (26 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, //                           
     (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, //                           
@@ -1885,7 +1825,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, //                           
     (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, //                           
     (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, //                           
-
     // @3584 'X' (18 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
@@ -1919,7 +1858,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
     (byte)0x00, (byte)0x00, (byte)0x00, //                   
-
     // @3680 'Y' (22 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                       
     (byte)0x00, (byte)0x00, (byte)0x00, //                       
@@ -1953,7 +1891,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                       
     (byte)0x00, (byte)0x00, (byte)0x00, //                       
     (byte)0x00, (byte)0x00, (byte)0x00, //                       
-
     // @3776 'Z' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
@@ -1987,7 +1924,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @3840 '[' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x00, //      
@@ -2021,7 +1957,6 @@ public class Curlz32 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @3872 '\' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
@@ -2055,7 +1990,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @3936 ']' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x00, //      
@@ -2089,7 +2023,6 @@ public class Curlz32 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @3968 '^' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
@@ -2123,7 +2056,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @4032 '_' (15 pixels wide)
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
@@ -2157,7 +2089,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
     (byte)0xFF, (byte)0xFE, // OOOOOOOOOOOOOOO
-
     // @4096 '`' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x00, //      
@@ -2191,7 +2122,6 @@ public class Curlz32 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @4128 'a' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
@@ -2225,7 +2155,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @4192 'b' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x0C, (byte)0x00, //     OO      
@@ -2259,7 +2188,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @4256 'c' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
@@ -2293,7 +2221,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @4320 'd' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
@@ -2327,7 +2254,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @4384 'e' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
@@ -2361,7 +2287,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @4448 'f' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x00, //         
@@ -2395,7 +2320,6 @@ public class Curlz32 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @4480 'g' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
@@ -2429,7 +2353,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @4544 'h' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0x0C, (byte)0x00, //     OO        
@@ -2463,7 +2386,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @4608 'i' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x00, //        
@@ -2497,7 +2419,6 @@ public class Curlz32 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @4640 'j' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x00, //         
@@ -2531,7 +2452,6 @@ public class Curlz32 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @4672 'k' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x7E, (byte)0x00, //  OOOOOO    
@@ -2565,7 +2485,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @4736 'l' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x08, //     O  
@@ -2599,7 +2518,6 @@ public class Curlz32 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @4768 'm' (19 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
@@ -2633,7 +2551,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
-
     // @4864 'n' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
@@ -2667,7 +2584,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @4928 'o' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
@@ -2701,7 +2617,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @4992 'p' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
@@ -2735,7 +2650,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @5056 'q' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
@@ -2769,7 +2683,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @5120 'r' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
@@ -2803,7 +2716,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @5184 's' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x00, //        
@@ -2837,7 +2749,6 @@ public class Curlz32 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @5216 't' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
@@ -2871,7 +2782,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @5280 'u' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
@@ -2905,7 +2815,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @5344 'v' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
@@ -2939,7 +2848,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @5408 'w' (19 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
@@ -2973,7 +2881,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
     (byte)0x00, (byte)0x00, (byte)0x00, //                    
-
     // @5504 'x' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
@@ -3007,7 +2914,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @5568 'y' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
@@ -3041,7 +2947,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @5632 'z' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
@@ -3075,7 +2980,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @5696 '{' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x00, //         
@@ -3109,7 +3013,6 @@ public class Curlz32 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @5728 '|' (1 pixels wide)
     (byte)0x00, //  
     (byte)0x80, // O
@@ -3143,7 +3046,6 @@ public class Curlz32 extends Font {
     (byte)0x00, //  
     (byte)0x00, //  
     (byte)0x00, //  
-
     // @5760 '}' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x00, //        
@@ -3177,7 +3079,6 @@ public class Curlz32 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @5792 '~' (15 pixels wide)
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
@@ -3211,7 +3112,6 @@ public class Curlz32 extends Font {
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
-
     // @5856 '°' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x00, //      
@@ -3247,7 +3147,7 @@ public class Curlz32 extends Font {
     (byte)0x00, //      
 };
 
-private static final int[][] descriptors = {
+	private static final int[][] descriptors = {
     {5,0},// !
     {4,32},// "
     {13,64},// #
@@ -3345,7 +3245,7 @@ private static final int[][] descriptors = {
     {5,5856},// °
 };
 
-private static final byte[][] kerning = {
+	private static final byte[][] kerning = {
     {5,5,4,4,4,4,5,4,4,4,3,5,3,5,3,4,5,5,5,5,5,3,5,4,4,5,5,3,4,4,4,4,5,4,3,4,5,5,4,3,5,5,5,5,4,5,4,5,4,5,5,4,4,5,4,5,5,5,5,5,2,3,0,5,5,5,4,3,4,4,3,3,4,2,5,4,4,5,4,4,3,3,4,4,4,3,3,5,4,5,4,5,5,3,5,},
     {2,4,0,3,3,1,4,2,3,2,0,1,0,2,0,2,4,2,3,3,3,1,4,3,3,2,1,0,0,3,3,1,0,3,1,3,3,3,1,2,4,0,3,4,3,2,1,3,2,3,3,3,2,3,3,3,3,2,4,3,1,0,0,4,0,1,0,0,0,3,0,2,2,1,1,2,0,0,0,0,0,0,1,0,0,0,0,0,0,2,1,4,3,0,3,},
     {11,9,13,13,13,10,13,12,10,10,8,10,8,11,5,12,9,8,9,10,12,12,9,13,13,11,10,9,8,9,12,12,10,12,12,13,11,11,12,9,11,6,11,11,12,7,12,9,12,11,12,13,12,9,9,7,12,12,12,10,10,9,0,9,11,10,10,10,11,12,11,10,10,8,10,11,10,10,10,9,10,12,12,10,12,12,11,8,11,12,10,13,10,7,9,},
@@ -3441,23 +3341,23 @@ private static final byte[][] kerning = {
     {6,6,5,6,5,6,6,7,5,5,5,5,5,5,3,7,6,6,6,6,6,7,6,6,6,5,5,6,5,6,6,7,6,6,7,5,6,6,7,4,6,6,6,6,6,6,7,6,7,6,6,6,7,6,6,6,6,5,6,6,4,5,0,6,6,5,6,6,6,5,7,4,5,3,5,5,5,5,6,5,6,5,7,4,6,5,7,5,4,4,7,7,6,6,6,},
     {13,11,12,14,10,14,13,15,11,5,15,12,15,13,10,15,9,13,11,15,13,15,11,13,13,13,12,15,14,5,11,15,13,8,15,9,12,12,15,10,13,13,12,13,9,13,15,9,15,12,14,7,15,8,9,13,9,10,14,8,12,14,0,10,14,13,15,15,15,15,15,11,12,11,12,13,13,13,15,13,15,12,14,13,14,12,12,10,11,9,13,15,11,14,10,},
     {3,5,2,4,4,3,5,4,3,4,0,2,0,3,0,3,5,4,5,5,5,2,5,5,4,3,2,0,0,5,5,2,0,5,3,4,5,5,3,2,4,0,5,4,5,2,3,5,3,5,5,5,4,5,5,1,5,3,5,5,2,0,0,5,0,2,0,0,0,4,0,3,4,1,2,3,0,0,0,0,0,0,2,2,0,0,0,0,0,3,3,5,5,0,5,},
-};
+}
+;
 
-    @Override
-    public byte[] getBitmaps() {
-        return bitmaps;
-    }
+	@Override
+	public byte[] getBitmaps() {
+		return bitmaps;
+	}
 
-    @Override
-    public int[][] getDescriptors() {
-        return descriptors;
-    }
+	@Override
+	public int[][] getDescriptors() {
+		return descriptors;
+	}
 
-    @Override
-    public byte[][] getKerning() {
-        return kerning;
-    }
+	@Override
+	public byte[][] getKerning() {
+		return kerning;
+	}
 
 }
-// End of font
 

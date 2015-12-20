@@ -1,21 +1,15 @@
 package org.warheim.interfacing.jiffy32.bitmap.fonts;
-
-/**
- *
- * @author andy
- */
-public class Magneto16 extends Font {
-
-    public Magneto16() {
-      super("Magneto 16", '!', (char)127, 16, 8, 2);
-    }
-
 // coding=utf-8
 // Module magneto_bold_16
 // generated from Magneto 11.25pt
 
-    private static final byte[] bitmaps = {
+public class Magneto16 extends Font {
+	public Magneto16() {
+		super("Magneto 16", '!', (char)127, 16, 8, 2);
+	}
 
+
+	private static final byte[] bitmaps = {
     // @0 '!' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x1C, //    OOO
@@ -33,7 +27,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @16 '"' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x6C, //  OO OO
@@ -51,7 +44,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @32 '#' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x0C, (byte)0xC0, //     OO  OO 
@@ -69,7 +61,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @64 '$' (12 pixels wide)
     (byte)0x01, (byte)0x40, //        O O  
     (byte)0x0F, (byte)0xE0, //     OOOOOOO 
@@ -87,7 +78,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @96 '%' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x71, (byte)0x80, //  OOO   OO
@@ -105,7 +95,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @128 '&' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x0F, (byte)0x80, //     OOOOO  
@@ -123,7 +112,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @160 ''' (3 pixels wide)
     (byte)0x00, //    
     (byte)0x60, //  OO
@@ -141,7 +129,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //    
     (byte)0x00, //    
     (byte)0x00, //    
-
     // @176 '(' (6 pixels wide)
     (byte)0x0C, //     OO
     (byte)0x18, //    OO 
@@ -159,7 +146,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @192 ')' (6 pixels wide)
     (byte)0x18, //    OO 
     (byte)0x08, //     O 
@@ -177,7 +163,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @208 '*' (5 pixels wide)
     (byte)0xA8, // O O O
     (byte)0x70, //  OOO 
@@ -195,7 +180,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @224 '+' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
@@ -213,7 +197,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @256 ',' (3 pixels wide)
     (byte)0x00, //    
     (byte)0x00, //    
@@ -231,7 +214,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //    
     (byte)0x00, //    
     (byte)0x00, //    
-
     // @272 '-' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x00, //       
@@ -249,7 +231,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @288 '.' (3 pixels wide)
     (byte)0x00, //    
     (byte)0x00, //    
@@ -267,7 +248,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //    
     (byte)0x00, //    
     (byte)0x00, //    
-
     // @304 '/' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x02, //       O
@@ -285,7 +265,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @320 '0' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x1F, (byte)0x00, //    OOOOO  
@@ -303,7 +282,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @352 '1' (5 pixels wide)
     (byte)0x00, //      
     (byte)0x70, //  OOO 
@@ -321,7 +299,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //      
     (byte)0x00, //      
     (byte)0x00, //      
-
     // @368 '2' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x3F, (byte)0x80, //   OOOOOOO 
@@ -339,7 +316,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @400 '3' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x3F, (byte)0x80, //   OOOOOOO
@@ -357,7 +333,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @432 '4' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x38, (byte)0xC0, //   OOO   OO
@@ -375,7 +350,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @464 '5' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x1F, (byte)0x80, //    OOOOOO
@@ -393,7 +367,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @496 '6' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x0C, (byte)0x00, //     OO   
@@ -411,7 +384,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @528 '7' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x7F, //  OOOOOOO
@@ -429,7 +401,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @544 '8' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x0F, (byte)0x00, //     OOOO 
@@ -447,7 +418,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @576 '9' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x3C, //   OOOO  
@@ -465,7 +435,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @592 ':' (4 pixels wide)
     (byte)0x00, //     
     (byte)0x00, //     
@@ -483,7 +452,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //     
     (byte)0x00, //     
     (byte)0x00, //     
-
     // @608 ';' (4 pixels wide)
     (byte)0x00, //     
     (byte)0x00, //     
@@ -501,7 +469,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //     
     (byte)0x00, //     
     (byte)0x00, //     
-
     // @624 '<' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x00, //         
@@ -519,7 +486,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @640 '=' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x00, //        
@@ -537,7 +503,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @656 '>' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x00, //         
@@ -555,7 +520,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @672 '?' (8 pixels wide)
     (byte)0x00, //         
     (byte)0xFE, // OOOOOOO 
@@ -573,7 +537,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @688 '@' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x0F, (byte)0x80, //     OOOOO  
@@ -591,7 +554,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @720 'A' (21 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                      
     (byte)0x00, (byte)0x03, (byte)0x80, //               OOO    
@@ -609,7 +571,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                      
     (byte)0x00, (byte)0x00, (byte)0x00, //                      
     (byte)0x00, (byte)0x00, (byte)0x00, //                      
-
     // @768 'B' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x7F, (byte)0xF0, //  OOOOOOOOOOO 
@@ -627,7 +588,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @800 'C' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x0F, (byte)0xC0, //     OOOOOO
@@ -645,7 +605,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @832 'D' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x7F, (byte)0xE0, //  OOOOOOOOOO  
@@ -663,7 +622,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @864 'E' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x07, (byte)0xE0, //      OOOOOO
@@ -681,7 +639,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @896 'F' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0x3F, (byte)0xFC, //   OOOOOOOOOOOO
@@ -699,7 +656,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @928 'G' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x07, (byte)0xE0, //      OOOOOO
@@ -717,7 +673,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @960 'H' (21 pixels wide)
     (byte)0x00, (byte)0x60, (byte)0x00, //          OO          
     (byte)0x00, (byte)0x61, (byte)0x80, //          OO    OO    
@@ -735,7 +690,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                      
     (byte)0x00, (byte)0x00, (byte)0x00, //                      
     (byte)0x00, (byte)0x00, (byte)0x00, //                      
-
     // @1008 'I' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x3F, (byte)0xE0, //   OOOOOOOOO
@@ -753,7 +707,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @1040 'J' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x3F, (byte)0xF0, //   OOOOOOOOOO
@@ -771,7 +724,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @1072 'K' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x7C, (byte)0x18, //  OOOOO     OO
@@ -789,7 +741,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @1104 'L' (16 pixels wide)
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x1E, //            OOOO 
@@ -807,7 +758,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
-
     // @1136 'M' (17 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
     (byte)0x7C, (byte)0x00, (byte)0x00, //  OOOOO           
@@ -825,7 +775,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
-
     // @1184 'N' (16 pixels wide)
     (byte)0x00, (byte)0x00, //                 
     (byte)0x03, (byte)0x87, //       OOO    OOO
@@ -843,7 +792,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
     (byte)0x00, (byte)0x00, //                 
-
     // @1216 'O' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x7F, (byte)0xE0, //  OOOOOOOOOO  
@@ -861,7 +809,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @1248 'P' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x7F, (byte)0xE0, //  OOOOOOOOOO 
@@ -879,7 +826,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @1280 'Q' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x0F, (byte)0xC0, //     OOOOOO  
@@ -897,7 +843,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @1312 'R' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x7F, (byte)0xF0, //  OOOOOOOOOOO 
@@ -915,7 +860,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @1344 'S' (15 pixels wide)
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x3E, //           OOOOO
@@ -933,7 +877,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
-
     // @1376 'T' (15 pixels wide)
     (byte)0x00, (byte)0x00, //                
     (byte)0x3F, (byte)0xFE, //   OOOOOOOOOOOOO
@@ -951,7 +894,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
-
     // @1408 'U' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x7C, (byte)0x60, //  OOOOO   OO 
@@ -969,7 +911,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @1440 'V' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x7C, (byte)0x38, //  OOOOO    OOO
@@ -987,7 +928,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @1472 'W' (17 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
     (byte)0x7C, (byte)0x61, (byte)0x80, //  OOOOO   OO    OO
@@ -1005,7 +945,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
-
     // @1520 'X' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0x3E, (byte)0x1C, //   OOOOO    OOO
@@ -1023,7 +962,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @1552 'Y' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0xFF, (byte)0x0C, // OOOOOOOO    OO
@@ -1041,7 +979,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @1584 'Z' (15 pixels wide)
     (byte)0x00, (byte)0x00, //                
     (byte)0x0F, (byte)0xF0, //     OOOOOOOO   
@@ -1059,7 +996,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
     (byte)0x00, (byte)0x00, //                
-
     // @1616 '[' (7 pixels wide)
     (byte)0x0E, //     OOO
     (byte)0x18, //    OO  
@@ -1077,7 +1013,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @1632 '\' (6 pixels wide)
     (byte)0xC0, // OO    
     (byte)0x60, //  OO   
@@ -1095,7 +1030,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @1648 ']' (7 pixels wide)
     (byte)0x0E, //     OOO
     (byte)0x06, //      OO
@@ -1113,7 +1047,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @1664 '^' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x00, //       
@@ -1131,7 +1064,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @1680 '_' (17 pixels wide)
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
@@ -1149,7 +1081,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, (byte)0x00, //                  
     (byte)0x7F, (byte)0xFF, (byte)0x80, //  OOOOOOOOOOOOOOOO
     (byte)0xFF, (byte)0xFF, (byte)0x00, // OOOOOOOOOOOOOOOO 
-
     // @1728 '`' (3 pixels wide)
     (byte)0x00, //    
     (byte)0x00, //    
@@ -1167,7 +1098,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //    
     (byte)0x00, //    
     (byte)0x00, //    
-
     // @1744 'a' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
@@ -1185,7 +1115,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @1776 'b' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
@@ -1203,7 +1132,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @1808 'c' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
@@ -1221,7 +1149,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @1840 'd' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
@@ -1239,7 +1166,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @1872 'e' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
@@ -1257,7 +1183,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @1904 'f' (12 pixels wide)
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
@@ -1275,7 +1200,6 @@ public class Magneto16 extends Font {
     (byte)0xE0, (byte)0x00, // OOO         
     (byte)0x00, (byte)0x00, //             
     (byte)0x00, (byte)0x00, //             
-
     // @1936 'g' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
@@ -1293,7 +1217,6 @@ public class Magneto16 extends Font {
     (byte)0x78, (byte)0x00, //  OOOO    
     (byte)0x70, (byte)0x00, //  OOO     
     (byte)0x00, (byte)0x00, //          
-
     // @1968 'h' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
@@ -1311,7 +1234,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @2000 'i' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x00, //       
@@ -1329,7 +1251,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @2016 'j' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x00, //         
@@ -1347,7 +1268,6 @@ public class Magneto16 extends Font {
     (byte)0xF0, // OOOO    
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @2032 'k' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
@@ -1365,7 +1285,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @2064 'l' (6 pixels wide)
     (byte)0x00, //       
     (byte)0x00, //       
@@ -1383,7 +1302,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //       
     (byte)0x00, //       
     (byte)0x00, //       
-
     // @2080 'm' (14 pixels wide)
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
@@ -1401,7 +1319,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
     (byte)0x00, (byte)0x00, //               
-
     // @2112 'n' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
@@ -1419,7 +1336,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @2144 'o' (13 pixels wide)
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
@@ -1437,7 +1353,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
     (byte)0x00, (byte)0x00, //              
-
     // @2176 'p' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
@@ -1455,7 +1370,6 @@ public class Magneto16 extends Font {
     (byte)0xC0, (byte)0x00, // OO         
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @2208 'q' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
@@ -1473,7 +1387,6 @@ public class Magneto16 extends Font {
     (byte)0x10, (byte)0x00, //    O     
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @2240 'r' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
@@ -1491,7 +1404,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @2272 's' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
@@ -1509,7 +1421,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @2304 't' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x00, //        
@@ -1527,7 +1438,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @2320 'u' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
@@ -1545,7 +1455,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
-
     // @2352 'v' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
@@ -1563,7 +1472,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @2384 'w' (11 pixels wide)
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
@@ -1581,7 +1489,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
     (byte)0x00, (byte)0x00, //            
-
     // @2416 'x' (7 pixels wide)
     (byte)0x00, //        
     (byte)0x00, //        
@@ -1599,7 +1506,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @2432 'y' (10 pixels wide)
     (byte)0x00, (byte)0x00, //           
     (byte)0x00, (byte)0x00, //           
@@ -1617,7 +1523,6 @@ public class Magneto16 extends Font {
     (byte)0x78, (byte)0x00, //  OOOO     
     (byte)0x70, (byte)0x00, //  OOO      
     (byte)0x00, (byte)0x00, //           
-
     // @2464 'z' (8 pixels wide)
     (byte)0x00, //         
     (byte)0x00, //         
@@ -1635,7 +1540,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //         
     (byte)0x00, //         
     (byte)0x00, //         
-
     // @2480 '{' (7 pixels wide)
     (byte)0x0E, //     OOO
     (byte)0x18, //    OO  
@@ -1653,7 +1557,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @2496 '|' (1 pixels wide)
     (byte)0x80, // O
     (byte)0x80, // O
@@ -1671,7 +1574,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //  
     (byte)0x00, //  
     (byte)0x00, //  
-
     // @2512 '}' (7 pixels wide)
     (byte)0x0E, //     OOO
     (byte)0x06, //      OO
@@ -1689,7 +1591,6 @@ public class Magneto16 extends Font {
     (byte)0x00, //        
     (byte)0x00, //        
     (byte)0x00, //        
-
     // @2528 '~' (9 pixels wide)
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
@@ -1707,7 +1608,6 @@ public class Magneto16 extends Font {
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
     (byte)0x00, (byte)0x00, //          
-
     // @2560 '°' (4 pixels wide)
     (byte)0x60, //  OO 
     (byte)0x90, // O  O
@@ -1727,7 +1627,7 @@ public class Magneto16 extends Font {
     (byte)0x00, //     
 };
 
-private static final int[][] descriptors = {
+	private static final int[][] descriptors = {
     {6,0},// !
     {6,16},// "
     {11,32},// #
@@ -1825,7 +1725,7 @@ private static final int[][] descriptors = {
     {4,2560},// °
 };
 
-private static final byte[][] kerning = {
+	private static final byte[][] kerning = {
     {3,5,3,3,5,3,5,4,2,5,4,3,3,3,3,4,5,4,4,4,3,4,5,3,5,3,2,4,4,3,6,4,3,5,4,5,3,5,4,3,5,5,5,3,5,3,5,5,3,5,3,5,5,5,5,4,6,3,3,5,1,2,0,5,3,3,3,3,3,2,3,3,3,2,3,3,3,3,3,2,3,4,3,3,3,3,3,3,3,3,3,6,1,3,6,},
     {3,5,2,2,5,2,5,4,2,5,1,3,0,3,1,4,5,4,4,4,3,3,5,3,5,2,2,1,0,3,6,4,0,5,3,5,2,5,3,0,5,5,5,0,5,0,5,5,3,5,0,5,5,5,5,4,6,2,3,5,1,0,0,5,0,3,0,0,0,2,0,3,3,0,3,3,0,0,0,0,0,0,0,2,0,0,0,0,0,0,3,6,1,0,6,},
     {9,10,10,8,9,10,10,10,7,11,9,8,9,8,8,11,9,9,9,10,9,10,10,10,11,9,9,10,9,8,10,10,8,10,10,10,10,11,10,9,11,11,10,7,10,7,10,10,9,10,10,11,10,10,10,9,10,8,9,9,7,10,0,10,10,9,10,10,10,8,10,9,9,6,9,9,9,9,10,8,10,10,7,9,9,10,9,8,9,8,9,11,7,9,10,},
@@ -1921,24 +1821,23 @@ private static final byte[][] kerning = {
     {5,7,5,5,6,5,7,6,4,7,6,4,5,5,4,6,6,6,6,6,5,6,7,6,6,5,5,6,6,5,7,6,5,7,6,7,5,6,6,5,6,6,7,4,7,4,7,7,4,7,5,6,7,7,7,6,7,5,5,7,3,5,0,6,5,5,5,5,5,5,5,5,5,3,5,5,5,5,5,4,5,6,5,6,5,6,5,5,5,6,5,7,3,5,7,},
     {8,3,8,6,6,8,6,9,5,4,9,6,7,7,6,9,8,5,7,9,7,9,8,9,8,8,8,9,9,5,8,9,6,6,9,7,8,8,9,7,8,8,6,1,7,4,7,7,6,6,8,8,7,6,5,7,5,6,8,7,6,8,0,6,8,8,8,8,8,8,8,8,8,5,8,8,8,8,8,7,8,9,6,9,8,9,8,8,8,9,8,9,5,7,5,},
     {2,4,1,1,3,1,4,2,0,4,0,1,0,1,0,2,3,3,3,2,2,1,4,2,3,0,0,0,0,2,4,2,0,4,1,4,1,3,1,0,3,3,4,0,4,0,4,4,1,4,0,3,4,4,4,3,4,1,1,3,0,0,0,3,0,1,0,0,0,0,0,1,2,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,4,0,0,4,},
-};
+}
+;
 
+	@Override
+	public byte[] getBitmaps() {
+		return bitmaps;
+	}
 
-    @Override
-    public byte[] getBitmaps() {
-        return bitmaps;
-    }
+	@Override
+	public int[][] getDescriptors() {
+		return descriptors;
+	}
 
-    @Override
-    public int[][] getDescriptors() {
-        return descriptors;
-    }
-
-    @Override
-    public byte[][] getKerning() {
-        return kerning;
-    }
+	@Override
+	public byte[][] getKerning() {
+		return kerning;
+	}
 
 }
-// End of font
 
