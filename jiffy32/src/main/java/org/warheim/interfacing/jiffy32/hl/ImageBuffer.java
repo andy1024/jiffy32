@@ -9,30 +9,39 @@ import java.util.BitSet;
 public class ImageBuffer {
     final private int width;
     final private int height;
-    private BitSet buffer;
+    private byte[] buffer;
     final private int size;
     
     public ImageBuffer(int width, int height) {
         this.width = width;
         this.height = height;
         this.size = width*height;
-        this.buffer = new BitSet(size);
+        this.buffer = new byte[size+1]; //1 for command
     }
     
     public void clear() {
-        buffer.clear();
+        for (int i=1;i<buffer.length;++i) {
+            buffer[i] = 0;
+        }
     }
 
     public void invert() {
-        buffer.flip(0, size-1);
+        for (int i=1;i<buffer.length;++i) {
+            buffer[i] ^= 0;
+        }
     }
 
     public void setPixel(int x, int y, boolean color) {
-        buffer.set(y*width+x, color);
+        if (color) {
+            buffer[1+x+ (y/8)*width] |=  (1 << (y&7)); 
+        } else {
+            buffer[1+x+ (y/8)*height] &= ~(1 << (y&7)); 
+        }
     }
 
     public boolean getPixel(int x, int y) {
-        return buffer.get(y*width+x);
+        return false;//TODO: do something with it!
+        //buffer.get(y*width+x);
     }
 
     public int getWidth() {
@@ -47,7 +56,7 @@ public class ImageBuffer {
         buffer = ib.getBuffer();
     }
 
-    public BitSet getBuffer() {
+    public byte[] getBuffer() {
         return buffer;
     }
 
