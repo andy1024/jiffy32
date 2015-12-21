@@ -1,0 +1,9 @@
+#to replace 0xHH, 0xHH, hex strings with binary
+echo "    0x18, 0x41, #    OO"|sed 's/#.*$//'|sed 's/0x//'g|sed "s/\([0-9A-Fa-f]*\),/\\\\\\\x\1/"g|tr -d ' '
+#to replace HH, HH, hex strings with binary
+echo -n -e `echo "   80, 41,"|sed "s/\([0-9A-Fa-f]*\),/\\\\\\\x\1/"g|tr -d ' '`
+
+#to iterate over line with it (it's broken at the moment)
+for line in `cat arial_16.py |grep 0x`; do echo -n -e `echo $line|sed "s/\([0-9A-Fa-f]*\),/\\\\\\\x\1/"g|tr -d ' '`; done
+
+for line in `cat arial_16.py |grep 0x`; do echo -n -e `echo $line|sed 's/#.*$//'|sed 's/0x//'g|sed "s/\([0-9A-Fa-f]*\),/\\\\\\\x\1/"g|tr -d ' '`; done
