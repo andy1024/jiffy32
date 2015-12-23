@@ -53,4 +53,6 @@ public class Constants {
     public static final int USB_FF32_PRODUCT_ID_NUMBER = 63673;
     
     public static final String ARGUMENT_EXC_MESSAGE_BYTE = "Value supplied is not a byte %d";
+    public static final int MAX_METADATA_BUFFER_LENGTH = 32;
+    public static final int MAX_BUS_DATA_BUFFER_LENGTH = 60;
 }
