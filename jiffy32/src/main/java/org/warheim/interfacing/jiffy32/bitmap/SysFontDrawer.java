@@ -4,12 +4,16 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
+import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsEnvironment;
 import java.awt.font.FontRenderContext;
 import java.awt.font.LineMetrics;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 /**
  *
  * @author andy
@@ -21,6 +25,20 @@ public class SysFontDrawer {
         return widRemainder;
     }
     
+    private static double DELTA_THETA = Math.PI / 90;
+    
+    public static BufferedImage tilt(BufferedImage image, double angle) {
+        double sin = Math.abs(Math.sin(angle)), cos = Math.abs(Math.cos(angle));
+        int w = image.getWidth(), h = image.getHeight();
+        int neww = (int)Math.floor(w*cos+h*sin), newh = (int)Math.floor(h*cos+w*sin);
+        int transparency = image.getColorModel().getTransparency();
+        BufferedImage result = new BufferedImage(neww, newh, BufferedImage.TYPE_BYTE_BINARY);
+        Graphics2D g = result.createGraphics();
+        g.translate((neww-w)/2, (newh-h)/2);
+        g.rotate(angle, w/2, h/2);
+        g.drawRenderedImage(image, null);
+        return result;
+    }
     public static void drawStringToBitmap(String text, Font f, boolean on, int x0, int y0, Bitmap bitmap) {
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         //predraw text to get measurements
@@ -53,8 +71,17 @@ public class SysFontDrawer {
         g2.setColor(Color.white);
         g2.setFont(f);
         g2.drawString(text, x+positionRemainder, y);
+        
         g2.dispose();
         
+        BufferedImage rotated1 = tilt(bi, -Math.PI/2);
+        bi=rotated1;
+//        try {
+//            ImageIO.write(rotated1, "png", new File("/tmp/testimage2.png"));
+//        } catch (IOException ex) {
+//            
+//        }
+//        if (1==1) throw new RuntimeException();
         //transfer text onto bitmap
         byte[] byteArray = ((DataBufferByte) bi.getData().getDataBuffer()).getData();
 //        for (byte b: byteArray) {
