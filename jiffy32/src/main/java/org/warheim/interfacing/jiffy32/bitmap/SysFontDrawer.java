@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
-import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsEnvironment;
 import java.awt.font.FontRenderContext;
 import java.awt.font.LineMetrics;
@@ -12,7 +11,6 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
 import java.io.File;
-import java.io.IOException;
 import javax.imageio.ImageIO;
 /**
  *
@@ -25,20 +23,6 @@ public class SysFontDrawer {
         return widRemainder;
     }
     
-    private static double DELTA_THETA = Math.PI / 90;
-    
-    public static BufferedImage tilt(BufferedImage image, double angle) {
-        double sin = Math.abs(Math.sin(angle)), cos = Math.abs(Math.cos(angle));
-        int w = image.getWidth(), h = image.getHeight();
-        int neww = (int)Math.floor(w*cos+h*sin), newh = (int)Math.floor(h*cos+w*sin);
-        int transparency = image.getColorModel().getTransparency();
-        BufferedImage result = new BufferedImage(neww, newh, BufferedImage.TYPE_BYTE_BINARY);
-        Graphics2D g = result.createGraphics();
-        g.translate((neww-w)/2, (newh-h)/2);
-        g.rotate(angle, w/2, h/2);
-        g.drawRenderedImage(image, null);
-        return result;
-    }
     public static void drawStringToBitmap(String text, Font f, boolean on, int x0, int y0, Bitmap bitmap) {
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         //predraw text to get measurements
@@ -71,37 +55,23 @@ public class SysFontDrawer {
         g2.setColor(Color.white);
         g2.setFont(f);
         g2.drawString(text, x+positionRemainder, y);
-        
         g2.dispose();
         
-        BufferedImage rotated1 = tilt(bi, -Math.PI/2);
-        bi=rotated1;
-//        try {
-//            ImageIO.write(rotated1, "png", new File("/tmp/testimage2.png"));
-//        } catch (IOException ex) {
-//            
-//        }
-//        if (1==1) throw new RuntimeException();
         //transfer text onto bitmap
         byte[] byteArray = ((DataBufferByte) bi.getData().getDataBuffer()).getData();
 //        for (byte b: byteArray) {
 //            System.out.printf("%02x\n", b);
 //        }
-        int widthInBytes = bi.getWidth()/8;
-        int maxColInBytes = bitmap.getCols()/8;
-        int maxRow = bitmap.getRows();
-        int x0InBytes = x0/8;
-        for (int col=0;col<widthInBytes;++col) {
+        for (int col=0;col<bi.getWidth();++col) {
             for (int row=0;row<bi.getHeight();++row) {
-                if (x0InBytes+col<maxColInBytes && y0+row<maxRow) {
-                    byte textStencilByte = byteArray[col+row*widthInBytes];
-                    int addressInBitmap = (x0InBytes+col)+(y0+row)*maxColInBytes;
-                    byte bitmapBackgroundByte = bitmap.getData()[addressInBitmap];
-                    byte result = (byte)(bitmapBackgroundByte | textStencilByte);
-                    bitmap.getData()[addressInBitmap] = result;
+                //System.out.printf("pixel at %d,%d=%d\n",x0+col, y0+row, bi.getRGB(x0+col, y0+row));
+                if (bi.getRGB(col, row)==-1) {
+                    //System.out.printf("pixel at %d,%d\n",x0+col, y0+row);
+                    bitmap.draw_pixel(x0+col, y0+row, on);
                 }
             }
         }
+
     }
     
     public static void main(String... args) {
