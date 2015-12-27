@@ -50,3 +50,6 @@ SPI and 1-Wire calls are implemented, but not tested yet
 Library supports multiple dongles attached simultaneously
 
 No optimization has been done yet 
+[Current bugs](https://github.com/andy1024/jiffy32/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
+
+[Enhancements planned](https://github.com/andy1024/jiffy32/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement)
