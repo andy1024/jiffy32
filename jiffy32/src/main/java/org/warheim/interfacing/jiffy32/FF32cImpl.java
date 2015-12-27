@@ -22,8 +22,6 @@ public class FF32cImpl implements FF32c {
     HIDDevice dev;
     private static final byte BTRUE = 0x01;
     private static final byte BFALSE = 0x00;
-    private static final int MAX_METADATA_BUFFER_LENGTH = 32;
-    private static final int MAX_BUS_DATA_BUFFER_LENGTH = 60;
     
     Logger logger = LoggerFactory.getLogger(FF32cImpl.class);
 
@@ -189,8 +187,8 @@ public class FF32cImpl implements FF32c {
         byte[] str = value.getBytes();//Charset.forName("UTF-8"));
         int len = value.length();
 
-        if (len > MAX_METADATA_BUFFER_LENGTH)
-            len = MAX_METADATA_BUFFER_LENGTH;
+        if (len > Constants.MAX_METADATA_BUFFER_LENGTH)
+            len = Constants.MAX_METADATA_BUFFER_LENGTH;
         int startIndex = 1+commands.length;
         System.arraycopy(str, 0, buffer, startIndex, len);
         Arrays.fill(buffer, startIndex + len, buffer.length, Constants.PRIMER);
@@ -385,7 +383,7 @@ public class FF32cImpl implements FF32c {
     @Override
     public void writeSPIBus(byte[] data) 
             throws IOException, JiffyException {
-        if (data.length>MAX_BUS_DATA_BUFFER_LENGTH) {
+        if (data.length>Constants.MAX_BUS_DATA_BUFFER_LENGTH) {
             throw new ImproperDataLengthParameterValue();
         }
         byte[] commands = new byte[2+data.length];
@@ -450,7 +448,7 @@ public class FF32cImpl implements FF32c {
     public byte[] readSPIBus(int RDDataLen, byte[] WRData) 
             throws IOException, JiffyException, ArgumentException {
         validateArguments(RDDataLen);
-        if (WRData.length>MAX_BUS_DATA_BUFFER_LENGTH||RDDataLen>MAX_BUS_DATA_BUFFER_LENGTH) {
+        if (WRData.length>Constants.MAX_BUS_DATA_BUFFER_LENGTH||RDDataLen>Constants.MAX_BUS_DATA_BUFFER_LENGTH) {
             throw new ImproperDataLengthParameterValue();
         }
         byte[] commands = new byte[3+WRData.length];
@@ -506,7 +504,7 @@ public class FF32cImpl implements FF32c {
     @Override
     public void writeI2CBus(byte[] data) 
             throws IOException, JiffyException {
-        if (data.length>MAX_BUS_DATA_BUFFER_LENGTH) {
+        if (data.length>Constants.MAX_BUS_DATA_BUFFER_LENGTH) {
             throw new ImproperDataLengthParameterValue();
         }
         byte[] commands = new byte[2+data.length];
@@ -530,7 +528,7 @@ public class FF32cImpl implements FF32c {
     public byte[] readI2CBus(int RDDataLen, byte[] WRData) 
             throws IOException, JiffyException, ArgumentException {
         validateArguments(RDDataLen);
-        if (WRData.length>MAX_BUS_DATA_BUFFER_LENGTH||RDDataLen>MAX_BUS_DATA_BUFFER_LENGTH) {
+        if (WRData.length>Constants.MAX_BUS_DATA_BUFFER_LENGTH||RDDataLen>Constants.MAX_BUS_DATA_BUFFER_LENGTH) {
             throw new ImproperDataLengthParameterValue();
         }
         byte[] commands = new byte[3+WRData.length];
@@ -666,7 +664,7 @@ public class FF32cImpl implements FF32c {
     @Override
     public void write1WireBus(byte[] data) 
             throws IOException, JiffyException {
-        if (data.length>MAX_BUS_DATA_BUFFER_LENGTH) {
+        if (data.length>Constants.MAX_BUS_DATA_BUFFER_LENGTH) {
             throw new ImproperDataLengthParameterValue();
         }
         byte[] commands = new byte[2+data.length];
@@ -711,7 +709,7 @@ public class FF32cImpl implements FF32c {
     public byte[] read1WireBus(int RDDataLen, byte[] WRData) 
             throws IOException, JiffyException, ArgumentException {
         validateArguments(RDDataLen);
-        if (WRData.length>MAX_BUS_DATA_BUFFER_LENGTH||RDDataLen>MAX_BUS_DATA_BUFFER_LENGTH) {
+        if (WRData.length>Constants.MAX_BUS_DATA_BUFFER_LENGTH||RDDataLen>Constants.MAX_BUS_DATA_BUFFER_LENGTH) {
             throw new ImproperDataLengthParameterValue();
         }
         byte[] commands = new byte[3+WRData.length];
