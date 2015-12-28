@@ -18,7 +18,7 @@ import org.warheim.interfacing.jiffy32.bitmap.SysFontDrawer;
  * @author andy
  */
 public class VectorFontDemo {
-//Oxygen-Sans
+
     public static final String DATE_FORMAT = "HH:mm:ss";
     static {
         ClassPathLibraryLoader.loadNativeHIDLibrary();
@@ -28,11 +28,11 @@ public class VectorFontDemo {
         FF32c jiffy = FF32Factory.getInstance();
         SSD1306 oled = new SSD1306(jiffy, 0x3C, Pin.A5, Pin.A6, 64, 128, 64, 128);
         oled.begin(SSD1306.SWITCH_CAP_VCC);
-        oled.clear_display();
+        oled.clearDisplay();
         oled.display();
-        oled.invert_display();
+        oled.invertDisplay();
         Thread.sleep(500);
-        oled.normal_display();
+        oled.normalDisplay();
         Thread.sleep(500);
         int i = 0;
         float dx = 1.0f;
@@ -60,12 +60,12 @@ public class VectorFontDemo {
             DateFormat formatter = new SimpleDateFormat(DATE_FORMAT);
             String text = formatter.format(new Date());
             // wipe area and show date
-            oled.clear_block(0,0,159,35);
+            oled.clearBlock(0,0,159,35);
             SysFontDrawer.drawStringToBitmap(text, font, true, 0, 0, oled.getBitmap());
-            //oled.draw_text3(0,0,text,font);
+            
             System.out.println(String.format("[x,y]=%f,%f [px,py]=%f,%f [dx,dy]=%f,%f", x, y, px, py, dx, dy));
-            oled.draw_pixel((int)px, (int)py, false);
-            oled.draw_pixel((int)x, (int)y, true);
+            oled.drawPixel((int)px, (int)py, false);
+            oled.drawPixel((int)x, (int)y, true);
             oled.display();
             Thread.sleep(5);
             i++;

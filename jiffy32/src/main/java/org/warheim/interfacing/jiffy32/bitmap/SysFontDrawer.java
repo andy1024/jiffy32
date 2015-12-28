@@ -9,9 +9,6 @@ import java.awt.font.FontRenderContext;
 import java.awt.font.LineMetrics;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferByte;
-import java.io.File;
-import javax.imageio.ImageIO;
 /**
  *
  * @author andy
@@ -57,27 +54,14 @@ public class SysFontDrawer {
         g2.drawString(text, x+positionRemainder, y);
         g2.dispose();
         
-        //transfer text onto bitmap
-        byte[] byteArray = ((DataBufferByte) bi.getData().getDataBuffer()).getData();
-//        for (byte b: byteArray) {
-//            System.out.printf("%02x\n", b);
-//        }
         for (int col=0;col<bi.getWidth();++col) {
             for (int row=0;row<bi.getHeight();++row) {
-                //System.out.printf("pixel at %d,%d=%d\n",x0+col, y0+row, bi.getRGB(x0+col, y0+row));
                 if (bi.getRGB(col, row)==-1) {
-                    //System.out.printf("pixel at %d,%d\n",x0+col, y0+row);
-                    bitmap.draw_pixel(x0+col, y0+row, on);
+                    bitmap.drawPixel(x0+col, y0+row, on);
                 }
             }
         }
 
     }
     
-    public static void main(String... args) {
-        int width=63;
-        int widRemainder = 8-(width & 7);
-        int newWidth = width + widRemainder;
-        System.out.printf("width =%d remainder=%d newWidth=%d\n", width, widRemainder, newWidth);
-    }
 }
