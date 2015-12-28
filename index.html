@@ -54,6 +54,8 @@
 
 <p>Codeminders for their <a href="https://code.google.com/p/javahidapi/">javahidapi</a></p>
 
+<p>Guy Carpenter for his <a href="http://guy.carpenter.id.au/gaugette/">py-gaugatte</a> code</p>
+
 <h2>
 <a id="build" class="anchor" href="#build" aria-hidden="true"><span class="octicon octicon-link"></span></a>Build</h2>
 
@@ -65,7 +67,17 @@
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<p>Example usage can be found in org.warheim.interfacing.jiffy32.JiffyTest class. Protoboard wiring example will follow shortly.</p>
+<p>In order to run this package you need to FF32 from FlyFish Technologies and proper privileges to run the code.
+You can achieve it by running it as root (bad practice) or add a udev rule like this:</p>
+
+<pre><code>sudo echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="04d8", ATTRS{idProduct}=="f8b9", MODE:="0666"
+KERNEL=="hiddev*", ATTRS{idVendor}=="04d8", ATTRS{idProduct}=="f8b9", MODE:="0666"' &gt;/etc/udev/rules.d/50-hid.rules
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+</code></pre>
+
+<p>This should be done only once.
+Example usage can be found in org.warheim.interfacing.jiffy32.JiffyTest class. Protoboard wiring example will follow shortly.</p>
 
 <p><img src="https://raw.githubusercontent.com/andy1024/jiffy32/master/images/pfcjif-screenshot.png?raw=true" alt="Alt text" title="Self-made board with FF32 chip connected to PCF8591"></p>
 
@@ -86,6 +98,10 @@
 <p>Library supports multiple dongles attached simultaneously</p>
 
 <p>No optimization has been done yet </p>
+
+<p><a href="https://github.com/andy1024/jiffy32/issues?q=is%3Aopen+is%3Aissue+label%3Abug">Current bugs</a></p>
+
+<p><a href="https://github.com/andy1024/jiffy32/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement">Enhancements planned</a></p>
       </section>
     </div>
 
