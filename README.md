@@ -15,6 +15,8 @@ Original author of FF32 C library for codebase
 
 Codeminders for their [javahidapi](https://code.google.com/p/javahidapi/)
 
+Guy Carpenter for his [py-gaugatte](http://guy.carpenter.id.au/gaugette/) code
+
 ## Build
 Building process is handled by maven tool, which takes care of dependencies needed by this project
 ```shell
