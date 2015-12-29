@@ -32,9 +32,9 @@ public class I2C_PCF8591 extends I2CDevice {
         this.ports = ports;
     }
     
-    public I2C_PCF8591(Pin SCL, Pin SDA) throws IOException, JiffyException, ArgumentException {
+    public I2C_PCF8591(Pin SCL, Pin SDA, Map<String, Integer> ports) throws IOException, JiffyException, ArgumentException {
         super(SCL, SDA, SLAVE_ADDRESS);
-        this.ports = new HashMap<>();
+        this.ports = ports;
     }
 
     public int readPort(String portName) throws IOException, JiffyException, ArgumentException {
@@ -51,8 +51,4 @@ public class I2C_PCF8591 extends I2CDevice {
         return retval;
     }
     
-    public static void main(String... args) throws Exception {
-        I2C_PCF8591 chip = new I2C_PCF8591(Pin.B9, Pin.B10);
-        System.out.println(chip.readPort(0x03));
-    }
 }
