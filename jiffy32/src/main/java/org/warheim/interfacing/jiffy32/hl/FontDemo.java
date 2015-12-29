@@ -1,5 +1,6 @@
 package org.warheim.interfacing.jiffy32.hl;
 
+import org.warheim.interfacing.jiffy32.bitmap.fonts.Font;
 import com.codeminders.hidapi.ClassPathLibraryLoader;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -9,16 +10,31 @@ import java.util.List;
 import org.warheim.interfacing.jiffy32.FF32Factory;
 import org.warheim.interfacing.jiffy32.FF32c;
 import org.warheim.interfacing.jiffy32.Pin;
-import java.awt.Font;
-import java.awt.GraphicsEnvironment;
-import org.warheim.interfacing.jiffy32.bitmap.SysFontDrawer;
+import org.warheim.interfacing.jiffy32.bitmap.fonts.Arial16;
+import org.warheim.interfacing.jiffy32.bitmap.fonts.Arial24;
+import org.warheim.interfacing.jiffy32.bitmap.fonts.Arial32;
+import org.warheim.interfacing.jiffy32.bitmap.fonts.ArialNarrow16;
+import org.warheim.interfacing.jiffy32.bitmap.fonts.Curlz22;
+import org.warheim.interfacing.jiffy32.bitmap.fonts.Curlz32;
+import org.warheim.interfacing.jiffy32.bitmap.fonts.Magneto16;
+import org.warheim.interfacing.jiffy32.bitmap.fonts.Magneto24;
+import org.warheim.interfacing.jiffy32.bitmap.fonts.Magneto32;
+import org.warheim.interfacing.jiffy32.bitmap.fonts.OldEnglish30;
+import org.warheim.interfacing.jiffy32.bitmap.fonts.Stencil16;
+import org.warheim.interfacing.jiffy32.bitmap.fonts.Stencil24;
+import org.warheim.interfacing.jiffy32.bitmap.fonts.Stencil33;
+import org.warheim.interfacing.jiffy32.bitmap.fonts.Tahoma16;
+import org.warheim.interfacing.jiffy32.bitmap.fonts.Tahoma24;
+import org.warheim.interfacing.jiffy32.bitmap.fonts.Tahoma32;
+import org.warheim.interfacing.jiffy32.bitmap.fonts.Verdana15;
+import org.warheim.interfacing.jiffy32.bitmap.fonts.Verdana24;
+import org.warheim.interfacing.jiffy32.bitmap.fonts.Verdana32;
 
 /**
  *
  * @author andy
  */
-public class VectorFontDemo {
-
+public class FontDemo {
     public static final String DATE_FORMAT = "HH:mm:ss";
     static {
         ClassPathLibraryLoader.loadNativeHIDLibrary();
@@ -42,16 +58,25 @@ public class VectorFontDemo {
         float x = 60;
         float y = 40;
         List<Font> fonts = new ArrayList<>();
-        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-        String testValue = "17:12:59";
-        for (String s: ge.getAvailableFontFamilyNames()) {
-            Font f = VectorFontFactory.getFont(s, Font.PLAIN, 20, true, true);
-            if (f.canDisplayUpTo(testValue)==-1) {
-                System.out.println(f.getName());
-                fonts.add(f);
-            }
-        }
-
+        fonts.add(new Arial16());
+        fonts.add(new ArialNarrow16());
+        fonts.add(new Arial24());
+        fonts.add(new Arial32());
+        fonts.add(new Curlz22());
+        fonts.add(new Curlz32());
+        fonts.add(new Magneto16());
+        fonts.add(new Magneto24());
+        fonts.add(new Magneto32());
+        fonts.add(new OldEnglish30());
+        fonts.add(new Stencil16());
+        fonts.add(new Stencil24());
+        fonts.add(new Stencil33());
+        fonts.add(new Tahoma16());
+        fonts.add(new Tahoma24());
+        fonts.add(new Tahoma32());
+        fonts.add(new Verdana15());
+        fonts.add(new Verdana24());
+        fonts.add(new Verdana32());
         
         int fc = 0;
         Font font = fonts.get(fc);
@@ -61,15 +86,14 @@ public class VectorFontDemo {
             String text = formatter.format(new Date());
             // wipe area and show date
             oled.clearBlock(0,0,159,35);
-            SysFontDrawer.drawStringToBitmap(text, font, true, 0, 0, oled.getBitmap());
-            
+            oled.drawText(0,0,text,font);
             System.out.println(String.format("[x,y]=%f,%f [px,py]=%f,%f [dx,dy]=%f,%f", x, y, px, py, dx, dy));
             oled.drawPixel((int)px, (int)py, false);
             oled.drawPixel((int)x, (int)y, true);
             oled.display();
             Thread.sleep(5);
             i++;
-            if (i>5) {
+            if (i>10) {
                 i=0;
                 fc++;
                 if (fc>=fonts.size()) {

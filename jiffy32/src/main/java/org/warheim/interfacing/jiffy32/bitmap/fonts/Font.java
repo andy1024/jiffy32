@@ -14,33 +14,33 @@ import org.slf4j.LoggerFactory;
 public abstract class Font implements Serializable {
     private static final Logger logger = LoggerFactory.getLogger(Font.class);
     private final String name;
-    private final char start_char;
-    private final char end_char;
-    private final int char_height;
-    private final int space_width;
-    private final int gap_width;
+    private final char startChar;
+    private final char endChar;
+    private final int charHeight;
+    private final int spaceWidth;
+    private final int gapWidth;
     
     protected byte[] bitmaps;
 
-    protected void readBitmapFile(String bitmapBinaryFilename) {
+    final protected void readBitmapFile(String bitmapBinaryFilename) {
         ClassLoader loader = Thread.currentThread().getContextClassLoader();
         try (InputStream resourceStream = loader.getResourceAsStream(bitmapBinaryFilename)) {
             bitmaps = new byte[(int) resourceStream.available()];
-            DataInputStream dis = new DataInputStream(resourceStream);
-            dis.readFully(bitmaps);
-            dis.close();
+            try (DataInputStream dis = new DataInputStream(resourceStream)) {
+                dis.readFully(bitmaps);
+            }
         } catch (IOException ex) {
             logger.error("Main config not found", ex);
         }
     }
     
-    public Font(String name, char start_char, char end_char, int char_height, int space_width, int gap_width, String bitmapBinaryFilename) {
+    public Font(String name, char startChar, char endChar, int charHeight, int spaceWidth, int gapWidth, String bitmapBinaryFilename) {
         this.name = name;
-        this.start_char = start_char;
-        this.end_char = end_char;
-        this.char_height = char_height;
-        this.space_width = space_width;
-        this.gap_width = gap_width;
+        this.startChar = startChar;
+        this.endChar = endChar;
+        this.charHeight = charHeight;
+        this.spaceWidth = spaceWidth;
+        this.gapWidth = gapWidth;
         readBitmapFile(bitmapBinaryFilename);
     }
     
@@ -56,24 +56,24 @@ public abstract class Font implements Serializable {
         return name;
     }
 
-    public char getStart_char() {
-        return start_char;
+    public char getStartChar() {
+        return startChar;
     }
 
-    public char getEnd_char() {
-        return end_char;
+    public char getEndChar() {
+        return endChar;
     }
 
-    public int getChar_height() {
-        return char_height;
+    public int getCharHeight() {
+        return charHeight;
     }
 
-    public int getSpace_width() {
-        return space_width;
+    public int getSpaceWidth() {
+        return spaceWidth;
     }
 
-    public int getGap_width() {
-        return gap_width;
+    public int getGapWidth() {
+        return gapWidth;
     }
   
 }
