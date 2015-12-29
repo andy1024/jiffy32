@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 import org.warheim.interfacing.jiffy32.FF32Factory;
 import org.warheim.interfacing.jiffy32.FF32c;
-import org.warheim.interfacing.jiffy32.Pin;
+import org.warheim.interfacing.jiffy32.model.Pin;
 import java.awt.Font;
 import java.awt.GraphicsEnvironment;
 import org.warheim.interfacing.jiffy32.bitmap.SysFontDrawer;

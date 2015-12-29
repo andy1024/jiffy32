@@ -7,7 +7,7 @@ import org.warheim.interfacing.jiffy32.bitmap.fonts.Font;
 import java.io.IOException;
 import org.warheim.interfacing.jiffy32.Constants;
 import org.warheim.interfacing.jiffy32.FF32c;
-import org.warheim.interfacing.jiffy32.Pin;
+import org.warheim.interfacing.jiffy32.model.Pin;
 import org.warheim.interfacing.jiffy32.exceptions.ArgumentException;
 import org.warheim.interfacing.jiffy32.exceptions.JiffyException;
 

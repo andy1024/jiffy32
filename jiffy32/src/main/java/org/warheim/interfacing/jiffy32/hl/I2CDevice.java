@@ -4,7 +4,7 @@ import com.codeminders.hidapi.ClassPathLibraryLoader;
 import java.io.IOException;
 import org.warheim.interfacing.jiffy32.FF32Factory;
 import org.warheim.interfacing.jiffy32.FF32c;
-import org.warheim.interfacing.jiffy32.Pin;
+import org.warheim.interfacing.jiffy32.model.Pin;
 import org.warheim.interfacing.jiffy32.exceptions.ArgumentException;
 import org.warheim.interfacing.jiffy32.exceptions.JiffyException;
 

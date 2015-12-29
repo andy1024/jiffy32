@@ -1,5 +1,6 @@
 package org.warheim.interfacing.jiffy32;
 
+import org.warheim.interfacing.jiffy32.model.Pin;
 import java.io.IOException;
 import org.warheim.interfacing.jiffy32.exceptions.AddressOutOfRange;
 import org.warheim.interfacing.jiffy32.exceptions.ArgumentException;

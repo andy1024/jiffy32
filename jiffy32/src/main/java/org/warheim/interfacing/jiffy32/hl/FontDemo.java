@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 import org.warheim.interfacing.jiffy32.FF32Factory;
 import org.warheim.interfacing.jiffy32.FF32c;
-import org.warheim.interfacing.jiffy32.Pin;
+import org.warheim.interfacing.jiffy32.model.Pin;
 import org.warheim.interfacing.jiffy32.bitmap.fonts.Arial16;
 import org.warheim.interfacing.jiffy32.bitmap.fonts.Arial24;
 import org.warheim.interfacing.jiffy32.bitmap.fonts.Arial32;

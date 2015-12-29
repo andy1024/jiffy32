@@ -1,5 +1,6 @@
 package org.warheim.interfacing.jiffy32;
 
+import org.warheim.interfacing.jiffy32.model.Pin;
 import com.codeminders.hidapi.HIDDevice;
 import java.io.IOException;
 import java.util.Arrays;
