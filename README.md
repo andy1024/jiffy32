@@ -17,7 +17,7 @@ Codeminders for their [javahidapi](https://code.google.com/p/javahidapi/)
 
 Guy Carpenter for his [py-gaugatte](http://guy.carpenter.id.au/gaugette/) code
 
-Michał Kołodziejski [mk github](https://github.com/michalkolodziejski) for some clever ideas on solving font issues
+[Michał Kołodziejski](https://github.com/michalkolodziejski) for some clever ideas on solving font issues
 
 ## Build
 Building process is handled by maven tool, which takes care of dependencies needed by this project
