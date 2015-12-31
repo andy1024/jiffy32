@@ -1,6 +1,6 @@
 package org.warheim.interfacing.jiffy32.bitmap;
 
-import org.warheim.interfacing.jiffy32.bitmap.fonts.Font;
+import org.warheim.interfacing.jiffy32.bitmap.fonts.BitmapFont;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -104,7 +104,7 @@ public class Bitmap {
     }
 
     // returns the width in pixels of the string allowing for kerning & interchar-spaces
-    public int textWidth(String string, Font font) {
+    public int textWidth(String string, BitmapFont font) {
         int x = 0;
         Character prevChar = null;
         int prevWidth = 0;
@@ -138,73 +138,49 @@ public class Bitmap {
         logger.debug(s);
     }
 
-    private static void print(String s, Object... args) {
-        print(String.format(s, args));
-    }
-
-    public int drawText(int x, int y, String string, Font font) {
+    public int drawText(int x, int y, String string, BitmapFont font) {
         int height = font.getCharHeight();
         Character prevChar = null;
-        print("1 height=%d", height);
         int prevWidth = 0;
         for (int i=0; i<string.length(); ++i) {
             char c = string.charAt(i);
-            print("2 char=%c", c);
             if (c<font.getStartChar() || c>font.getEndChar()) {
                 if (prevChar != null) {
-                    print("3a outside, prev_char=%c", prevChar);
                     x += font.getSpaceWidth() + prevWidth + font.getGapWidth();
-                    print("3b x=%d", x);
                 }
                 prevChar = null;
             } else {
                 int pos = c - font.getStartChar();
-                print("4a pos=%d", pos);
                 int width = font.getDescriptors()[pos][0];
                 int offset = font.getDescriptors()[pos][1];
-                print("4b width=%d offset=%d", width, offset);
                 if (prevChar != null) {
-                    print("5a prev_char not null");
                     x += font.getKerning()[prevChar][pos] + font.getGapWidth();
-                    print("5b x=%d", x);
                 }
                 prevChar = (char)pos;
                 prevWidth = width;
-                print("6a prev_char=%c prev_width=%d",(int)prevChar, prevWidth);
                 int bytesPerRow = (width + 7) / 8;
-                print("6b bytes_per_row=%d", bytesPerRow);
                 for (int row=0; row<height; ++row) {
-                    print("7a row=%d", row);
                     int py = y + row;
                     byte mask = (byte)0x80;
                     int p = offset;
-                    print("7b py=%d mask=%x p=%d",py, mask, p);
                     for (int col=0; col<width; ++col) {
-                        print("8a col=%d", col);
                         int px = x + col;
-                        print("8b px=%d", px);
                         if ((font.getBitmaps()[p] & mask)!=0) {
-                            print("9 and mask");
                             drawPixel(px,py,true);  // for kerning, never draw black
                         }
                         mask = (byte)((mask & 0xff) >>> 1); //Oh God... why?
-                        print("9.1 mask=%x", mask);
                         if (mask == 0) {
                             mask = (byte)0x80;
                             p+=1;
                         }
-                        print("10 mask=%x p=%d", mask, p);
                     }
                     offset += bytesPerRow;
-                    print("11 offset=%d",offset);
                 }
             }
         }
         if (prevChar != null) {
             x += prevWidth;
-            print("12 prev_char not null, x=%d",x);
         }
-        print("13 x=%d",x);
         return x;
     }
 

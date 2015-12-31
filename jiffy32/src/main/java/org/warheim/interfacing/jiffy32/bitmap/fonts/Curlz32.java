@@ -3,7 +3,7 @@ package org.warheim.interfacing.jiffy32.bitmap.fonts;
 // Module curlz_mt_32
 // generated from Curlz MT 21.75pt
 
-public class Curlz32 extends Font {
+public class Curlz32 extends BitmapFont {
 	public Curlz32() {
 		super("Curlz MT 32", '!', (char)127, 32, 16, 4, "Curlz32.bin");
 	}

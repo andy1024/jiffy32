@@ -11,8 +11,8 @@ import org.slf4j.LoggerFactory;
  *
  * @author andy
  */
-public abstract class Font implements Serializable {
-    private static final Logger logger = LoggerFactory.getLogger(Font.class);
+public abstract class BitmapFont implements Serializable {
+    private static final Logger logger = LoggerFactory.getLogger(BitmapFont.class);
     private final String name;
     private final char startChar;
     private final char endChar;
@@ -34,7 +34,7 @@ public abstract class Font implements Serializable {
         }
     }
     
-    public Font(String name, char startChar, char endChar, int charHeight, int spaceWidth, int gapWidth, String bitmapBinaryFilename) {
+    public BitmapFont(String name, char startChar, char endChar, int charHeight, int spaceWidth, int gapWidth, String bitmapBinaryFilename) {
         this.name = name;
         this.startChar = startChar;
         this.endChar = endChar;

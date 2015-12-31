@@ -3,7 +3,7 @@ package org.warheim.interfacing.jiffy32.bitmap.fonts;
 // Module arial_16
 // generated from Arial 12pt
 
-public class Arial16 extends Font {
+public class Arial16 extends BitmapFont {
 	public Arial16() {
 		super("Arial 16", '!', (char)127, 16, 8, 2, "Arial16.bin");
 	}

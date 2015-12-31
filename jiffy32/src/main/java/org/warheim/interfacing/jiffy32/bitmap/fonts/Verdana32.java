@@ -3,7 +3,7 @@ package org.warheim.interfacing.jiffy32.bitmap.fonts;
 // Module verdana_32
 // generated from Verdana 24pt
 
-public class Verdana32 extends Font {
+public class Verdana32 extends BitmapFont {
 	public Verdana32() {
 		super("Verdana 32", '!', (char)127, 32, 16, 4, "Verdana32.bin");
 	}

@@ -3,7 +3,7 @@ package org.warheim.interfacing.jiffy32.hl;
 import org.warheim.interfacing.jiffy32.bitmap.Bitmap;
 import org.warheim.interfacing.jiffy32.bitmap.SimpleFont;
 import org.warheim.interfacing.jiffy32.bitmap.Font5x8;
-import org.warheim.interfacing.jiffy32.bitmap.fonts.Font;
+import org.warheim.interfacing.jiffy32.bitmap.fonts.BitmapFont;
 import java.io.IOException;
 import org.warheim.interfacing.jiffy32.Constants;
 import org.warheim.interfacing.jiffy32.FF32c;
@@ -318,11 +318,11 @@ public class I2C_SSD1306 extends I2CDevice {
         bitmap.clearBlock(x0,y0,dx,dy);
     }
     
-    public void drawText(int x, int y, String string, Font font) {
+    public void drawText(int x, int y, String string, BitmapFont font) {
         bitmap.drawText(x,y,string,font);
     }
 
-    public void textWidth(String string, Font font) {
+    public void textWidth(String string, BitmapFont font) {
         bitmap.textWidth(string, font);
     }
 

@@ -3,7 +3,7 @@ package org.warheim.interfacing.jiffy32.bitmap.fonts;
 // Module arial_narrow_16
 // generated from Arial Narrow 12pt
 
-public class ArialNarrow16 extends Font {
+public class ArialNarrow16 extends BitmapFont {
 	public ArialNarrow16() {
 		super("Arial Narrow 16", '!', (char)127, 16, 8, 2, "ArialNarrow16.bin");
 	}

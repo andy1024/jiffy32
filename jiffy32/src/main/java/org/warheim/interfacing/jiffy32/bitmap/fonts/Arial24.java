@@ -3,7 +3,7 @@ package org.warheim.interfacing.jiffy32.bitmap.fonts;
 // Module arial_24
 // generated from Arial 18.75pt
 
-public class Arial24 extends Font {
+public class Arial24 extends BitmapFont {
 	public Arial24() {
 		super("Arial 24", '!', (char)127, 24, 12, 3, "Arial24.bin");
 	}

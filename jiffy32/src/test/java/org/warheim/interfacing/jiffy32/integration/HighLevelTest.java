@@ -61,7 +61,7 @@ public class HighLevelTest {
         ports.put(0x01, "pot");
         ports.put(0x02, "photoresistor");
         ports.put(0x03, "thermistor");
-        for (int i=0;i<150;++i) {
+        for (int i=0;i<15;++i) {
             for (int x: ports.keySet()) {
                 jiffy.writeByteI2C(SLAVE_ADDRESS, x); 
                 int retval = jiffy.readByteI2C(SLAVE_ADDRESS);

@@ -1,6 +1,6 @@
 package org.warheim.interfacing.jiffy32.hl;
 
-import org.warheim.interfacing.jiffy32.bitmap.fonts.Font;
+import org.warheim.interfacing.jiffy32.bitmap.fonts.BitmapFont;
 import com.codeminders.hidapi.ClassPathLibraryLoader;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -57,7 +57,7 @@ public class FontDemo {
         float py = -1;
         float x = 60;
         float y = 40;
-        List<Font> fonts = new ArrayList<>();
+        List<BitmapFont> fonts = new ArrayList<>();
         fonts.add(new Arial16());
         fonts.add(new ArialNarrow16());
         fonts.add(new Arial24());
@@ -79,7 +79,7 @@ public class FontDemo {
         fonts.add(new Verdana32());
         
         int fc = 0;
-        Font font = fonts.get(fc);
+        BitmapFont font = fonts.get(fc);
         while (true) {
             // retrieve current date 
             DateFormat formatter = new SimpleDateFormat(DATE_FORMAT);

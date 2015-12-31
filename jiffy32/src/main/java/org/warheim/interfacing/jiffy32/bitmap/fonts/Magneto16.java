@@ -3,7 +3,7 @@ package org.warheim.interfacing.jiffy32.bitmap.fonts;
 // Module magneto_bold_16
 // generated from Magneto 11.25pt
 
-public class Magneto16 extends Font {
+public class Magneto16 extends BitmapFont {
 	public Magneto16() {
 		super("Magneto 16", '!', (char)127, 16, 8, 2, "Magneto16.bin");
 	}

@@ -3,7 +3,7 @@ package org.warheim.interfacing.jiffy32.bitmap.fonts;
 // Module stencil_16
 // generated from Stencil 11.25pt
 
-public class Stencil16 extends Font {
+public class Stencil16 extends BitmapFont {
 	public Stencil16() {
 		super("Stencil 16", '!', (char)127, 16, 8, 2, "Stencil16.bin");
 	}

@@ -3,7 +3,7 @@ package org.warheim.interfacing.jiffy32.bitmap.fonts;
 // Module arial_32
 // generated from Arial 24.75pt
 
-public class Arial32 extends Font {
+public class Arial32 extends BitmapFont {
 	public Arial32() {
 		super("Arial 32", '!', (char)127, 32, 16, 4, "Arial32.bin");
 	}

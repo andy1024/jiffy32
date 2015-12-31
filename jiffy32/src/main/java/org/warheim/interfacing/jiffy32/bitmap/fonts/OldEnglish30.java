@@ -3,7 +3,7 @@ package org.warheim.interfacing.jiffy32.bitmap.fonts;
 // Module old_english_text_mt_30
 // generated from Old English Text MT 24pt
 
-public class OldEnglish30 extends Font {
+public class OldEnglish30 extends BitmapFont {
 	public OldEnglish30() {
 		super("Old English Text MT 30", '!', (char)127, 30, 15, 3, "OldEnglish30.bin");
 	}

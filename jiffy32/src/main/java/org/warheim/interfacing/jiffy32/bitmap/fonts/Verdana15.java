@@ -3,7 +3,7 @@ package org.warheim.interfacing.jiffy32.bitmap.fonts;
 // Module verdana_15
 // generated from Verdana 12pt
 
-public class Verdana15 extends Font {
+public class Verdana15 extends BitmapFont {
 	public Verdana15() {
 		super("Verdana 15", '!', (char)127, 15, 7, 1, "Verdana15.bin");
 	}

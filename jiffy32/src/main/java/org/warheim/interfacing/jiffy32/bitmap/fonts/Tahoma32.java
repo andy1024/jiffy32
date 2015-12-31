@@ -3,7 +3,7 @@ package org.warheim.interfacing.jiffy32.bitmap.fonts;
 // Module tahoma_32
 // generated from Tahoma 24pt
 
-public class Tahoma32 extends Font {
+public class Tahoma32 extends BitmapFont {
 	public Tahoma32() {
 		super("Tahoma 32", '!', (char)127, 32, 16, 4, "Tahoma32.bin");
 	}
