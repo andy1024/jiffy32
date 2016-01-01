@@ -26,6 +26,7 @@ public class SysFontDrawer {
         BufferedImage bi = new BufferedImage(1, 1, BufferedImage.TYPE_BYTE_BINARY);
         Graphics2D g2 = ge.createGraphics(bi);
         g2.setFont(f);
+        //TODO: check if it's necessary and if it introduces any side effects
         //if destination text position is not 8-bit aligned, move it right to align with 8-bit boundary
         int positionRemainder = calculate8bitAlignedRemainder(x0);
         int x = 0;
