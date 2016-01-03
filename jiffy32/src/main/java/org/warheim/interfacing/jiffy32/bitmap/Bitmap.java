@@ -1,6 +1,16 @@
 package org.warheim.interfacing.jiffy32.bitmap;
 
-import org.warheim.interfacing.jiffy32.bitmap.fonts.BitmapFont;
+import org.warheim.interfacing.jiffy32.fonts.SimpleFont;
+import org.warheim.interfacing.jiffy32.fonts.VectorFont;
+import java.awt.Color;
+import java.awt.FontMetrics;
+import java.awt.Graphics2D;
+import java.awt.GraphicsEnvironment;
+import java.awt.font.FontRenderContext;
+import java.awt.font.LineMetrics;
+import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
+import org.warheim.interfacing.jiffy32.fonts.bitmap.BitmapFont;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -77,7 +87,9 @@ public class Bitmap {
                     line += ' '
             print('|'+line+'|')
 */
-    
+    public void drawPixel(int x, int y, int on) {
+        drawPixel(x,y,(on==1));
+    }
 
     public void drawPixel(int x, int y, boolean on/*=True*/) {
         if (x<0 || x>=cols || y<0 || y>=rows) {
@@ -138,6 +150,54 @@ public class Bitmap {
         logger.debug(s);
     }
 
+    //draws text using simple font
+    public void drawText(int x, int y, String string, SimpleFont font) {
+        byte[] fontBytes = font.getBytes();
+        int fontRows = font.getRows();
+        int fontCols = font.getCols();
+        for (int i=0; i<string.length(); ++i) {
+            char c = string.charAt(i);
+            int p = c * fontCols;
+            for (int col=0; col<fontCols; ++col) {
+                byte mask = fontBytes[p];
+                p+=1;
+                for (int row=0; row<fontRows; ++row) {
+                    drawPixel(x,y+row,mask & 0x1);
+                    mask >>= 1;
+                }
+                x += 1;
+            }
+        }
+    }
+
+    public void drawText(int x, int y, String string, SimpleFont font, int size/*=2*/, int space/*=1*/) {
+        byte[] fontBytes = font.getBytes();
+        int fontRows = font.getRows();
+        int fontCols = font.getCols();
+        for (int i=0; i<string.length(); ++i) {
+            char c = string.charAt(i);
+            int p = c * fontCols;
+            for (int col=0; col<fontCols; ++col) {
+                byte mask = fontBytes[p];
+                p+=1;
+                int py = y;
+                for (int row=0; row<fontRows; ++row) {
+                    for (int sy=0;sy<size;++sy) {
+                        int px = x;
+                        for (int sx=0;sx<size; ++sx) {
+                            drawPixel(px,py,mask & 0x1);
+                            px += 1;
+                        }
+                        py += 1;
+                    }
+                    mask >>= 1;
+                }
+                x += size;
+            }
+            x += space;
+        }
+    }
+
     public int drawText(int x, int y, String string, BitmapFont font) {
         int height = font.getCharHeight();
         Character prevChar = null;
@@ -182,6 +242,60 @@ public class Bitmap {
             x += prevWidth;
         }
         return x;
+    }
+
+    public static int calculate8bitAlignedRemainder(int w) {
+        int widRemainder = 8-(w & 7);
+        return widRemainder;
+    }
+    
+    public void drawStringToBitmap(int x0, int y0, String text, VectorFont f) {
+        drawStringToBitmap(x0, y0, text, f, true);
+    }
+    
+    public void drawStringToBitmap(int x0, int y0, String text, VectorFont f, boolean on) {
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        //predraw text to get measurements
+        BufferedImage bi = new BufferedImage(1, 1, BufferedImage.TYPE_BYTE_BINARY);
+        Graphics2D g2 = ge.createGraphics(bi);
+        g2.setFont(f);
+        //TODO: check if it's necessary and if it introduces any side effects
+        //if destination text position is not 8-bit aligned, move it right to align with 8-bit boundary
+        int positionRemainder = calculate8bitAlignedRemainder(x0);
+        int x = 0;
+        FontRenderContext frc = g2.getFontRenderContext();
+        LineMetrics lm = f.getLineMetrics(text, frc);
+
+        int asc = (int) lm.getAscent();
+        int y = 0 + asc;
+        g2.drawString(text, x, y + asc);
+        FontMetrics metrics = g2.getFontMetrics(f);
+        Rectangle2D r = metrics.getStringBounds(text, null);
+        g2.dispose();
+        
+        //get measurements
+        int width = (int) (r.getWidth())+positionRemainder;
+        int height = (int) (r.getHeight());
+        
+        //align to byte
+        width += calculate8bitAlignedRemainder(width);
+        
+        //draw text onto virtual BufferedImage
+        bi = new BufferedImage(width, height, BufferedImage.TYPE_BYTE_BINARY);
+        g2 = ge.createGraphics(bi);
+        g2.setColor(Color.white);
+        g2.setFont(f);
+        g2.drawString(text, x+positionRemainder, y);
+        g2.dispose();
+        
+        for (int col=0;col<bi.getWidth();++col) {
+            for (int row=0;row<bi.getHeight();++row) {
+                if (bi.getRGB(col, row)==-1) {
+                    drawPixel(x0+col, y0+row, on);
+                }
+            }
+        }
+
     }
 
 }

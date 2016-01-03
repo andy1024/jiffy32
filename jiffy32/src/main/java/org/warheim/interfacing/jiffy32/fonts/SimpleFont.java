@@ -1,10 +1,10 @@
-package org.warheim.interfacing.jiffy32.bitmap;
+package org.warheim.interfacing.jiffy32.fonts;
 
 /**
  *
  * @author andy
  */
-public abstract class SimpleFont {
+public abstract class SimpleFont implements AbstractFont {
     private String name;
     private int rows;
     private int cols;

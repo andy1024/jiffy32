@@ -1,4 +1,4 @@
-package org.warheim.interfacing.jiffy32.bitmap.fonts;
+package org.warheim.interfacing.jiffy32.fonts.bitmap;
 // coding=utf-8
 // Module magneto_bold_16
 // generated from Magneto 11.25pt

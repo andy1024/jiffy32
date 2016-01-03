@@ -1,4 +1,4 @@
-package org.warheim.interfacing.jiffy32.bitmap.fonts;
+package org.warheim.interfacing.jiffy32.fonts.bitmap;
 // coding=utf-8
 // Module old_english_text_mt_30
 // generated from Old English Text MT 24pt

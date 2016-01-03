@@ -1,4 +1,4 @@
-package org.warheim.interfacing.jiffy32.bitmap.fonts;
+package org.warheim.interfacing.jiffy32.fonts.bitmap;
 // coding=utf-8
 // Module curlz_mt_22
 // generated from Curlz MT 15.75pt

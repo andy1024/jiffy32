@@ -1,9 +1,9 @@
 package org.warheim.interfacing.jiffy32.hl;
 
 import org.warheim.interfacing.jiffy32.bitmap.Bitmap;
-import org.warheim.interfacing.jiffy32.bitmap.SimpleFont;
-import org.warheim.interfacing.jiffy32.bitmap.Font5x8;
-import org.warheim.interfacing.jiffy32.bitmap.fonts.BitmapFont;
+import org.warheim.interfacing.jiffy32.fonts.SimpleFont;
+import org.warheim.interfacing.jiffy32.fonts.Font5x8;
+import org.warheim.interfacing.jiffy32.fonts.bitmap.BitmapFont;
 import java.io.IOException;
 import org.warheim.interfacing.jiffy32.Constants;
 import org.warheim.interfacing.jiffy32.FF32c;

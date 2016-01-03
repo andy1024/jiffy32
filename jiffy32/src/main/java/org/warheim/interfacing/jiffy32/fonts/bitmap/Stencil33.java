@@ -1,4 +1,4 @@
-package org.warheim.interfacing.jiffy32.bitmap.fonts;
+package org.warheim.interfacing.jiffy32.fonts.bitmap;
 // coding=utf-8
 // Module stencil_33
 // generated from Stencil 24pt

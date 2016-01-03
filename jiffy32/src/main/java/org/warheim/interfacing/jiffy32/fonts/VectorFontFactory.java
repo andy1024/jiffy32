@@ -1,4 +1,4 @@
-package org.warheim.interfacing.jiffy32.bitmap;
+package org.warheim.interfacing.jiffy32.fonts;
 
 import java.awt.Font;
 import java.awt.font.TextAttribute;

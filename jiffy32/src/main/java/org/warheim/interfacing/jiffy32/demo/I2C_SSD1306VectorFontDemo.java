@@ -11,9 +11,9 @@ import org.warheim.interfacing.jiffy32.FF32c;
 import org.warheim.interfacing.jiffy32.model.Pin;
 import java.awt.Font;
 import java.awt.GraphicsEnvironment;
-import org.warheim.interfacing.jiffy32.bitmap.SysFontDrawer;
+import org.warheim.interfacing.jiffy32.fonts.SysFontDrawer;
 import org.warheim.interfacing.jiffy32.hl.I2C_SSD1306;
-import org.warheim.interfacing.jiffy32.bitmap.VectorFontFactory;
+import org.warheim.interfacing.jiffy32.fonts.VectorFontFactory;
 
 /**
  *

@@ -1,4 +1,4 @@
-package org.warheim.interfacing.jiffy32.bitmap;
+package org.warheim.interfacing.jiffy32.fonts;
 
 /**
  * based on Guy Carpenter's py-gaugette and Adafruit_SSD1306 library

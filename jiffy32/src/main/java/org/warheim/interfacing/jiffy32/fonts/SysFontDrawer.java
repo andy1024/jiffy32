@@ -1,4 +1,4 @@
-package org.warheim.interfacing.jiffy32.bitmap;
+package org.warheim.interfacing.jiffy32.fonts;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -9,6 +9,7 @@ import java.awt.font.FontRenderContext;
 import java.awt.font.LineMetrics;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
+import org.warheim.interfacing.jiffy32.bitmap.Bitmap;
 /**
  *
  * @author andy

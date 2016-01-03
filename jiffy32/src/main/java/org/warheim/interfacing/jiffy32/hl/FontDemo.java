@@ -1,6 +1,6 @@
 package org.warheim.interfacing.jiffy32.hl;
 
-import org.warheim.interfacing.jiffy32.bitmap.fonts.BitmapFont;
+import org.warheim.interfacing.jiffy32.fonts.bitmap.BitmapFont;
 import com.codeminders.hidapi.ClassPathLibraryLoader;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -10,25 +10,25 @@ import java.util.List;
 import org.warheim.interfacing.jiffy32.FF32Factory;
 import org.warheim.interfacing.jiffy32.FF32c;
 import org.warheim.interfacing.jiffy32.model.Pin;
-import org.warheim.interfacing.jiffy32.bitmap.fonts.Arial16;
-import org.warheim.interfacing.jiffy32.bitmap.fonts.Arial24;
-import org.warheim.interfacing.jiffy32.bitmap.fonts.Arial32;
-import org.warheim.interfacing.jiffy32.bitmap.fonts.ArialNarrow16;
-import org.warheim.interfacing.jiffy32.bitmap.fonts.Curlz22;
-import org.warheim.interfacing.jiffy32.bitmap.fonts.Curlz32;
-import org.warheim.interfacing.jiffy32.bitmap.fonts.Magneto16;
-import org.warheim.interfacing.jiffy32.bitmap.fonts.Magneto24;
-import org.warheim.interfacing.jiffy32.bitmap.fonts.Magneto32;
-import org.warheim.interfacing.jiffy32.bitmap.fonts.OldEnglish30;
-import org.warheim.interfacing.jiffy32.bitmap.fonts.Stencil16;
-import org.warheim.interfacing.jiffy32.bitmap.fonts.Stencil24;
-import org.warheim.interfacing.jiffy32.bitmap.fonts.Stencil33;
-import org.warheim.interfacing.jiffy32.bitmap.fonts.Tahoma16;
-import org.warheim.interfacing.jiffy32.bitmap.fonts.Tahoma24;
-import org.warheim.interfacing.jiffy32.bitmap.fonts.Tahoma32;
-import org.warheim.interfacing.jiffy32.bitmap.fonts.Verdana15;
-import org.warheim.interfacing.jiffy32.bitmap.fonts.Verdana24;
-import org.warheim.interfacing.jiffy32.bitmap.fonts.Verdana32;
+import org.warheim.interfacing.jiffy32.fonts.bitmap.Arial16;
+import org.warheim.interfacing.jiffy32.fonts.bitmap.Arial24;
+import org.warheim.interfacing.jiffy32.fonts.bitmap.Arial32;
+import org.warheim.interfacing.jiffy32.fonts.bitmap.ArialNarrow16;
+import org.warheim.interfacing.jiffy32.fonts.bitmap.Curlz22;
+import org.warheim.interfacing.jiffy32.fonts.bitmap.Curlz32;
+import org.warheim.interfacing.jiffy32.fonts.bitmap.Magneto16;
+import org.warheim.interfacing.jiffy32.fonts.bitmap.Magneto24;
+import org.warheim.interfacing.jiffy32.fonts.bitmap.Magneto32;
+import org.warheim.interfacing.jiffy32.fonts.bitmap.OldEnglish30;
+import org.warheim.interfacing.jiffy32.fonts.bitmap.Stencil16;
+import org.warheim.interfacing.jiffy32.fonts.bitmap.Stencil24;
+import org.warheim.interfacing.jiffy32.fonts.bitmap.Stencil33;
+import org.warheim.interfacing.jiffy32.fonts.bitmap.Tahoma16;
+import org.warheim.interfacing.jiffy32.fonts.bitmap.Tahoma24;
+import org.warheim.interfacing.jiffy32.fonts.bitmap.Tahoma32;
+import org.warheim.interfacing.jiffy32.fonts.bitmap.Verdana15;
+import org.warheim.interfacing.jiffy32.fonts.bitmap.Verdana24;
+import org.warheim.interfacing.jiffy32.fonts.bitmap.Verdana32;
 
 /**
  *
