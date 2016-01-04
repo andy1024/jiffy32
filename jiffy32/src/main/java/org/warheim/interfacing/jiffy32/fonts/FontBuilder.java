@@ -56,9 +56,10 @@ public class FontBuilder {
             case SIMPLE:
                 return (SimpleFont)fontClass.newInstance();
             case BITMAP:
-                //return (BitmapFont)fontClass.newInstance();
+                return (BitmapFont)fontClass.newInstance();
             case VECTOR:
-                break;
+                VectorFont f = VectorFontFactory.getFont(name, style, size, kerning, ligature);
+                return f;
             default:
                 //error
                 break;

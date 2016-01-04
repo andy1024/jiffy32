@@ -10,4 +10,7 @@ public class VectorFont extends java.awt.Font implements AbstractFont {
         super(name, style, size);
     }
 
+    public VectorFont(java.awt.Font baseFont) {
+        super(baseFont);
+    }
 }

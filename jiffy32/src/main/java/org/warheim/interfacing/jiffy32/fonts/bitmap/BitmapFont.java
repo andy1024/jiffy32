@@ -6,12 +6,13 @@ import java.io.InputStream;
 import java.io.Serializable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.warheim.interfacing.jiffy32.fonts.AbstractFont;
 
 /**
  *
  * @author andy
  */
-public abstract class BitmapFont implements Serializable {
+public abstract class BitmapFont implements AbstractFont, Serializable {
     private static final Logger logger = LoggerFactory.getLogger(BitmapFont.class);
     private final String name;
     private final char startChar;

@@ -10,7 +10,7 @@ import java.util.Map;
  * @author andy
  */
 public class VectorFontFactory {
-    public static Font getFont(String name, int style, int size, boolean kerning, boolean ligature) {
+    public static VectorFont getFont(String name, int style, int size, boolean kerning, boolean ligature) {
         Font f = new Font(name, style, size);
         if (kerning||ligature) {
             Map<TextAttribute, Object> map = new HashMap<>();
@@ -24,6 +24,6 @@ public class VectorFontFactory {
             }
             f = f.deriveFont(map);
         }
-        return f;
+        return new VectorFont(f);
     }
 }
