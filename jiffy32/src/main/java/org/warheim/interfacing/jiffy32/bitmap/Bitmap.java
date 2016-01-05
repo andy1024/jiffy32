@@ -249,11 +249,11 @@ public class Bitmap {
         return widRemainder;
     }
     
-    public void drawStringToBitmap(int x0, int y0, String text, VectorFont f) {
-        drawStringToBitmap(x0, y0, text, f, true);
+    public void drawText(int x0, int y0, String text, VectorFont f) {
+        drawText(x0, y0, text, f, true);
     }
     
-    public void drawStringToBitmap(int x0, int y0, String text, VectorFont f, boolean on) {
+    public void drawText(int x0, int y0, String text, VectorFont f, boolean on) {
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         //predraw text to get measurements
         BufferedImage bi = new BufferedImage(1, 1, BufferedImage.TYPE_BYTE_BINARY);
