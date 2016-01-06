@@ -10,6 +10,7 @@ import org.warheim.interfacing.jiffy32.FF32c;
 import org.warheim.interfacing.jiffy32.model.Pin;
 import org.warheim.interfacing.jiffy32.exceptions.ArgumentException;
 import org.warheim.interfacing.jiffy32.exceptions.JiffyException;
+import org.warheim.interfacing.jiffy32.fonts.VectorFont;
 
 /**
  * based on Guy Carpenter's py-gaugette and Adafruit_SSD1306 library
@@ -268,50 +269,11 @@ public class I2C_SSD1306 extends I2CDevice {
 
     //draws text using simple font
     public void drawText(int x, int y, String string) {
-        byte[] fontBytes = font.getBytes();
-        int fontRows = font.getRows();
-        int fontCols = font.getCols();
-        for (int i=0; i<string.length(); ++i) {
-            char c = string.charAt(i);
-            int p = c * fontCols;
-            for (int col=0; col<fontCols; ++col) {
-                byte mask = fontBytes[p];
-                p+=1;
-                for (int row=0; row<fontRows; ++row) {
-                    drawPixel(x,y+row,mask & 0x1);
-                    mask >>= 1;
-                }
-                x += 1;
-            }
-        }
+        bitmap.drawText(x, y, string, font);
     }
 
     public void drawText(int x, int y, String string, int size/*=2*/, int space/*=1*/) {
-        byte[] fontBytes = font.getBytes();
-        int fontRows = font.getRows();
-        int fontCols = font.getCols();
-        for (int i=0; i<string.length(); ++i) {
-            char c = string.charAt(i);
-            int p = c * fontCols;
-            for (int col=0; col<fontCols; ++col) {
-                byte mask = fontBytes[p];
-                p+=1;
-                int py = y;
-                for (int row=0; row<fontRows; ++row) {
-                    for (int sy=0;sy<size;++sy) {
-                        int px = x;
-                        for (int sx=0;sx<size; ++sx) {
-                            drawPixel(px,py,mask & 0x1);
-                            px += 1;
-                        }
-                        py += 1;
-                    }
-                    mask >>= 1;
-                }
-                x += size;
-            }
-            x += space;
-        }
+        bitmap.drawText(x, y, string, font, size, space);
     }
 
     public void clearBlock(int x0, int y0, int dx, int dy) {
@@ -319,6 +281,10 @@ public class I2C_SSD1306 extends I2CDevice {
     }
     
     public void drawText(int x, int y, String string, BitmapFont font) {
+        bitmap.drawText(x,y,string,font);
+    }
+
+    public void drawText(int x, int y, String string, VectorFont font) {
         bitmap.drawText(x,y,string,font);
     }
 

@@ -12,6 +12,7 @@ import org.warheim.interfacing.jiffy32.model.Pin;
 import java.awt.Font;
 import java.awt.GraphicsEnvironment;
 import org.warheim.interfacing.jiffy32.fonts.SysFontDrawer;
+import org.warheim.interfacing.jiffy32.fonts.VectorFont;
 import org.warheim.interfacing.jiffy32.hl.I2C_SSD1306;
 import org.warheim.interfacing.jiffy32.fonts.VectorFontFactory;
 
@@ -43,11 +44,11 @@ public class I2C_SSD1306VectorFontDemo {
         float py = -1;
         float x = 60;
         float y = 40;
-        List<Font> fonts = new ArrayList<>();
+        List<VectorFont> fonts = new ArrayList<>();
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         String testValue = "17:12:59";
         for (String s: ge.getAvailableFontFamilyNames()) {
-            Font f = VectorFontFactory.getFont(s, Font.PLAIN, 20, true, true);
+            VectorFont f = VectorFontFactory.getFont(s, Font.PLAIN, 20, true, true);
             if (f.canDisplayUpTo(testValue)==-1) {
                 System.out.println(f.getName());
                 fonts.add(f);
@@ -56,13 +57,14 @@ public class I2C_SSD1306VectorFontDemo {
 
         
         int fc = 0;
-        Font font = fonts.get(fc);
+        VectorFont font = fonts.get(fc);
         while (true) {
             // retrieve current date 
             DateFormat formatter = new SimpleDateFormat(DATE_FORMAT);
             String text = formatter.format(new Date());
             // wipe area and show date
             oled.clearBlock(0,0,159,35);
+            oled.drawText(0, 0, text, font);
             SysFontDrawer.drawStringToBitmap(text, font, true, 0, 0, oled.getBitmap());
             
             System.out.println(String.format("[x,y]=%f,%f [px,py]=%f,%f [dx,dy]=%f,%f", x, y, px, py, dx, dy));
