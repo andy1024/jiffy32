@@ -6,6 +6,8 @@ import java.io.InputStream;
 import java.io.Serializable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.warheim.interfacing.jiffy32.bitmap.Bitmap;
+import org.warheim.interfacing.jiffy32.bitmap.FontDrawer;
 import org.warheim.interfacing.jiffy32.fonts.AbstractFont;
 
 /**
@@ -77,4 +79,9 @@ public abstract class BitmapFont implements AbstractFont, Serializable {
         return gapWidth;
     }
   
+    @Override
+    public int draw(int x, int y, String str, boolean on, Bitmap bitmap, FontDrawer fontDrawerVisitor) {
+        return fontDrawerVisitor.visit(this, x, y, str, on, bitmap);
+    }
+
 }

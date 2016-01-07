@@ -11,16 +11,19 @@ import org.warheim.interfacing.jiffy32.FF32c;
 import org.warheim.interfacing.jiffy32.model.Pin;
 import java.awt.Font;
 import java.awt.GraphicsEnvironment;
-import org.warheim.interfacing.jiffy32.fonts.SysFontDrawer;
+import org.warheim.interfacing.jiffy32.bitmap.FontDrawer;
+import org.warheim.interfacing.jiffy32.fonts.AbstractFont;
+import org.warheim.interfacing.jiffy32.fonts.Font5x8;
 import org.warheim.interfacing.jiffy32.fonts.VectorFont;
 import org.warheim.interfacing.jiffy32.hl.I2C_SSD1306;
 import org.warheim.interfacing.jiffy32.fonts.VectorFontFactory;
+import org.warheim.interfacing.jiffy32.fonts.bitmap.Arial24;
 
 /**
  *
  * @author andy
  */
-public class I2C_SSD1306VectorFontDemo {
+public class I2C_SSD1306FontDemo {
 
     public static final String DATE_FORMAT = "HH:mm:ss";
     static {
@@ -44,7 +47,9 @@ public class I2C_SSD1306VectorFontDemo {
         float py = -1;
         float x = 60;
         float y = 40;
-        List<VectorFont> fonts = new ArrayList<>();
+        List<AbstractFont> fonts = new ArrayList<>();
+        fonts.add(new Font5x8(2,1));
+        fonts.add(new Arial24());
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         String testValue = "17:12:59";
         for (String s: ge.getAvailableFontFamilyNames()) {
@@ -54,18 +59,17 @@ public class I2C_SSD1306VectorFontDemo {
                 fonts.add(f);
             }
         }
-
         
         int fc = 0;
-        VectorFont font = fonts.get(fc);
+        AbstractFont font = fonts.get(fc);
+        FontDrawer fd = new FontDrawer();
         while (true) {
             // retrieve current date 
             DateFormat formatter = new SimpleDateFormat(DATE_FORMAT);
             String text = formatter.format(new Date());
             // wipe area and show date
             oled.clearBlock(0,0,159,35);
-            oled.drawText(0, 0, text, font);
-            SysFontDrawer.drawStringToBitmap(text, font, true, 0, 0, oled.getBitmap());
+            font.draw(0, 0, text, true, oled.getBitmap(), fd);
             
             System.out.println(String.format("[x,y]=%f,%f [px,py]=%f,%f [dx,dy]=%f,%f", x, y, px, py, dx, dy));
             oled.drawPixel((int)px, (int)py, false);

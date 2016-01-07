@@ -42,7 +42,11 @@ public class Font5x8 extends SimpleFont {
                 "000018180000001010003040FF0101001F01011E00191D1712003C3C3C3C0000000000"                    
             );
     public Font5x8() {
-        super("Font5x8", 8, 5);
+        super("Font5x8", 8, 5, 1, 1);
+    }
+
+    public Font5x8(int size, int space) {
+        super("Font5x8", 8, 5, size, space);
     }
 
     @Override
