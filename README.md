@@ -36,7 +36,7 @@ sudo udevadm control --reload-rules
 sudo udevadm trigger
 ```
 This should be done only once.
-Example usage can be found in org.warheim.interfacing.jiffy32.JiffyTest class. Protoboard wiring example will follow shortly.
+Example usage can be found in org.warheim.interfacing.jiffy32.JiffyTest class and org.warheim.interfacing.jiffy32.demo package. Protoboard wiring example will follow shortly.
 
 ![Alt text](https://raw.githubusercontent.com/andy1024/jiffy32/master/images/pfcjif-screenshot.png?raw=true "Self-made board with FF32 chip connected to PCF8591")
 ######Screenshot from jiffy32 demo using PCF8591 breakout board. Written in Processing
@@ -47,13 +47,11 @@ Work in progress
 
 Basic calls are working (dongle metadata, digital, analog and pwm single and mutliple pin i/o requests)
 
-i2c calls are working (tested with PCF8591 chip)
+i2c calls are working (tested with PCF8591 chip and SSD1306 OLED display)
 
 SPI and 1-Wire calls are implemented, but not tested yet
 
 Library supports multiple dongles attached simultaneously
-
-No optimization has been done yet 
 
 [Current bugs](https://github.com/andy1024/jiffy32/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
 
