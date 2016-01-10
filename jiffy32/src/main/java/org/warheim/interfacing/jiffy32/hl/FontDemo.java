@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.List;
 import org.warheim.interfacing.jiffy32.FF32Factory;
 import org.warheim.interfacing.jiffy32.FF32c;
+import org.warheim.interfacing.jiffy32.bitmap.FontDrawer;
 import org.warheim.interfacing.jiffy32.model.Pin;
 import org.warheim.interfacing.jiffy32.fonts.bitmap.Arial16;
 import org.warheim.interfacing.jiffy32.fonts.bitmap.Arial24;
@@ -80,13 +81,14 @@ public class FontDemo {
         
         int fc = 0;
         BitmapFont font = fonts.get(fc);
+        FontDrawer fd = new FontDrawer();
         while (true) {
             // retrieve current date 
             DateFormat formatter = new SimpleDateFormat(DATE_FORMAT);
             String text = formatter.format(new Date());
             // wipe area and show date
             oled.clearBlock(0,0,159,35);
-            oled.drawText(0,0,text,font);
+            font.draw(0,0,text,true, oled.getBitmap(), fd);
             System.out.println(String.format("[x,y]=%f,%f [px,py]=%f,%f [dx,dy]=%f,%f", x, y, px, py, dx, dy));
             oled.drawPixel((int)px, (int)py, false);
             oled.drawPixel((int)x, (int)y, true);

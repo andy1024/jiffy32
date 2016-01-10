@@ -10,6 +10,7 @@ import org.warheim.interfacing.jiffy32.FF32c;
 import org.warheim.interfacing.jiffy32.model.Pin;
 import org.warheim.interfacing.jiffy32.exceptions.ArgumentException;
 import org.warheim.interfacing.jiffy32.exceptions.JiffyException;
+import org.warheim.interfacing.jiffy32.fonts.AbstractFont;
 import org.warheim.interfacing.jiffy32.fonts.VectorFont;
 
 /**
@@ -73,7 +74,7 @@ public class I2C_SSD1306 extends I2CDevice {
     public Bitmap getBitmap() {
         return bitmap;
     }
-    private SimpleFont font;
+    private AbstractFont font;
 
     public I2C_SSD1306(FF32c jiffy, int slaveAddr, Pin sclPin, Pin sdaPin, int bufferRows, int bufferCols, int rows, int cols) throws IOException, JiffyException, ArgumentException {
         super(jiffy, sclPin, sdaPin, slaveAddr);
@@ -267,27 +268,10 @@ public class I2C_SSD1306 extends I2CDevice {
         bitmap.drawPixel(x,y,(on==1));
     }
 
-    //draws text using simple font
-    public void drawText(int x, int y, String string) {
-        bitmap.drawText(x, y, string, font);
-    }
-
-    public void drawText(int x, int y, String string, int size/*=2*/, int space/*=1*/) {
-        bitmap.drawText(x, y, string, font, size, space);
-    }
-
     public void clearBlock(int x0, int y0, int dx, int dy) {
         bitmap.clearBlock(x0,y0,dx,dy);
     }
     
-    public void drawText(int x, int y, String string, BitmapFont font) {
-        bitmap.drawText(x,y,string,font);
-    }
-
-    public void drawText(int x, int y, String string, VectorFont font) {
-        bitmap.drawText(x,y,string,font);
-    }
-
     public void textWidth(String string, BitmapFont font) {
         bitmap.textWidth(string, font);
     }
@@ -308,11 +292,11 @@ public class I2C_SSD1306 extends I2CDevice {
         return cols;
     }
 
-    public SimpleFont getFont() {
+    public AbstractFont getFont() {
         return font;
     }
 
-    public void setFont(SimpleFont font) {
+    public void setFont(AbstractFont font) {
         this.font = font;
     }
     
