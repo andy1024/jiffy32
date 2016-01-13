@@ -23,6 +23,8 @@ public class Constants {
     public static final byte CMD_READ_BLOCK_DIGITAL_INPUTS = 0x31;
     public static final byte CMD_SET_PWM_OUTPUT = 	0x22;
     public static final byte CMD_READ_ANALOG_INPUT = 	0x23;
+    public static final byte CMD_READ_BLOCK_ANALOG_INPUTS  = 0x32;
+
     public static final byte CMD_CONFIG_SPI_BUS = 	0x24;
     public static final byte CMD_WRITE_SPI_BUS = 	0x25;
     public static final byte CMD_READ_SPI_BUS = 	0x26;
@@ -36,6 +38,8 @@ public class Constants {
     public static final byte CMD_RESET_1WIRE_BUS =      0x2D;
     public static final byte CMD_WRITE_BIT_1WIRE_BUS =  0x2E;
     public static final byte CMD_READ_BIT_1WIRE_BUS =   0x2F;
+    public static final byte CMD_SET_MODE_1WIRE_BUS =   0x40;
+    public static final byte CMD_SET_DEFAULT_ITEM_1WIRE_BUS =   0x41;
     public static final byte CMD_GET_CHIP_INFO = 	0x71;
     
     public static final byte RESULT_OK                    =       0x0E;
