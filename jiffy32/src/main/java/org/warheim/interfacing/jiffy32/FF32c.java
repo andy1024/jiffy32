@@ -99,6 +99,8 @@ public interface FF32c {
             throws IOException, JiffyException, ArgumentException;
     boolean reset1WireBus() 
             throws IOException, JiffyException;
+    void write1WireBus(byte data) 
+            throws IOException, JiffyException;
     void write1WireBus(byte[] data) 
             throws IOException, JiffyException;
     void writeBit1WireBus(boolean dataBit) 

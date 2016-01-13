@@ -661,6 +661,11 @@ public class FF32cImpl implements FF32c {
         }
     }
 
+    @Override
+    public void write1WireBus(byte data) throws IOException, JiffyException {
+        write1WireBus(new byte[]{data});
+    }
+
     //WARNING: not tested yet
     @Override
     public void write1WireBus(byte[] data) 
