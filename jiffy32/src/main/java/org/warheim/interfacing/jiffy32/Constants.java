@@ -40,12 +40,14 @@ public class Constants {
     public static final byte CMD_READ_BIT_1WIRE_BUS =   0x2F;
     public static final byte CMD_SET_MODE_1WIRE_BUS =   0x40;
     public static final byte CMD_SET_DEFAULT_ITEM_1WIRE_BUS =   0x41;
+    public static final byte HEADER_SET_DEFAULT_ITEM_1WIRE_BUS =  0x01;
     public static final byte CMD_GET_CHIP_INFO = 	0x71;
     
     public static final byte RESULT_OK                    =       0x0E;
     public static final byte RESULT_ADDRESS_OUT_OF_RANGE  =       0x03;
     public static final byte RESULT_IMPROPER_PIN_NAME     =       0x01;
     public static final byte RESULT_IMPROPER_PINS_BLOCK_ID=       0x05;
+    public static final byte RESULT_INVALID_SWITCH_VALUE  =       0x06;
     public static final byte RESULT_UNKNOWN_COMMAND       =       0x0F;
     public static final byte RESULT_IMPROPER_DATA_LEN     =       0x02;
     public static final byte RESULT_ACK_ABSENT            =       0x04;

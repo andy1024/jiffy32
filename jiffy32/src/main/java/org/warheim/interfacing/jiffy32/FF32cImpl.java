@@ -363,8 +363,37 @@ public class FF32cImpl implements FF32c {
         commands[2] = (byte)pinNumber;
         byte[] result = sendData(commands);
         if (result!=null) {
-            if (result.length>1&&result[0]==Constants.CMD_READ_ANALOG_INPUT) {
-                return result[1];
+            if (result.length>=3&&result[0]==Constants.CMD_READ_ANALOG_INPUT) {
+                int retval = (result[1] << 8) & result[2];
+                return retval;
+            } else {
+                JiffyException je = JiffyException.decodeException(result);
+                throw je;
+            }
+        } else {
+            throw new GeneralFF32Error();
+        }
+    }
+
+    @Override
+    public int[] readBlockAnalogInputs(int pinsBlock, int pinsMask) throws IOException, JiffyException, ArgumentException {
+        validateArguments(pinsBlock);
+        byte[] commands = new byte[4];
+        commands[0] = Constants.CMD_READ_BLOCK_ANALOG_INPUTS;
+        commands[1] = (byte)pinsBlock;
+        byte maskLSB = (byte)(pinsMask & 0xFF);
+        byte maskMSB = (byte)((pinsMask >> 8)& 0xFF);
+        commands[2] = maskMSB;
+        commands[3] = maskLSB;
+        byte[] result = sendData(commands);
+        int[] retval = new int[13];
+        if (result!=null) {
+            if (result.length>=25&&result[0]==Constants.CMD_READ_BLOCK_ANALOG_INPUTS) {
+                retval[0] = result[0];
+                for (int i=1;i<25;i=i+2) {
+                    retval[1+i/2]=(result[i] << 8) & result[i+1];
+                }
+                return retval;
             } else {
                 JiffyException je = JiffyException.decodeException(result);
                 throw je;
@@ -781,6 +810,50 @@ public class FF32cImpl implements FF32c {
     @Override
     public String toString() {
         return super.toString();
+    }
+
+    @Override
+    public void setMode1Wire(boolean enableImplicitReset) throws IOException, JiffyException {
+        byte[] commands = new byte[2];
+        commands[0] = Constants.CMD_SET_MODE_1WIRE_BUS;
+        commands[1] = (byte)(!enableImplicitReset?BTRUE:BFALSE);//this is correct according to specs
+        byte[] result = sendData(commands);
+        if (result!=null) {
+            if (result.length>0&&result[0]==Constants.RESULT_OK) {
+                
+            } else {
+                JiffyException je = JiffyException.decodeException(result);
+                throw je;
+            }
+        } else {
+            throw new GeneralFF32Error();
+        }
+    }
+
+    @Override
+    public void setDefaultItem1Wire(int pinBlock, int pinNumber) throws IOException, JiffyException, ArgumentException {
+        validateArguments(pinBlock, pinNumber);
+        byte[] commands = new byte[4];
+        commands[0] = Constants.CMD_SET_DEFAULT_ITEM_1WIRE_BUS;
+        commands[1] = Constants.HEADER_SET_DEFAULT_ITEM_1WIRE_BUS;
+        commands[2] = (byte)pinBlock;
+        commands[3] = (byte)pinNumber;
+        byte[] result = sendData(commands);
+        if (result!=null) {
+            if (result.length>0&&result[0]==Constants.RESULT_OK) {
+                
+            } else {
+                JiffyException je = JiffyException.decodeException(result);
+                throw je;
+            }
+        } else {
+            throw new GeneralFF32Error();
+        }
+    }
+
+    @Override
+    public void setDefaultItem1Wire(Pin defaultItem) throws IOException, JiffyException, ArgumentException {
+        setDefaultItem1Wire(defaultItem.getBlock(), defaultItem.getNumber());
     }
     
 }

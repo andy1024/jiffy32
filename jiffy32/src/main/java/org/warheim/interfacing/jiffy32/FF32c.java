@@ -53,6 +53,20 @@ public interface FF32c {
             throws IOException, JiffyException, ArgumentException;
     int readAnalogInput(Pin pin) 
             throws IOException, JiffyException, ArgumentException;
+    /**
+     * Reads multiple analog inputs
+     * 
+     * @since 0.8 firmware version
+     * @param pinsBlock
+     * @param pinsMask
+     * @return 13 ints array, 0th is voltage (3 when VCC=3.3V or 5 when VCC=5V)
+     *         rest is a map of read values, with one int per pin
+     * @throws IOException
+     * @throws JiffyException
+     * @throws ArgumentException 
+     */
+    int[] readBlockAnalogInputs(int pinsBlock, int pinsMask) 
+            throws IOException, JiffyException, ArgumentException;
     
     /* SPI bus */
     //This method is called "Configure SPI bus (0x24)" in docs
@@ -109,7 +123,27 @@ public interface FF32c {
             throws IOException, JiffyException, ArgumentException;
     boolean readBit1WireBus() 
             throws IOException, JiffyException;
-    
+    /**Sets default 1-wire mode to implicit reset within commands 
+     * write-to-1-wire and read-from-1-wire
+     * Stores configuration in non volatile memory
+     * @since 0.6 firmware version
+     * @param enableImplicitReset
+     * @throws IOException
+     * @throws JiffyException 
+     */
+    void setMode1Wire(boolean enableImplicitReset)
+            throws IOException, JiffyException;
+    /** Sets default 1-wire DQ pin
+     * Stores configuration in non volatile memory
+     * @since 0.7 firmware version
+     * @param defaultItem - pin description
+     * @throws IOException
+     * @throws JiffyException 
+     */
+    void setDefaultItem1Wire(Pin defaultItem) throws IOException, JiffyException, ArgumentException;
+
+    void setDefaultItem1Wire(int pinBlock, int pinNumber) throws IOException, JiffyException, ArgumentException;
+
     /* general communication functions */
     byte[] sendData(byte... commands) throws IOException;
     byte[] sendDataString(String value, byte... commands) throws IOException;
