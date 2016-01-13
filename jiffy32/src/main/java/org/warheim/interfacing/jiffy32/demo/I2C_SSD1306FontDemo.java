@@ -15,7 +15,7 @@ import org.warheim.interfacing.jiffy32.bitmap.FontDrawer;
 import org.warheim.interfacing.jiffy32.fonts.AbstractFont;
 import org.warheim.interfacing.jiffy32.fonts.Font5x8;
 import org.warheim.interfacing.jiffy32.fonts.VectorFont;
-import org.warheim.interfacing.jiffy32.hl.I2C_SSD1306;
+import org.warheim.interfacing.jiffy32.hl.i2c.I2C_SSD1306;
 import org.warheim.interfacing.jiffy32.fonts.VectorFontFactory;
 import org.warheim.interfacing.jiffy32.fonts.bitmap.Arial24;
 

@@ -1,5 +1,6 @@
 package org.warheim.interfacing.jiffy32.hl;
 
+import org.warheim.interfacing.jiffy32.hl.i2c.I2C_SSD1306;
 import org.warheim.interfacing.jiffy32.fonts.bitmap.BitmapFont;
 import com.codeminders.hidapi.ClassPathLibraryLoader;
 import java.text.DateFormat;

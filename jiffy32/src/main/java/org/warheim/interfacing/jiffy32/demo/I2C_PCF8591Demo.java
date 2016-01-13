@@ -1,5 +1,6 @@
 package org.warheim.interfacing.jiffy32.demo;
 
+import org.warheim.interfacing.jiffy32.hl.i2c.I2C_PCF8591;
 import org.warheim.interfacing.jiffy32.hl.*;
 import com.codeminders.hidapi.ClassPathLibraryLoader;
 import java.io.IOException;

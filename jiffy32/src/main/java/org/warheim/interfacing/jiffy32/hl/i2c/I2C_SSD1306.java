@@ -1,4 +1,4 @@
-package org.warheim.interfacing.jiffy32.hl;
+package org.warheim.interfacing.jiffy32.hl.i2c;
 
 import org.warheim.interfacing.jiffy32.bitmap.Bitmap;
 import org.warheim.interfacing.jiffy32.fonts.SimpleFont;

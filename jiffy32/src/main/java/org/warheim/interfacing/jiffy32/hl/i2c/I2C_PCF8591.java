@@ -1,4 +1,4 @@
-package org.warheim.interfacing.jiffy32.hl;
+package org.warheim.interfacing.jiffy32.hl.i2c;
 
 import com.codeminders.hidapi.ClassPathLibraryLoader;
 import java.io.IOException;
