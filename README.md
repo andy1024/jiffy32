@@ -49,7 +49,9 @@ Basic calls are working (dongle metadata, digital, analog and pwm single and mut
 
 i2c calls are working (tested with PCF8591 chip and SSD1306 OLED display)
 
-SPI and 1-Wire calls are implemented, but not tested yet
+1-Wire calls are working (tested with DS18B20 thermal probe)
+
+SPI calls are implemented, but not tested yet
 
 Library supports multiple dongles attached simultaneously
 
