@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.warheim.interfacing.jiffy32.FF32c;
 import org.warheim.interfacing.jiffy32.exceptions.ArgumentException;
 import org.warheim.interfacing.jiffy32.exceptions.JiffyException;
+import org.warheim.interfacing.jiffy32.hl.CRC8;
 import org.warheim.interfacing.jiffy32.model.Pin;
 
 /**
@@ -44,7 +45,7 @@ public class OneWire_DS18B20 extends OneWireDevice {
             logger.debug(s);
         }
         
-        boolean crcOk = crc8(response, RESPONSE_LEN);
+        boolean crcOk = CRC8.checkCRC(response, RESPONSE_LEN);
         if (crcOk) {
             return (response[1] * 256 + response[0]) * 0.0625;
             // just return nonsense result to report invalid data
