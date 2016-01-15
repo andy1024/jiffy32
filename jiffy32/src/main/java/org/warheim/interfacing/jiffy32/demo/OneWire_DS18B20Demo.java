@@ -21,7 +21,7 @@ public class OneWire_DS18B20Demo {
         while (true) {
             double temp = probe.readTemp();
             System.out.println(String.format("Temperature %f", temp));
-            Thread.sleep(500);
+            Thread.sleep(3000);
         }
     }
 }
