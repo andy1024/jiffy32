@@ -1,4 +1,4 @@
-package org.warheim.interfacing.jiffy32;
+package org.warheim.interfacing.jiffy32.core;
 
 import org.warheim.interfacing.jiffy32.model.Pin;
 import java.io.IOException;

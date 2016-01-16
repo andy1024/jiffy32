@@ -2,8 +2,8 @@ package org.warheim.interfacing.jiffy32.hl.onewire;
 
 import com.codeminders.hidapi.ClassPathLibraryLoader;
 import java.io.IOException;
-import org.warheim.interfacing.jiffy32.FF32Factory;
-import org.warheim.interfacing.jiffy32.FF32c;
+import org.warheim.interfacing.jiffy32.core.FF32Factory;
+import org.warheim.interfacing.jiffy32.core.FF32c;
 import org.warheim.interfacing.jiffy32.exceptions.ArgumentException;
 import org.warheim.interfacing.jiffy32.exceptions.JiffyException;
 import org.warheim.interfacing.jiffy32.hl.CRC8;

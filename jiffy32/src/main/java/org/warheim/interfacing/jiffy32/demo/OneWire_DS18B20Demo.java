@@ -1,8 +1,8 @@
 package org.warheim.interfacing.jiffy32.demo;
 
 import com.codeminders.hidapi.ClassPathLibraryLoader;
-import org.warheim.interfacing.jiffy32.FF32Factory;
-import org.warheim.interfacing.jiffy32.FF32c;
+import org.warheim.interfacing.jiffy32.core.FF32Factory;
+import org.warheim.interfacing.jiffy32.core.FF32c;
 import org.warheim.interfacing.jiffy32.hl.onewire.OneWire_DS18B20;
 import org.warheim.interfacing.jiffy32.model.Pin;
 

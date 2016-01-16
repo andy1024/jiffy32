@@ -3,7 +3,7 @@ package org.warheim.interfacing.jiffy32.hl.onewire;
 import java.io.IOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.warheim.interfacing.jiffy32.FF32c;
+import org.warheim.interfacing.jiffy32.core.FF32c;
 import org.warheim.interfacing.jiffy32.exceptions.ArgumentException;
 import org.warheim.interfacing.jiffy32.exceptions.JiffyException;
 import org.warheim.interfacing.jiffy32.hl.CRC8;

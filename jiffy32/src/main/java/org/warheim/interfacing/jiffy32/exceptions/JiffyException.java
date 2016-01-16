@@ -1,6 +1,6 @@
 package org.warheim.interfacing.jiffy32.exceptions;
 
-import org.warheim.interfacing.jiffy32.Constants;
+import org.warheim.interfacing.jiffy32.core.Constants;
 
 /**
  * Base class for all the Jiffy exceptions

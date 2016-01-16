@@ -1,4 +1,4 @@
-package org.warheim.interfacing.jiffy32;
+package org.warheim.interfacing.jiffy32.core;
 
 import com.codeminders.hidapi.HIDDevice;
 import com.codeminders.hidapi.HIDDeviceInfo;

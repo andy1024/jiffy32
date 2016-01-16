@@ -1,6 +1,6 @@
 package org.warheim.interfacing.jiffy32.model;
 
-import org.warheim.interfacing.jiffy32.Constants;
+import org.warheim.interfacing.jiffy32.core.Constants;
 
 /**
  *

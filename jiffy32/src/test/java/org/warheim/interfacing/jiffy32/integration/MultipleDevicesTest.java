@@ -8,9 +8,9 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.warheim.interfacing.jiffy32.Constants;
-import org.warheim.interfacing.jiffy32.FF32Factory;
-import org.warheim.interfacing.jiffy32.FF32c;
+import org.warheim.interfacing.jiffy32.core.Constants;
+import org.warheim.interfacing.jiffy32.core.FF32Factory;
+import org.warheim.interfacing.jiffy32.core.FF32c;
 
 /**
  *
