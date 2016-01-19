@@ -35,4 +35,10 @@ public enum Pin {
     public byte getNumber() {
         return pinNumber;
     }
+
+    @Override
+    public String toString() {
+        return ""+(char)(pinBlock-0x0A+'A')+pinNumber;
+    }
+    
 }
