@@ -79,18 +79,6 @@ public class SimpleIOTest {
     }
 
     @org.junit.Test
-    public void testPWMOutput() throws Exception {
-        for (int x=0;x<255;x=x+5) {
-            logger.info("setting pwm to " + x);
-            jiffy.setPWMOutput(Pin.A5, x);
-        }
-        for (int x=255;x>=0;x=x-5) {
-            logger.info("setting pwm to " + x);
-            jiffy.setPWMOutput(Pin.A5, x);
-        }
-    }
-    
-    @org.junit.Test
     public void testMultipleDigitalOut() throws Exception {
         //light all in A block
         jiffy.setBlockDigitalOutputs(Constants.A, 0x003F, 0x003F);

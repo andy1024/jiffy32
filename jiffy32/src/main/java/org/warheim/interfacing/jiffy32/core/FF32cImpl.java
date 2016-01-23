@@ -166,7 +166,7 @@ public class FF32cImpl implements FF32c {
         if (n<0) {
             return null;
         }
-        logBytes("RCVD["+n+"]", commands);
+        logBytes("RCVD["+n+"]", buffer);
         return buffer;
     }
     
@@ -313,7 +313,7 @@ public class FF32cImpl implements FF32c {
         byte[] result = sendData(commands);
         if (result!=null) {
             if (result.length>2&&result[0]==Constants.CMD_READ_BLOCK_DIGITAL_INPUTS) {
-                int retval = (result[1] << 8) & result[2];
+                int retval = (result[1] << 8) | result[2];
                 return retval;
             } else {
                 JiffyException je = JiffyException.decodeException(result);
@@ -354,7 +354,7 @@ public class FF32cImpl implements FF32c {
     }
 
     @Override
-    public int readAnalogInput(int pinBlock, int pinNumber) 
+    public int[] readAnalogInput(int pinBlock, int pinNumber) 
             throws IOException, JiffyException, ArgumentException {
         validateArguments(pinBlock, pinNumber);
         byte[] commands = new byte[3];
@@ -362,9 +362,11 @@ public class FF32cImpl implements FF32c {
         commands[1] = (byte)pinBlock;
         commands[2] = (byte)pinNumber;
         byte[] result = sendData(commands);
+        int[] retval = new int[2];
         if (result!=null) {
-            if (result.length>=3&&result[0]==Constants.CMD_READ_ANALOG_INPUT) {
-                int retval = (result[1] << 8) & result[2];
+            if (result.length>=4&&result[0]==Constants.CMD_READ_ANALOG_INPUT) {
+                retval[0] = result[1];
+                retval[1] = Utils.byteToInt(result, 2);
                 return retval;
             } else {
                 JiffyException je = JiffyException.decodeException(result);
@@ -373,6 +375,12 @@ public class FF32cImpl implements FF32c {
         } else {
             throw new GeneralFF32Error();
         }
+    }
+
+    @Override
+    public int[] readAnalogInput(Pin pin) 
+            throws IOException, JiffyException, ArgumentException {
+        return readAnalogInput(pin.getBlock(), pin.getNumber());
     }
 
     @Override
@@ -389,9 +397,9 @@ public class FF32cImpl implements FF32c {
         int[] retval = new int[13];
         if (result!=null) {
             if (result.length>=25&&result[0]==Constants.CMD_READ_BLOCK_ANALOG_INPUTS) {
-                retval[0] = result[0];
-                for (int i=1;i<25;i=i+2) {
-                    retval[1+i/2]=(result[i] << 8) & result[i+1];
+                retval[0] = result[1];
+                for (int i=2;i<26;i=i+2) {
+                    retval[i/2]= Utils.byteToInt(result, i, 2);
                 }
                 return retval;
             } else {
@@ -401,12 +409,6 @@ public class FF32cImpl implements FF32c {
         } else {
             throw new GeneralFF32Error();
         }
-    }
-
-    @Override
-    public int readAnalogInput(Pin pin) 
-            throws IOException, JiffyException, ArgumentException {
-        return readAnalogInput(pin.getBlock(), pin.getNumber());
     }
 
     //WARNING: not tested yet
@@ -639,7 +641,7 @@ public class FF32cImpl implements FF32c {
         addr = (byte)(addr * 2 + 1);
         byte[] data =  {(byte)addr};
         byte[] result = readI2CBus((byte)2, data);
-        return (short)((result[1] << 8) + result[0]);
+        return (short)((result[1] << 8) | result[0]);
     }
 
     //WARNING: not tested yet

@@ -49,9 +49,9 @@ public interface FF32c {
             throws IOException, JiffyException, ArgumentException;
     void setPWMOutput(Pin pin, int ratio) 
             throws IOException, JiffyException, ArgumentException;
-    int readAnalogInput(int pinBlock, int pinNumber) 
+    int[] readAnalogInput(int pinBlock, int pinNumber) 
             throws IOException, JiffyException, ArgumentException;
-    int readAnalogInput(Pin pin) 
+    int[] readAnalogInput(Pin pin) 
             throws IOException, JiffyException, ArgumentException;
     /**
      * Reads multiple analog inputs
