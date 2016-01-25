@@ -2,7 +2,6 @@ package org.warheim.interfacing.jiffy32.hl.i2c;
 
 import com.codeminders.hidapi.ClassPathLibraryLoader;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

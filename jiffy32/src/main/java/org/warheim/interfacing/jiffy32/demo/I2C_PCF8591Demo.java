@@ -1,17 +1,12 @@
 package org.warheim.interfacing.jiffy32.demo;
 
 import org.warheim.interfacing.jiffy32.hl.i2c.I2C_PCF8591;
-import org.warheim.interfacing.jiffy32.hl.*;
 import com.codeminders.hidapi.ClassPathLibraryLoader;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.warheim.interfacing.jiffy32.core.FF32c;
 import org.warheim.interfacing.jiffy32.model.Pin;
-import org.warheim.interfacing.jiffy32.exceptions.ArgumentException;
-import org.warheim.interfacing.jiffy32.exceptions.JiffyException;
 
 /**
  * 8-bit A/D & D/A converter

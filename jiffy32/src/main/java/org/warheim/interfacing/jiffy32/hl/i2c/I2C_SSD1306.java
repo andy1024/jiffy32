@@ -1,7 +1,6 @@
 package org.warheim.interfacing.jiffy32.hl.i2c;
 
 import org.warheim.interfacing.jiffy32.bitmap.Bitmap;
-import org.warheim.interfacing.jiffy32.fonts.SimpleFont;
 import org.warheim.interfacing.jiffy32.fonts.Font5x8;
 import org.warheim.interfacing.jiffy32.fonts.bitmap.BitmapFont;
 import java.io.IOException;
@@ -11,7 +10,6 @@ import org.warheim.interfacing.jiffy32.model.Pin;
 import org.warheim.interfacing.jiffy32.exceptions.ArgumentException;
 import org.warheim.interfacing.jiffy32.exceptions.JiffyException;
 import org.warheim.interfacing.jiffy32.fonts.AbstractFont;
-import org.warheim.interfacing.jiffy32.fonts.VectorFont;
 
 /**
  * based on Guy Carpenter's py-gaugette and Adafruit_SSD1306 library
