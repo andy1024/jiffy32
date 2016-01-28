@@ -16,6 +16,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * based on Guy Carpenter's py-gaugette and Adafruit_SSD1306 library
+ * Bresenham algorithms come from wikipedia
  *
  * @author andy
  */
@@ -87,6 +88,18 @@ public class Bitmap {
                     line += ' '
             print('|'+line+'|')
 */
+    public boolean getPixel(int x, int y) {
+        if (x<0 || x>=cols || y<0 || y>=rows) {
+            return false;
+        }
+        int memCol = x;
+        int memRow = y / 8;
+        int bitMask = 1 << (y % 8);
+        int offset = memRow + (rows / 8) * memCol;
+
+        return (data[offset] & bitMask)>0;
+    }
+    
     public void drawPixel(int x, int y, int on) {
         drawPixel(x,y,(on==1));
     }
@@ -98,12 +111,82 @@ public class Bitmap {
         int memCol = x;
         int memRow = y / 8;
         int bitMask = 1 << (y % 8);
-        int offset = memRow + rows/8 * memCol;
+        int offset = memRow + (rows / 8) * memCol;
 
         if (on) {
             data[offset] |= bitMask;
         } else {
             data[offset] &= (0xFF - bitMask);
+        }
+    }
+    
+    public void drawCircle(int x0, int y0, int r, float w, boolean on) {
+        int x = r;
+        int y = 0;
+        int decisionOver2 = 1 - x;
+
+        while( y <= x )
+        {
+          drawPixel( x + x0,  y + y0, on);
+          drawPixel( y + x0,  x + y0, on);
+          drawPixel(-x + x0,  y + y0, on);
+          drawPixel(-y + x0,  x + y0, on);
+          drawPixel(-x + x0, -y + y0, on);
+          drawPixel(-y + x0, -x + y0, on);
+          drawPixel( x + x0, -y + y0, on);
+          drawPixel( y + x0, -x + y0, on);
+          y++;
+          if (decisionOver2<=0)
+          {
+            decisionOver2 += 2 * y + 1;
+          }
+          else
+          {
+            x--;
+            decisionOver2 += 2 * (y - x) + 1;
+          }
+        }
+    }
+    
+    public void drawFilledRect(int x1, int y1, int x2, int y2, int w, boolean on) {
+        for (int x=x1;x<=x2;++x) {
+            for (int y=y1;y<=y2;++y) {
+                drawPixel(x, y, on);
+            }
+        }
+    }
+
+    public void drawRect(int x1, int y1, int x2, int y2, int w, boolean on) {
+        for (int x=x1;x<=x2;++x) {
+            drawPixel(x, y1, on);
+            drawPixel(x, y2, on);
+        }
+        for (int y=y1;y<=y2;++y) {
+            drawPixel(x1, y, on);
+            drawPixel(x2, y, on);
+        }
+    }
+
+    public void drawLine(int x1, int y1, int x2, int y2, int w, boolean on) {
+        double dx = x2 - x1;
+        double dy = y2 - y1;
+        double error = 0;
+        if (dx==0) {
+            for (int y=y1;y<=y2;++y) {
+                drawPixel(x1, y, on);
+            }
+        } else {
+            double de = Math.abs(dy/dx);
+            int y = y1;
+            for (int x=x1;x<=x2;++x) {
+                drawPixel(x, y, on);
+                error = error + de;
+                while (error>=0.5) {
+                    drawPixel(x, y, on);
+                    y+=Math.signum(y2-y1);
+                    error-=1;
+                }
+            }
         }
     }
 
