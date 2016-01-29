@@ -40,7 +40,7 @@ Example usage can be found in org.warheim.interfacing.jiffy32.JiffyTest class an
 
 ![Alt text](https://raw.githubusercontent.com/andy1024/jiffy32/master/images/pfcjif-screenshot.png?raw=true "Self-made board with FF32 chip connected to PCF8591")
 ######Screenshot from jiffy32 demo using PCF8591 breakout board. Written in Processing
-
+######Sources for this application can be found on https://github.com/andy1024/pcfjif
 
 ## Current project status
 Work in progress
