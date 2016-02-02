@@ -59,7 +59,7 @@ public class AnalogTest {
         }
     }
     
-    @org.junit.Test
+    //@org.junit.Test
     public void testAllAnalogInputs() throws Exception {
         for (int i=1;i<=12;++i) {
             int[] result = jiffy.readAnalogInput(0x0B, i);
@@ -67,7 +67,7 @@ public class AnalogTest {
         }
     }
 
-    @org.junit.Test
+    //@org.junit.Test
     public void testSingleAnalogInput() throws Exception {
         Pin pin = Pin.B12;
         for (int i=0;i<5000;++i) {
